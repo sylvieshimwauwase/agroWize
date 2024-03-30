@@ -1,0 +1,25 @@
+.popup_container{
+    width: 28.938rem;
+    height: 20.375rem;
+    padding: 0.156rem;
+    align-items: center;
+    border: 6px solid rgb(6, 59, 6);
+    border-radius: 20px;
+    background-color: #fff;
+}
+.cancelIcon{
+    width: 1.667rem;
+    height: 1.667rem;
+    align-self: flex-end;
+}
+.successIcon{
+    width: 6.25rem;
+    height: 6.25rem;
+    align-items: center;
+}
+.popUpText{
+    font-family: NunitoSans;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,0 +1,124 @@
+.footer {
+    height: 100%;
+    font-family: Jacques Francois;
+    font-style: normal;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  
+  
+  }
+  
+  .footerSection1 {
+    display: flex;
+    width: 898px;
+    /* width: 65%; */
+    height: 600px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background: #778291;
+    color: #fff;
+  }
+  
+  .footerContainer1 {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .footerContainer1 > div {
+    padding: 0 10px;
+  }
+
+  .footerContainer1 h2 {
+    font-size: medium;
+  }
+  .footerContainer1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+  }
+
+  .footerContainer2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footerContainer2 h2 {
+    margin-right: 20px;
+    font-size: medium;
+  }
+  
+  .footerContainer2 ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footerContainer2 ul li {
+    margin-right: 20px;
+  }
+  .horizontalLine {
+    width: 80%;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    margin: 20px auto;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .footerContainer3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footerSection2 {
+    display: flex;
+    width: 608px;
+    height: 250px;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 300px; */
+    margin-left: 150px;
+    margin-top: -40px;
+    background: #f29620;
+    color: #fff;
+  }
+  
+  .footerSection2 h2 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .footerSection2 p {
+
+  }
+  
+  .input-box {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+  
+  .newsletter-input {
+    width: 370px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #fff;
+    border: none;
+  }

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+}
+.signupPage {
+    background-image: url("/public/loginBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.signupForm {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 28px 60px 25px 61px;
+    height: 80%;
+    margin: 19px 170px 0 170px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+
+.title {
+    width: 100%;
+    height: 49px;
+    flex-grow: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+.subtitle {
+    width: 100%;
+    height: 33px;
+    flex-grow: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #226d2c;
+    margin-top: 10px;
+}
+
+.formLbl {
+    position: relative;
+    width: 440px;
+    height: 80px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px;
+    opacity: 0.95;
+}
+
+.lbl {
+    width: 200px;
+    height: 22px;
+    flex-grow: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+    height: 30px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 9px;
+    border: solid 1px #4285f4;
+    background-color: #fff;
+}
+
+.icon {
+    position: absolute;
+    top: 80%;
+    transform: translate(-50%);
+    right: 10px;
+    color: #808080;
+    width: 10.7px;
+    height: 14px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-family: "Nunito", sans-serif;
+}

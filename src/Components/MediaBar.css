@@ -1,0 +1,94 @@
+.registerLine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 20px 0;
+    opacity: 0.95;
+}
+
+.leftLine,
+.rightLine {
+    flex-grow: 0;
+    width: 103px;
+    height: 1px;
+    margin: 4px 6px 5px 0;
+    transform: rotate(-360deg);
+    opacity: 0.95;
+    background-color: #fc7c0b;
+}
+
+.registerLine .buttonText {
+    width: 103px;
+    height: 19px;
+    flex-grow: 0;
+    margin: 0 10px 0 12px;
+    opacity: 0.95;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6a707c;
+}
+.termsAndConditions {
+    width: 462px;
+    height: 60px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    opacity: 0.95;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.termsAndConditions .terms1 .terms2 {
+    color: #226d2c;
+}
+
+.termsAndConditions .terms1 .terms3 {
+    color: #fc7c0b
+}
+
+.mediaBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mediaBar > div {
+    margin: 0 5px;
+}
+
+.imageBar {
+        width: 52px;
+        height: 28px;
+        flex-grow: 0;
+        margin: 20px 8px 0 0;
+        padding: 8px 21px 8px 37px;
+        opacity: 0.95;
+        border-radius: 8px;
+        border: solid 1px #e8ecf4;
+        background-color: #fff;
+}
+
+.imageBar img {
+    width: 26px;
+    height: 26px;
+    flex-grow: 0;
+    object-fit: contain;
+    opacity: 0.95;
+}

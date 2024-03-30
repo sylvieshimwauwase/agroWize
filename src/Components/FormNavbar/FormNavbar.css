@@ -1,0 +1,26 @@
+.formNavbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 90rem;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+.formNavbarLogo {
+  height: 40px;
+  width: 40px;
+}
+.formNavbar_CA {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+.formNavbarHome {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: #226d2c;
+  text-decoration: none;
+  text-align: right;
+  list-style: none;
+}
