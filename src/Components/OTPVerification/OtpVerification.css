@@ -14,7 +14,7 @@
   }
 
   .otpVerificationForm {
-    position: absolute;
+    /*position: absolute;
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%);
@@ -22,7 +22,22 @@
     height: 40%;
     margin: 19px 170px 0 170px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #fff;*/
+
+    max-width: 90%;
+    width: 27.5rem;
+    height: 40%;
+    padding: 1rem 7.375rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  @media screen and (max-width: 768px) {
+    .otpVerificationForm {
+    width: 90%;
+    max-width: 100%;
+    padding: 1.75rem 1rem;
+    }
   }
 
   .otpVerificationTitle {

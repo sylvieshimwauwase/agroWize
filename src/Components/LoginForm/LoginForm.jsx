@@ -42,7 +42,10 @@ const LoginForm = ({onFormSubmit}) => {
           </a>
         </div>
         <FormButton name="Login" />
-        <MediaBar loginText="Create Account" />
+        <MediaBar
+        registerText="Or Login with"
+        loginText="Create Account"
+        />
       </form>
     </div>
   );
