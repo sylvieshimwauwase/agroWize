@@ -25,6 +25,14 @@
     background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+    .login-form {
+    width: 90%;
+    max-width: 100%;
+    padding: 1.75rem 1rem;
+    }
+}
+
 
 .title {
     width: 100%;
