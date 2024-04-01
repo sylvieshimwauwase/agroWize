@@ -1,11 +1,13 @@
 import React from "react";
-import FormNavbar from "../Components/FormNavbar/FormNavbar";
+//import FormNavbar from "../Components/FormNavbar/FormNavbar";
 import ResetPassword from "../Components/ResetPassword/ResetPassword";
+import UserProfileHeader from "../Components/UserProfileHeader/UserProfileHeader";
+//import VerticalNavBar from "../Components/VerticalNavBar/VerticalNavBar";
 
 const ResetPasswordPage = () => {
     return (
         <div>
-            <FormNavbar title="Log In"/>
+            <UserProfileHeader />
             <ResetPassword />
         </div>
     );

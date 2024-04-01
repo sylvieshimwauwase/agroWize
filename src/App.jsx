@@ -5,6 +5,8 @@ import Login from "./Pages/Login.jsx";
 import ForgotPasswordPage from "./Pages/ForgotPasswordPage.jsx";
 import OtpVerificationPage from "./Pages/OtpVerificationPage.jsx";
 import ResetPasswordPage from "./Pages/ResetPasswordPage.jsx";
+import UserProfileUpdatePage from "./Pages/UserProfileUpdatePage.jsx";
+import UserProfileNotificationPage from "./Pages/UserProfileNotificationPage.jsx";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
         <Route path="otpVerification" element={<OtpVerificationPage />} />
         <Route path="resetPassword" element={<ResetPasswordPage />} />
+        <Route path="userProfileUpdate" element={<UserProfileUpdatePage />} />
+        <Route path="userProfileNotification" element={<UserProfileNotificationPage />} />
       </Routes>
     </BrowserRouter>
   );
