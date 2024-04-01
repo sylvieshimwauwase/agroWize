@@ -8,7 +8,6 @@ const Login = () => {
   return (
     <div>
       <FormNavbar title="Login"/>
-      <HeaderBar />
       <LoginForm/>
     </div>
   );
