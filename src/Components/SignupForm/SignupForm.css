@@ -136,9 +136,11 @@
         width: calc(80% - 20px);
     }
     .title {
+        width: 100%;
         font-size: 12px; 
     } 
     .subtitle {
+        width: 100%;
         font-size: 10px; 
     }
 }
