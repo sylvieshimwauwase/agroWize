@@ -99,3 +99,10 @@
     object-fit: contain;
     opacity: 0.95;
 }
+
+@media screen and (max-width: 768px) {
+    .termsAndConditions {
+        width: 100%;
+        font-size: 12px;
+    }
+}

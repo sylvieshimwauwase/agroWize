@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 import "./LoginForm.css"
 import MediaBar from "../MediaBar";
 import FormButton from "../FormButton";
@@ -7,11 +8,20 @@ import FormButton from "../FormButton";
 const LoginForm = ({onFormSubmit}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onFormSubmit({ username, password });
+    try {
+      const response = axios.post("/login", { username, password });
+      console.log(response.data);
+      onFormSubmit(response.data);
+    } catch (error) {
+      console.error("Error logging in: ", error);
+      setError("Invalid username or password");
+    }
+    
   };
   return (
     <div className="container">

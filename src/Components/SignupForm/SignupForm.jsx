@@ -1,4 +1,6 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { withRouter } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
@@ -8,17 +10,20 @@ import MediaBar from "../../Components/MediaBar";
 
 const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
+    /*const [isFormSubmitted, setIsFormSubmitted] = useState(false);*/
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    
 
     const validate = values => {
         const errors = {};
 
         if (!values.fullName) {
             errors.fullName = "Required";
-        } else if (values.fullName.length < 3) {
+        } /*else if (values.fullName.length < 3) {
             errors.fullName = "must be at least 3 characters";
         } else if (values.fullName.length > 15) {
             errors.fullName = "must be 15 characters or less";
-        }
+        }*/
 
         if (!values.email) {
             errors.email = "Required";
@@ -36,16 +41,40 @@ const SignupForm = () => {
         return errors;
     };
 
-    const handleSubmit = (values, { setSubmitting }) => {
-        setTimeout(() => {
+    const handleNavigate = (path) => {
+        // Navigation logic
+        console.log('Navigating to:', path);
+    };
+
+    const handleSubmit = async (values, { setSubmitting }) => {
+        setIsSubmitting(true);
+        /*setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
-        }, 400);
+        }, 400);*/
+        try {
+            const response = await axios.post('/signup', values);
+            console.log(response.data);
+
+            handleNavigate('/login');
+        } catch (error) {
+            console.error('Error signing up: ', error);
+        } finally {
+            setIsSubmitting(true);
+        }
     };
 
     const togglePassword = () => {
         setShowPassword((prev) => (!prev));
     };
+
+    useEffect(() => {
+        if (isSubmitting) {
+            handleNavigate('/login');
+        }
+    }, [isSubmitting, handleNavigate]);
+
+
 
     return (
         <div className="signupPage">
@@ -86,14 +115,19 @@ const SignupForm = () => {
                             <FontAwesomeIcon icon={showPassword ? faLockOpen : faLock} className="icon" onClick={togglePassword} />
                             <ErrorMessage name="confirmPassword" component="div" className="error" />
                         </div>
+                        <FormButton name="Create Account" disabled={isSubmitting} />
+                        <MediaBar
+                            registerText="Or Register with"
+                            loginText="Login"
+                        />
                     </Form>
                     )}
                 </Formik>
-                <FormButton name="Create Account"/>
+                {/*<FormButton name="Create Account"/>
                 <MediaBar
                     registerText="Or Register with"
                     loginText="Login"
-                />
+                />*/}
                 </div>
         </div>
     );
