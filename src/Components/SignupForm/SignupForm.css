@@ -133,7 +133,7 @@
 
 @media screen and (max-width: 768px) {
     .input {
-        width: calc(100% - 20px);
+        width: calc(80% - 20px);
     }
     .formLbl {
         width: 90%;
