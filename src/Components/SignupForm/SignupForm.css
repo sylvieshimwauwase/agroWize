@@ -99,7 +99,7 @@
     color: #000;
 }
 
-.input {
+/*.input {
     width: calc(100% - 40px);
     padding-right: 40px;
     height: 30px;
@@ -113,6 +113,14 @@
     border-radius: 9px;
     border: solid 1px #4285f4;
     background-color: #fff;
+}*/
+
+.input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #4285f4;
+  border-radius: 9px;
 }
 
 .icon {
@@ -132,9 +140,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .input {
+    /*.input {
         width: calc(80% - 20px);
-    }
+    }*/
     .title {
         width: 90%;
         max-width: 100%;
