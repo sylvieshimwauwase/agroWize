@@ -17,7 +17,7 @@ const ForgotPassword = () => {
                     <a href="/otpVerification" className="forgot-password">
                         Back to login
                     </a>
-                    <FormButton name="Continue" />
+                    <FormButton name="Continue" to="/otpVerification"/>
                 </form>
             </div>
         </div>

@@ -1,22 +1,26 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css"
 import MediaBar from "../MediaBar";
 import FormButton from "../FormButton";
+import Keys from "../../Constants/Keys";
 
 const LoginForm = ({onFormSubmit}) => {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [userpassword, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = axios.post("/login", { username, password });
+      const response = await axios.post(`${Keys.base_url}/login`, { username, userpassword });
       console.log(response.data);
-      onFormSubmit(response.data);
+      /*onFormSubmit(response.data);*/
+      navigate("/forgotPassword");
     } catch (error) {
       console.error("Error logging in: ", error);
       setError("Invalid username or password");
@@ -25,7 +29,7 @@ const LoginForm = ({onFormSubmit}) => {
   };
   return (
     <div className="container">
-      <form className="login-form" onFormSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <div className="welcomeBack">
           <h3>Welcome Back</h3>
           <p className="welcomeMsg">Glad to see you again!</p>
@@ -43,7 +47,7 @@ const LoginForm = ({onFormSubmit}) => {
           <input
             type="password"
             placeholder="enter your password"
-            value={password}
+            value={userpassword}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -51,7 +55,7 @@ const LoginForm = ({onFormSubmit}) => {
             Forgot password?
           </a>
         </div>
-        <FormButton name="Login" />
+        <FormButton type="submit" name="Login" />
         <MediaBar
         registerText="Or Login with"
         loginText="Create Account"

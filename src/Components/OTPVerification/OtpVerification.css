@@ -90,3 +90,19 @@
     outline: none;
     text-align: center;
   }
+
+  @media screen and (max-width: 768px) {
+    .otpInput {
+        width: calc(80% - 20px);
+    }
+    .otpVerificationTitle {
+        width: 90%;
+        max-width: 100%;
+        font-size: 12px; 
+    } 
+    .otpVerificationSubtitle {
+        width: 90%;
+        max-width: 100%;
+        font-size: 10px; 
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { withRouter } from "react-router-dom";
+import Keys from "../../Constants/Keys";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +13,7 @@ const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     /*const [isFormSubmitted, setIsFormSubmitted] = useState(false);*/
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
     
 
     const validate = values => {
@@ -53,10 +55,17 @@ const SignupForm = () => {
             setSubmitting(false);
         }, 400);*/
         try {
-            const response = await axios.post('/signup', values);
+            let data = {
+                fullname: values.fullName,
+                username: values.email,
+                userpassword: values.password,
+                confirmpassword: values.confirmPassword
+            };
+            console.log("values", values);
+            const response = await axios.post(`${Keys.base_url}/signup`, data);
             console.log(response.data);
 
-            handleNavigate('/login');
+            navigate('/login');
         } catch (error) {
             console.error('Error signing up: ', error);
         } finally {
