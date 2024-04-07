@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #f2f2f2;
+    font-family: "Nunito", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutUsPage {
+    width: 90%;
+    max-width: 100%;
+    padding: 1.75rem 1rem;
+    }
+}
+
+.sectionImage1 {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.overlayBtn {
+    position:absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    left: 80%;
+    color: white;
+    border: solid 2px #f29620;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.row-section-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+.row-section-item p,
+.row-section-item img {
+    width: 40%;
+    padding: 10px;
+}
+
+.row-section-item p{
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    align-items: center;
+}*/
+
+.sectionImage2 {
+    width: 100%;
+    height: auto;
+}
+
+.missionVisionValuesDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0 0;
+    padding: 38px 50px 59px;
+    background-color: #3ec772;
+}
+
+.innerDiv {
+    width: calc(33.33% - 30px); /* Adjust as needed */
+    padding: 20px;
+    height: 280px;
+    border: 1px solid #f29620;
+    text-align: center;
+    border-radius:30px;
+    background-color: #fff;
+    
+}
+
+.innerDiv img {
+    position: absolute;
+    width: 108.6px;
+    height: 117px;
+    flex-grow: 0;
+    margin: 0 127.3px 141px 18.1px;
+    padding: 12px 13.5px 23.5px 27.9px;
+    border-radius: 30px;
+}
+
+.innerDiv h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.innerDiv p {
+    margin-top: 5px;
+}

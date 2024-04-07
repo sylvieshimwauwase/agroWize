@@ -1,34 +1,54 @@
 .footer {
-    height: 100%;
-    font-family: Jacques Francois;
-    font-style: normal;
-    display: block;
-    justify-content: center;
-    align-items: center;
-  
-  
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  font-family: Jacques Francois;
+  font-style: normal;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 0;
   }
   
   .footerSection1 {
+    width: 100%;
     display: flex;
-    width: 898px;
-    /* width: 65%; */
-    height: 600px;
+    height: 450px;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    background: #778291;
+    background: #226d2c;
     color: #fff;
-  }
+   }
   
   .footerContainer1 {
-    display: flex;
     width: 100%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-top: 160px;
   }
 
-  .footerContainer1 > div {
+  .logoSection {
+    display: flex;
+    flex-direction: row;
     padding: 0 10px;
+    gap: 20px;
+  }
+
+  .logoSection img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logoSection p {
+    display: flex;
+    font-size: medium;
+    align-items: center;
   }
 
   .footerContainer1 h2 {
@@ -62,11 +82,11 @@
     margin-right: 20px;
   }
   .horizontalLine {
-    width: 80%;
+    width: 90%;
     height: 1px;
     background-color: #ccc;
     border: none;
-    margin: 20px auto;
+    margin: 0 auto;
     margin-left: 10%;
     margin-right: 10%;
   }
@@ -75,31 +95,44 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
   }
 
-  .footerSection2 {
+  .copyright {
+    flex-grow: 1;
+  }
+  
+  .social {
     display: flex;
-    width: 608px;
-    height: 250px;
-    padding: 10px 20px;
+    gap: 5px;
+  }
+
+
+  .footerSection2 {
+    width: 80%;
+    display: flex;
+    height: 200px;
+    padding: 20px 0px;
     flex-direction: column;
     align-items: center;
-    /* gap: 300px; */
     margin-left: 150px;
-    margin-top: -40px;
+    margin-top: -550px;
     background: #f29620;
     color: #fff;
+    gap: 30px;
+    border-top-left-radius: 50px;
+   border-bottom-right-radius: 50px;
   }
   
   .footerSection2 h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 
   .footerSection2 p {
-
+    font-size: 14px;
   }
   
   .input-box {
@@ -112,7 +145,7 @@
   }
   
   .newsletter-input {
-    width: 370px;
+    width: 100%;
     flex-grow: 0;
     display: flex;
     flex-direction: row;

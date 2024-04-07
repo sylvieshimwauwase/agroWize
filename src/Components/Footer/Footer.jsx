@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="footerSection1">
                 <div className='footerContainer1'>
 
-                    <div>
+                    <div className="logoSection">
                         <img src="/AgroWizeLogo.png" alt="Logo"></img>
                         <p>Revolutionizing Agriculture</p>
                     </div>
@@ -53,20 +53,23 @@ const Footer = () => {
                 <div className="footerContainer2">
                     <h2>Contact Us</h2>
                     <ul>
-                        <li>agrowize.info@gmail.com</li>
-                        <li>+12367890587</li>
-                        <li>5 Victoria Island, Lagos State, Nigeria.</li>
+                        <li><img src="/Vector (1).png" alt="Mail" />agrowize.info@gmail.com</li>
+                        <li><img src="/bxs_phone.png" alt="Phone" />+12367890587</li>
+                        <li><img src="/zondicons_location.png" alt="Location" />5 Victoria Island, Lagos State, Nigeria.</li>
                     </ul>
                 </div>
                 <hr className="horizontalLine"/>
                 <div className="footerContainer3">
-                    <div>
-                        <p>2024 AgroWize. All Rights Reserved</p>
+                    <div className="copyright">
+                        <p><img src="/bi_c-circle-fill.png" alt="Logo" />2024 AgroWize. All Rights Reserved</p>
                     </div>
-                    <div>
-                        <img src="/facebook_ic.png" alt="facebook" />
-                        <img src="/google_ic.png" alt="google" />
-                        <img src="/Vector.png" alt="vector" />
+                    <div className="social">
+                        <img src="/ic_outline-facebook.png" alt="facebook" />
+                        <img src="/pajamas_twitter.png" alt="google" />
+                        <img src="/ri_instagram-line.png" alt="vector" />
+                        <img src="/ic_outline-tiktok.png" alt="facebook" />
+                        <img src="/flowbite_youtube-solid.png" alt="google" />
+                        <img src="/bi_linkedin.png" alt="vector" />
                     </div>
                 </div>
 
