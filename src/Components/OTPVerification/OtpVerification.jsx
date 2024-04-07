@@ -75,7 +75,7 @@ const OtpVerification = ({ username }) => {
                         </div>
                         {error && <p className="error">{error}</p>}
                     </div>
-                    <a href="/resetPassword" className="forgot-password">
+                    <a href="/otpVerification" className="forgot-password">
                         Resend OTP
                     </a>
                     <FormButton name="Verify" />
