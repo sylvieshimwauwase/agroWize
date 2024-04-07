@@ -13,6 +13,7 @@ const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     /*const [isFormSubmitted, setIsFormSubmitted] = useState(false);*/
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     
 
@@ -48,7 +49,7 @@ const SignupForm = () => {
         console.log('Navigating to:', path);
     };
 
-    const handleSubmit = async (values, { setSubmitting }) => {
+    const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         setIsSubmitting(true);
         /*setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
@@ -67,9 +68,22 @@ const SignupForm = () => {
 
             navigate('/login');
         } catch (error) {
-            console.error('Error signing up: ', error);
+            /*console.error('Error signing up: ', error);
+            if (error.response && error.response.status === 400) {
+                setError('User already exists');
+                resetForm();
+            } else {
+                setError('An error occurred. Please try again later.');
+            }*/
+            if (!error?.response) {
+                setError('No Server Response');
+            } else if (error.response?.status === 409) {
+                setError('Username Taken');
+            } else {
+                setError('Registration Failed')
+            }
         } finally {
-            setIsSubmitting(true);
+            setIsSubmitting(false);
         }
     };
 

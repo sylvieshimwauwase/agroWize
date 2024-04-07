@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import "./LoginForm.css"
 import MediaBar from "../MediaBar";
 import FormButton from "../FormButton";
@@ -10,10 +12,14 @@ import Keys from "../../Constants/Keys";
 const LoginForm = ({onFormSubmit}) => {
   const [username, setUsername] = useState("");
   const [userpassword, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  
+  const togglePassword = () => {
+    setShowPassword((prev) => (!prev));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -45,11 +51,16 @@ const LoginForm = ({onFormSubmit}) => {
           />
           <label htmlFor="password">Password:</label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="enter your password"
             value={userpassword}
             onChange={(e) => setPassword(e.target.value)}
             required
+          />
+          <FontAwesomeIcon 
+            icon={showPassword ? faLockOpen : faLock}
+            className="lockIcon"
+            onClick={togglePassword}
           />
           <a href="/forgotPassword" className="forgot-password">
             Forgot password?

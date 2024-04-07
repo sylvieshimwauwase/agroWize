@@ -68,3 +68,13 @@ input[type="password"] {
   font-family: NunitoSans;
   color: #f29620;
 }
+
+.lockIcon {
+  position: absolute;
+  top: 55%;
+  right: 250px;
+  transform: translateY(-50%);
+  color: #808080;
+  width: 10.7px;
+  height: 14px;
+}

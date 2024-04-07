@@ -1,9 +1,14 @@
 import React, { useState, useRef} from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Keys from "../../Constants/Keys";
 import './OtpVerification.css';
 import FormButton from "../FormButton";
 
-const OtpVerification = () => {
+const OtpVerification = ({ username }) => {
     const [otp, setOTP] = useState(["", "", "", "", "",""]);
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
     const otpInputsRef = useRef([]);
 
     const handleOTPChange = (index, value) => {
@@ -24,10 +29,24 @@ const OtpVerification = () => {
         }
       };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const enteredOTP = otp.join("");
+
+        try {
+            const response = await axios.post(`${Keys.base_url}/verifyOtp`, { username, otp: enteredOTP });
+      
+            if (response.data.success) {
+              // OTP verified, navigate to password reset page
+              navigate('/resetPassword');
+            } else {
+              setError('Invalid OTP');
+            }
+          } catch (error) {
+            console.error('Error verifying OTP:', error);
+            setError('An error occurred. Please try again.');
+          }
     };
 
     return (
@@ -54,7 +73,7 @@ const OtpVerification = () => {
                             />
                             ))}
                         </div>
-                        
+                        {error && <p className="error">{error}</p>}
                     </div>
                     <a href="/resetPassword" className="forgot-password">
                         Resend OTP
