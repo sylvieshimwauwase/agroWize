@@ -67,7 +67,7 @@
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     align-items: center;
-}*/
+}
 
 .sectionImage2 {
     width: 100%;
@@ -84,7 +84,7 @@
 }
 
 .innerDiv {
-    width: calc(33.33% - 30px); /* Adjust as needed */
+    width: calc(33.33% - 30px);
     padding: 20px;
     height: 280px;
     border: 1px solid #f29620;

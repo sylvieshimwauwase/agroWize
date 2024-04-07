@@ -54,7 +54,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 30px; /* Add margin as needed */
+    margin-top: 30px;
 }
 
 .row-section-item p,
@@ -85,7 +85,7 @@
 }
 
 .innerDiv {
-    width: calc(33.33% - 30px); /* Adjust as needed */
+    width: calc(33.33% - 30px);
     padding: 20px;
     height: 280px;
     border: 1px solid #f29620;
