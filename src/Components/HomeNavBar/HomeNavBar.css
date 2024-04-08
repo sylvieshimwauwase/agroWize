@@ -57,6 +57,7 @@
     background: #257830;
     border: none;
     border-radius: 10px;
+    text-decoration: none;
   }
   .button-text {
     flex-shrink: 0;
@@ -87,6 +88,7 @@
     border: none;
     z-index: 175;
     border-radius: 10px;
+    text-decoration: none;
   }
   .button-text-2 {
     flex-shrink: 0;
