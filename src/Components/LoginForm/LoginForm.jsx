@@ -57,7 +57,7 @@ const LoginForm = ({onFormSubmit}) => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <FontAwesomeIcon 
+          <FontAwesomeIcon
             icon={showPassword ? faLockOpen : faLock}
             className="lockIcon"
             onClick={togglePassword}
@@ -68,9 +68,9 @@ const LoginForm = ({onFormSubmit}) => {
         </div>
         <FormButton type="submit" name="Login" />
         <MediaBar
-        registerText="Or Login with"
-        loginText="Create Account"
-        />
+          registerText="Or Login with"
+          alreadyHaveAccountText="Don't have an account?"
+        loginText="Create Account" />
       </form>
     </div>
   );

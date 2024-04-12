@@ -1,7 +1,7 @@
 import React from "react";
 import "./MediaBar.css";
 
-const MediaBar = ({ registerText, loginText }) => {
+const MediaBar = ({ registerText, loginText, alreadyHaveAccountText }) => {
     return (
         <div className="mediaBarSection">
             <div className="registerLine">
@@ -25,7 +25,7 @@ const MediaBar = ({ registerText, loginText }) => {
                     By Signing up, you agree to our <a className="terms2" href="/terms-of-use">Terms of Use</a> and <a className="terms3" href="/privacy-policy">Privacy Policy</a>
                 </p>
                 <p className="terms1">
-                    Already on AgroWize? <a className="terms2" href={loginText.toLowerCase() }>{loginText}</a>
+                    {alreadyHaveAccountText}  <a className="terms2" href={loginText.toLowerCase() }>{loginText}</a>
                 </p>
             </div>
         </div>

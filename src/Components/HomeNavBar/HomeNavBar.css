@@ -152,6 +152,7 @@
     line-height: 27px;
     text-align: left;
     white-space: nowrap;
+    cursor: pointer;
   }
   .frame-5 {
     display: flex;

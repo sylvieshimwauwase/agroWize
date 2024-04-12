@@ -1,0 +1,43 @@
+.resourcesImg{
+    width: 100%;
+}
+.productDetails{
+    display: flex;
+    padding: 5rem 5rem 0 5rem;
+    
+}
+.images{
+    width: 500px;
+    height: 300px;
+}
+.searchBarContainer{
+     margin: auto; 
+     position: relative;
+}
+.searchBar{
+    width: 100%;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+}
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust icon size as needed */
+  height: 20px; /* Adjust icon size as needed */
+  fill: #000; /* Adjust icon color */
+}
+.borderDetails{
+    margin: auto;
+    border: 1px solid #f29620 ;
+    padding: 2rem;
+}
+.primaryColor{
+    color: #226d2c;
+}
+.borderDetails > *{
+    margin-bottom: 5px;
+}

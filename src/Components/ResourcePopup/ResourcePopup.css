@@ -25,9 +25,22 @@
   width: 6.25rem;
   height: 6.25rem;
 }
-.popUpText {
+/* .popUpText .popupDetails {
   font-family: NunitoSans;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
+  justify-content: center;
+} */
+.popupDetails{
+  text-align: center;
+  font-family: NunitoSans;
+  padding-top: 4px;
+}
+.titletext{
+  color: #226d2c;
+  cursor: pointer;
+}
+.pryColor{
+  color: #f29620;
 }

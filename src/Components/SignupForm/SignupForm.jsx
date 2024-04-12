@@ -100,59 +100,112 @@ const SignupForm = () => {
 
 
     return (
-        <div className="signupPage">
-            <div className="signupForm"> 
-                <Formik
-                    initialValues={{
-                        fullName: "",
-                        email: "",
-                        password: "",
-                        confirmPassword: "",
-                    }}
-                    validate={validate}
-                    onSubmit={handleSubmit}
-                >
-                    {({ isSubmitting }) => (
-                        <Form action="" className="form">
-                        <h3 className="title">Welcome to AgroWize</h3>
-                        <p className="subtitle">Let's Create Your Account</p>
-                        <div className="formLbl">
-                            <label htmlFor="fullName" className="lbl">Full Name</label>
-                            <Field type="text" name="fullName" className="input" placeholder="Enter your full name" />
-                            <ErrorMessage name="fullName" component="div" className="error" />
-                        </div>
-                        <div className="formLbl">
-                            <label htmlFor="email" className="lbl">Enter your email address</label>
-                            <Field type="email" name="email" className="input" placeholder="example@gmail.com" />
-                            <ErrorMessage name="email" component="div" className="error" />
-                        </div>
-                        <div className="formLbl">
-                            <label htmlFor="password" className="lbl">Password</label>
-                            <Field type={showPassword ? "text" : "password"} name="password" className="input" placeholder="Create a secure password" />
-                            <FontAwesomeIcon icon={showPassword ? faLockOpen : faLock} className="icon" onClick={togglePassword} />
-                            <ErrorMessage name="password" component="div" className="error" />
-                        </div>
-                        <div className="formLbl">
-                            <label htmlFor="confirmPassword" className="lbl">Re-enter Password</label>
-                            <Field type={showPassword ? "text" : "password"} name="confirmPassword" className="input" placeholder="Re-enter your password" />
-                            <FontAwesomeIcon icon={showPassword ? faLockOpen : faLock} className="icon" onClick={togglePassword} />
-                            <ErrorMessage name="confirmPassword" component="div" className="error" />
-                        </div>
-                        <FormButton name="Create Account" disabled={isSubmitting} />
-                        <MediaBar
-                            registerText="Or Register with"
-                            loginText="Login"
-                        />
-                    </Form>
-                    )}
-                </Formik>
-                {/*<FormButton name="Create Account"/>
+      <div className="signupPage">
+        <div className="signupForm">
+          <Formik
+            initialValues={{
+              fullName: "",
+              email: "",
+              password: "",
+              confirmPassword: "",
+            }}
+            validate={validate}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form action="" className="form">
+                <h3 className="title">Welcome to AgroWize</h3>
+                <p className="subtitle">Let's Create Your Account</p>
+                <div className="formLbl">
+                  <label htmlFor="fullName" className="lbl">
+                    Full Name
+                  </label>
+                  <Field
+                    type="text"
+                    name="fullName"
+                    className="input"
+                    placeholder="Enter your full name"
+                  />
+                  <ErrorMessage
+                    name="fullName"
+                    component="div"
+                    className="error"
+                  />
+                </div>
+                <div className="formLbl">
+                  <label htmlFor="email" className="lbl">
+                    Enter your email address
+                  </label>
+                  <Field
+                    type="email"
+                    name="email"
+                    className="input"
+                    placeholder="example@gmail.com"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="error"
+                  />
+                </div>
+                <div className="formLbl">
+                  <label htmlFor="password" className="lbl">
+                    Password
+                  </label>
+                  <Field
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    className="input"
+                    placeholder="Create a secure password"
+                  />
+                  <FontAwesomeIcon
+                    icon={showPassword ? faLockOpen : faLock}
+                    className="icon"
+                    onClick={togglePassword}
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="error"
+                  />
+                </div>
+                <div className="formLbl">
+                  <label htmlFor="confirmPassword" className="lbl">
+                    Re-enter Password
+                  </label>
+                  <Field
+                    type={showPassword ? "text" : "password"}
+                    name="confirmPassword"
+                    className="input"
+                    placeholder="Re-enter your password"
+                  />
+                  <FontAwesomeIcon
+                    icon={showPassword ? faLockOpen : faLock}
+                    className="icon"
+                    onClick={togglePassword}
+                  />
+                  <ErrorMessage
+                    name="confirmPassword"
+                    component="div"
+                    className="error"
+                  />
+                </div>
+                <FormButton name="Create Account" disabled={isSubmitting} />
+                <MediaBar
+                  registerText="Or Register with"
+                  loginText="Login"
+                  alreadyHaveAccountText="Already have an account?"
+                />
+              </Form>
+            )}
+          </Formik>
+          {/*<FormButton name="Create Account"/>
                 <MediaBar
                     registerText="Or Register with"
                     loginText="Login"
                 />*/}
-                </div>
         </div>
+      </div>
     );
 };
 
