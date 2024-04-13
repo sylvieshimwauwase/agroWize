@@ -7,7 +7,7 @@
     align-items: center;
     width: 100%;
     background-color: #f2f2f2;
-    font-family: "Nunito", sans-serif;
+    font-family: NunitoSans;
 }
 
 @media screen and (max-width: 768px) {
@@ -63,7 +63,7 @@
 
 .row-section-item p{
     font-size: 16px;
-    font-family: "Nunito", sans-serif;
+    font-family: NunitoSans;
     font-weight: 500;
     align-items: center;
 }

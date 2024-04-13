@@ -8,7 +8,7 @@ const Home = () => {
       <section className="homeContainer">
         <div className='homeFirstContainer'>
           <div className='homeImageSection'>
-            <img src="/AboutUs3.png" alt="image section"/>
+            <img src="/VerticalLearning.png" alt="image section"/>
           </div>
           <div className='homeFirstContentSection'>
             <p>Join us at <span style={{color:"#226d2c"}}>AgroWize</span> to 
@@ -22,7 +22,7 @@ const Home = () => {
         </div>
         <div className='homeFirstContainer'>
           <div className='homeImageSection'>
-            <img src="/AboutUs3.png" alt="image section"/>
+            <img src="/Community.png" alt="image section"/>
           </div>
           <div className='homeFirstContentSection'>
             <p>Join your tailored <span style={{color:"#f29620"}}>community</span> 

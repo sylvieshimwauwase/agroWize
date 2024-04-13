@@ -18,16 +18,16 @@ const HomeNavBar = () => {
                 </Link>
             </div>
             <div className='frame-3'>
-            <span className='home'>Home</span>
-            <div className='frame-4'>
+            <Link to="/" className='home'>Home</Link>
+            <Link to="/aboutUs" className='frame-4'>
                 <span className='about-us'>About Us</span>
-            </div>
+            </Link >
             <div className='frame-5'>
                 <span className='farm-mode'>Farm Mode</span>
             </div>
-            <div className='frame-6'>
+            <Link to="/resources" className='frame-6'>
                 <span className='resources'>Resources</span>
-            </div>
+            </Link>
             <div className='frame-7'>
                 <span className='articles'>Articles</span>
             </div>
