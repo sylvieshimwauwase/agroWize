@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
     const isEmailValid = (email) => {
         // Regular expression for validating email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex =  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
         return emailRegex.test(email);
     };
 
@@ -22,23 +22,24 @@ const ForgotPassword = () => {
         e.preventDefault();
 
         if (!isEmailValid(username)) {
-            setError("Invalid email");
+            setError("Invalid email format");
             return;
         }
 
         try {
             const forgotResponse = await axios.post(`${Keys.base_url}/forgotPass`, { username });
             console.log(forgotResponse.data);
+            navigate("/otpVerification");
 
-            if (forgotResponse.data.exists) {
+            /*if (forgotResponse.data.exists) {
                 setMessage(forgotResponse.data.message);
                 navigate("/otpVerification");
             } else {
-                setError("Email not found");
-            }
+                setError(forgotResponse.data.error);
+            }*/
         } catch (error) {
             /*console.error("Error logging in: ", error);*/
-            setError("Invalid email");
+            setError("An error occurred. Please try again later.");
         }
     };
 
@@ -62,7 +63,7 @@ const ForgotPassword = () => {
                         />
                         {error && <p className="error">{error}</p>}
                     </div>
-                    <FormButton name="Continue" to="/otpVerification"/>
+                    <FormButton name="Continue" />
                 </form>
             </div>
         </div>

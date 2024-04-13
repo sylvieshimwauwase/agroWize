@@ -36,13 +36,13 @@ const OtpVerification = ({ username }) => {
 
         try {
             const response = await axios.post(`${Keys.base_url}/verifyOtp`, { username, otp: enteredOTP });
-      
-            if (response.data.success) {
+            navigate('/resetPassword');
+            /*if (response.data.success) {
               // OTP verified, navigate to password reset page
               navigate('/resetPassword');
             } else {
               setError('Invalid OTP');
-            }
+            }*/
           } catch (error) {
             console.error('Error verifying OTP:', error);
             setError('An error occurred. Please try again.');

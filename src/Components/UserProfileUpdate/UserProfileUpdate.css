@@ -2,14 +2,10 @@
     margin: 0;
 }
 .userProfileUpdate {
-    background-color: #226d2c !important;
+
+    background-color: #226d2c;
+    background: cover;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
 }
 
 .search-button {
@@ -48,11 +44,11 @@
 
 .userProfileUpdateForm {
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 57%;
+    left: 50%;
     transform: translate(-50%, -50%);
     padding: 28px 60px 25px 61px;
-    height: 80%;
+    height: 70%;
     margin: 19px 170px 0 170px;
     border-radius: 10px;
     background-color: #fff;
