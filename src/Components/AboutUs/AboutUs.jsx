@@ -4,13 +4,16 @@ import CoreValues from "../CoreValues/CoreValues";
 import Footer from "../Footer/Footer";
 import Team from "../Team/Team";
 import ContactUs from "../ContactUs/ContactUs";
+import SearchBar from "../Search/SearchBar";
 
 const HeroSection = () => {
     return (
         <div className="aboutUsPage">
                 <div className="section">
                     <img className="sectionImage1" src="/HeroSectionHomePage.png" alt="Logo" />
-                    <button className="overlayBtn">Search</button>
+                    <div className="searchBarWrapper">
+                        <SearchBar />
+                    </div>
                     <div className="overlay">
                         <h2>About Us</h2>
                     </div>
