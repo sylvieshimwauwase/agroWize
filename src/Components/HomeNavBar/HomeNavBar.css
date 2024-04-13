@@ -65,7 +65,7 @@
     position: relative;
     height: 24px;
     color: #ffffff;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -96,7 +96,7 @@
     position: relative;
     height: 24px;
     color: #ffffff;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -124,12 +124,13 @@
     position: relative;
     height: 27px;
     color: #000000;
-    font-family: "Nunito", sans-serif;
+    font-family: NunitoSans;
     font-size: 18px;
     font-weight: 800;
     line-height: 27px;
     text-align: left;
     white-space: nowrap;
+    text-decoration: none;
   }
   .frame-4 {
     display: flex;
@@ -139,6 +140,7 @@
     gap: 4px;
     position: relative;
     width: 87px;
+    text-decoration: none;
   }
   .about-us {
     flex-shrink: 0;
@@ -146,7 +148,7 @@
     position: relative;
     height: 27px;
     color: #000000;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
@@ -170,7 +172,7 @@
     position: relative;
     height: 27px;
     color: #000000;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
@@ -187,6 +189,7 @@
     position: relative;
     width: 94px;
     z-index: 167;
+    text-decoration: none;
   }
   .resources {
     flex-shrink: 0;
@@ -194,7 +197,7 @@
     position: relative;
     height: 27px;
     color: #000000;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
@@ -213,7 +216,7 @@
     position: relative;
     height: 27px;
     color: #000000;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
@@ -225,7 +228,7 @@
     position: relative;
     height: 27px;
     color: #000000;
-    font-family: "Nunito", sans-serif;
+   font-family: NunitoSans;
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
