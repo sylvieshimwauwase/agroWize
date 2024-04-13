@@ -3,6 +3,7 @@ import './AboutUs.css';
 import CoreValues from "../CoreValues/CoreValues";
 import Footer from "../Footer/Footer";
 import Team from "../Team/Team";
+import ContactUs from "../ContactUs/ContactUs";
 
 const HeroSection = () => {
     return (
@@ -81,6 +82,7 @@ const HeroSection = () => {
                 </div>
                 <CoreValues />
                 <Team />
+                <ContactUs />
                 <Footer />
             </div>
     );
