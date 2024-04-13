@@ -1,0 +1,41 @@
+.searchContainer {
+  width: 12.125rem;
+  height: 2.213rem;
+  display: flex;
+  position: relative;
+  padding-top: 2rem;
+  margin-left: 65rem;
+  padding-bottom: 4rem;
+}
+.searchBar {
+  flex: 1;
+  /* width: 100%; */
+  padding: 10px;
+  border: 2px solid #f29620;
+  border-radius: 20px;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+.searchBar::placeholder {
+  color: #ffffff;
+  font-family: Nunitosans;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.iconSearch {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-70%);
+  cursor: pointer;
+}
+/* .iconSearch{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+} */

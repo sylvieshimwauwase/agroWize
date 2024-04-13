@@ -1,0 +1,67 @@
+.coreValuesSection {
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 100%;
+    background-color: #3ec772;
+}
+.coreValuesSectionTitle {
+    margin: 0 0 30px;
+    font-size: 30px;
+    text-align: center;
+}
+.missionVisionValuesDiv {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      align-items: center;
+  }
+  
+  .innerDiv {
+      position: relative;
+      margin-left: 7%;
+      border: 1px solid #f29620;
+      text-align: center;
+      border-radius:30px;
+      background-color: #fff;
+      flex-grow: 1;
+      height: 100%;
+      /*box-shadow: 1px 14px 0px 0 #f8f8f8;*/
+  }
+  /*img {
+      width: 100%;
+  }*/
+  .innerDiv img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-90%, -150%);
+      border-radius: 30px;
+  }
+  
+  .innerDiv h3 {
+      font-size: 20px;
+      text-align: left;
+      margin-top: 10px !important;
+  }
+  
+  .innerDiv p {
+      margin-top: 5px;
+      text-align: left;
+  }
+
+  .innerDiv:last-child {
+      margin-right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+      .missionVisionValuesDiv {
+        flex-direction: column;
+      }
+      
+      .innerDiv {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: auto;
+      }
+    }
