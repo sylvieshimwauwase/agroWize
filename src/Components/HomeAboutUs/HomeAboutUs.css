@@ -1,0 +1,70 @@
+.homeAboutUs {
+    font-family: NunitoSans;
+  }
+  
+  .homeAboutUsTitle {
+    text-align: center; 
+  }
+
+  .containerOne,
+  .containerTwo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%; 
+  height: 30rem;
+}
+
+.imageRegion,
+.firstContent,
+.secondContent {
+  width: 40%;
+}
+
+.imageRegion img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.firstContent,
+.secondContent {
+  padding: 0 30px;
+  text-align: left;
+}
+
+.firstContent h3 {
+  margin-bottom: 10px;
+  color: #226d2c;
+  font-size: 24px;
+  text-align: center;
+}
+
+.secondContent h3 {
+  margin-bottom: 10px;
+  color: #000000;
+  font-size: 24px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .firstContainer,
+  .containerTwo {
+    flex-direction: row;
+    padding: 0 10%;
+  }
+
+  .imageRegion,
+  .firstContent,
+  .secondContent {
+    width: 40%;
+  }
+
+  .imageRegion img {
+    width: 100%;
+  }
+
+  .firstContent,
+  .secondContent {
+    padding: 0 20px;
+  }
+}

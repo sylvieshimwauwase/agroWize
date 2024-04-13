@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<ResourcesPopupPage/>} />
+        <Route index element={<Homepage/>} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />

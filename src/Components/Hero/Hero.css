@@ -1,0 +1,47 @@
+.hero{
+    background-image: url("/public/HeroSectionHomePage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 23.563rem;
+}
+
+.searchBarWrapper {
+    position: absolute;
+    top: 20%; /* Position at the center vertically */
+    left: 30%; /* Position at the center horizontally */
+    transform: translate(-50%, -50%); /* Center the wrapper */
+}
+
+.plainText{
+    color: #FFFFFF;
+    font-family: NunitoSans;
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    top: 35%;
+}
+.coloredText{
+    color: #f29620;
+}
+@media (max-width: 768px) {
+    .hero {
+        height: 20rem; /* Adjust height for tablets */
+    }
+
+    .plainText {
+        font-size: 2.5rem; /* Decrease font size for tablets */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .hero {
+        height: 15rem; /* Adjust height for mobile devices */
+    }
+
+    .plainText {
+        font-size: 2rem; /* Decrease font size for mobile devices */
+    }
+}
