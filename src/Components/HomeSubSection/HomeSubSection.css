@@ -111,6 +111,15 @@
 
   .firstContentSection,
   .secondContentSection {
-    padding: 0 20px; 
+    padding: 0 20px;
+    font-size: 12px;
+  }
+
+  .firstContentSection h3 {
+    font-size: 16px;
+  }
+
+  .secondContentSection h3 {
+    font-size: 16px;
   }
 }
