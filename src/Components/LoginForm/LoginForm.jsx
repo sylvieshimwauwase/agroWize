@@ -70,7 +70,7 @@ const LoginForm = ({onFormSubmit}) => {
         <MediaBar
           registerText="Or Login with"
           alreadyHaveAccountText="Don't have an account?"
-        loginText="Create Account" />
+          loginText="Create Account" />
       </form>
     </div>
   );

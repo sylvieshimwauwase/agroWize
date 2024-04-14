@@ -165,6 +165,7 @@
     position: relative;
     width: 103px;
     z-index: 165;
+    text-decoration: none;
   }
   .farm-mode {
     flex-shrink: 0;
@@ -211,6 +212,7 @@
     gap: 4px;
     position: relative;
     width: 71px;
+    text-decoration: none;
   }
   .articles {
     position: relative;
@@ -236,3 +238,71 @@
     margin-right: 10px;
     white-space: nowrap;
   }
+
+  @media screen and (max-width: 768px) {
+    .agrowize-logo img {
+        height: 30px;
+    }
+
+    .primary-filled-button,
+    .secondary-filled-button {
+        width: 100px;
+        padding: 6px 10px;
+        font-size: 12px; 
+    }
+    .frame {
+     gap: 3px;
+     width: 150px;
+    }
+    .button-text {
+      font-size: 12px;
+    }
+    .button-text-2 {
+      font-size: 12px;
+    }
+    .frame-3 {
+      gap: 10px;
+      height: 20px;
+    }
+    .home {
+      height: 20px;
+      font-size: 14px;
+    }
+    .frame-4 {
+      gap: 3px;
+      width: 70px;
+    }
+    .about-us {
+      height: 20px;
+      font-size: 14px;
+    }
+    .frame-5 {
+      gap: 3px;
+      width: 80px;
+    }
+    .farm-mode {
+      height: 20px;
+      font-size: 14px;
+    }
+    .frame-6 {
+      gap: 3px;
+      width: 80px;
+    }
+    .resources {
+      height: 20px;
+      font-size: 14px;
+    }
+    .frame-7 {
+      gap: 3px;
+      width: 60px;
+    }
+    .articles {
+      height: 20px;
+      font-size: 14px;
+    }
+    .community {
+      height: 20px;
+      font-size: 14px;
+    }
+  
+}

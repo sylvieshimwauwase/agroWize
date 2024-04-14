@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,useLocation} from "react-router-dom";
 import "./VerticalNavBar.css";
 
 const VerticalNavBar = ({userName}) => {
+    const location = useLocation();
     const pages = [
         "Profile Update",
         "Notifications",
@@ -19,17 +20,16 @@ const VerticalNavBar = ({userName}) => {
     return (
         <div className="verticalNavbar">
             <div className="profileCircle">
-            {/* Placeholder for profile picture */}
             <span>{userName}</span>
             </div>
         <ul>
             {pages.map((page, index) => (
             <li key={index}>
-                {page === "Notifications" ? (
-                            // Use Link for Notifications page
+                {page === "Profile Update" ? (
+                            <Link to="/userProfileUpdate">{page}</Link>
+                        ) : page === "Notifications" ? (
                             <Link to="/userProfileNotification">{page}</Link>
                         ) : (
-                            // Use normal anchor tag for other pages
                             <a href="#">{page}</a>
                         )}
             </li>

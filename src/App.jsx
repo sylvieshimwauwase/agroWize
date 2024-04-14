@@ -11,6 +11,8 @@ import UserProfileNotificationPage from "./Pages/UserProfileNotificationPage.jsx
 import AboutUsPage from "./Pages/AboutUsPage.jsx";
 import ResourcesPage from "./Pages/ResourcesPage.jsx";
 import ResourcesPopupPage from "./Pages/ResourcesPopupPage.jsx";
+import ArticlesPage from "./Pages/ArticlesPage.jsx";
+import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 // import ResourcesPopup from "./Components/ResourcePopup/ResourcePopup.jsx"
 
 
@@ -32,6 +34,8 @@ function App() {
         />
         <Route path="aboutUs" element={<AboutUsPage />} />
         <Route path="resources" element={<ResourcesPage />} />
+        <Route path="articles" element={<ArticlesPage />} />
+        <Route path="verticalFarming" element={<VerticalFarmingPage />} />
       </Routes>
     </BrowserRouter>
   );

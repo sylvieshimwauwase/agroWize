@@ -6,14 +6,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
+    font-size: 18px;
   }
   .formNavbarLogo {
     height: 40px;
     width: 40px;
   }
+  
   .formNavbarLink {
-    font-family: "Nunito", sans-serif;
-    font-weight: 550;
+    font-family: NunitoSans;
+    font-weight: 600;
     color: #000000;
     text-decoration: none;
     text-align: right;
@@ -22,12 +24,16 @@
   .userProfileButton {
     width: 150px;
     height: 30px;
-    font-family: "Nunito", sans-serif;
-    font-weight: 500;
+    font-family: NunitoSans;
+    font-weight: 600;
     color: #226d2c;
     border-radius: 10px;
     text-decoration: none;
     list-style: none;
     background-color: transparent;
     cursor: pointer;
+    border: 1px solid #226d2c;
+  }
+  .userProfileButton:hover {
+    background-color: #3ec772;
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import './Footer.css';
+import { Link } from "react-router-dom";
 import FormButton from "../FormButton";
 
 const Footer = () => {
@@ -16,9 +17,9 @@ const Footer = () => {
                     <div>
                         <h2>Links</h2>
                         <ul>
-                            <li>Home</li>
-                            <li>About Us</li>
-                            <li>User Profile</li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/aboutUs">About Us</Link></li>
+                            <li><Link to="/userProfileUpdate">User Profile</Link></li>
                         </ul>
                     </div>
 
@@ -35,18 +36,18 @@ const Footer = () => {
                     <div>
                         <h2>Explore More</h2>
                         <ul>
-                            <li>Courses</li>
-                            <li>Blogs/News</li>
-                            <li>Resources</li>
-                            <li>Communities</li>
+                            <li><Link to="/resources">Courses</Link></li>
+                            <li><Link to="/blogs"></Link>Blogs/News</li>
+                            <li><Link to="/resources">Resources</Link></li>
+                            <li><Link to="/communities">Communities</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h2>Legal</h2>
                         <ul>
-                            <li>Privacy Policy</li>
-                            <li>Terms and Conditions</li>
+                            <li><Link to="/">Privacy Policy</Link></li>
+                            <li><Link to="/">Terms and Conditions</Link></li>
                         </ul>
                     </div>
                 </div>
