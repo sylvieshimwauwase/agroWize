@@ -92,7 +92,7 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .firstContainer,
   .secondContainer {
     flex-direction: row;

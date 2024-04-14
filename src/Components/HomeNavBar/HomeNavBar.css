@@ -165,6 +165,7 @@
     position: relative;
     width: 103px;
     z-index: 165;
+    text-decoration: none;
   }
   .farm-mode {
     flex-shrink: 0;
@@ -211,6 +212,7 @@
     gap: 4px;
     position: relative;
     width: 71px;
+    text-decoration: none;
   }
   .articles {
     position: relative;

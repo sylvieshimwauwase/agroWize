@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./UserProfileUpdate.css";
 import FormButton from "../FormButton";
+import SearchBar from "../Search/SearchBar";
 
 const UserProfileUpdate = ({ userName }) => {
 
@@ -40,7 +41,7 @@ const UserProfileUpdate = ({ userName }) => {
         <div className="userProfileUpdate">
             <div className="userProfileUpdateForm">
                 <div className="search-button">
-                    <button className="search-btn">Search</button>
+                    <SearchBar />
                 </div>
                 <Formik
                     initialValues={{

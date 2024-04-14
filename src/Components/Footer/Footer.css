@@ -21,6 +21,11 @@
     background: #226d2c;
     color: #fff;
    }
+
+   .footerSection1 ul li a {
+    text-decoration: none;
+    color: inherit;
+}
   
   .footerContainer1 {
     width: 100%;

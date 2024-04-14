@@ -22,15 +22,15 @@ const HomeNavBar = () => {
             <Link to="/aboutUs" className='frame-4'>
                 <span className='about-us'>About Us</span>
             </Link >
-            <div className='frame-5'>
+            <Link to="/verticalFarming" className='frame-5'>
                 <span className='farm-mode'>Farm Mode</span>
-            </div>
+            </Link>
             <Link to="/resources" className='frame-6'>
                 <span className='resources'>Resources</span>
             </Link>
-            <div className='frame-7'>
+            <Link to="/articles" className='frame-7'>
                 <span className='articles'>Articles</span>
-            </div>
+            </Link>
             <span className='community'>Community</span>
             </div>
         </div>
