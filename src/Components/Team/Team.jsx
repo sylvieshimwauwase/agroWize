@@ -55,7 +55,7 @@ const Team = () => {
                         <p>Front-End Developer</p>
                     </div>
                     <div className="teamMember">
-                        <img src="/Temilola.png" alt="Team Member" />
+                        <img src="/Temilola.jpeg" alt="Team Member" />
                         <p>Temilola Oguntamu</p>
                         <p>Front-End Developer</p>
                     </div>
