@@ -1,14 +1,18 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Keys from "../../Constants/Keys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
 import './ResetPassword.css';
 import FormButton from "../FormButton";
 
 const ResetPassword = () => {
-    const [newPassword, setNewPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [userpassword, setNewPassword] = useState("");
+    const [confirmpassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleNewPasswordChange = (e) => {
         setNewPassword(e.target.value);
@@ -18,9 +22,9 @@ const ResetPassword = () => {
         setConfirmPassword(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (newPassword !== confirmPassword) {
+        if (userpassword !== confirmpassword) {
             setErrorMessage("Passwords do not match");
             return;
         }
@@ -28,6 +32,14 @@ const ResetPassword = () => {
 
         setNewPassword("");
         setConfirmPassword("");
+        try {
+            const response = await axios.post(`${Keys.base_url}/resendOTP`, { userpassword, confirmpassword });
+            console.log(response.data);
+            navigate("/login");
+          } catch (error) {
+            console.error("Error logging in: ", error);
+            /*setError("Invalid username or password");*/
+          }
     };
 
     const togglePasswordVisibility = () => {
@@ -44,7 +56,7 @@ const ResetPassword = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="newPassword"
-                            value={newPassword}
+                            value={userpassword}
                             onChange={handleNewPasswordChange}
                             required
                         />
@@ -59,7 +71,7 @@ const ResetPassword = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="confirmPassword"
-                            value={confirmPassword}
+                            value={confirmpassword}
                             onChange={handleConfirmPasswordChange}
                             required
                         />
@@ -69,9 +81,6 @@ const ResetPassword = () => {
                                 onClick={togglePasswordVisibility}
                         />
                     </div>
-                    <a href="/userProfileUpdate" className="forgot-password">
-                        profile Update
-                    </a>
                     <FormButton name="Reset Password" />
                 </form>
             </div>
