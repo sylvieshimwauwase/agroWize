@@ -10,10 +10,10 @@ import UserProfileUpdatePage from "./Pages/UserProfileUpdatePage.jsx";
 import UserProfileNotificationPage from "./Pages/UserProfileNotificationPage.jsx";
 import AboutUsPage from "./Pages/AboutUsPage.jsx";
 import ResourcesPage from "./Pages/ResourcesPage.jsx";
-import ResourcesPopupPage from "./Pages/ResourcesPopupPage.jsx";
 import ArticlesPage from "./Pages/ArticlesPage.jsx";
 import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
-// import ResourcesPopup from "./Components/ResourcePopup/ResourcePopup.jsx"
+import CommunityPage from "./Pages/CommunityPage.jsx";
+
 
 
 
@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Homepage/>} />
+        <Route index element={<CommunityPage/>} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
@@ -36,6 +36,7 @@ function App() {
         <Route path="resources" element={<ResourcesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
+        <Route path="community" element={<CommunityPage/>}/>
       </Routes>
     </BrowserRouter>
   );

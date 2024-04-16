@@ -31,12 +31,12 @@
 }
 
 h3 {
-  font-family: NunitoSans;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 2rem;
   font-weight: bold;
 }
 .welcomeMsg {
-  font-family: NunitoSans;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: #226d2c;
@@ -65,7 +65,7 @@ input[type="password"] {
   text-align: right;
   margin-top: 5px;
   font-size: 0.875rem;
-  font-family: NunitoSans;
+  font-family: 'Nunito Sans', sans-serif;
   color: #f29620;
 }
 
