@@ -30,11 +30,17 @@ const ResetPassword = () => {
         }
         setErrorMessage("");
 
-        setNewPassword("");
-        setConfirmPassword("");
         try {
-            const response = await axios.post(`${Keys.base_url}/resendOTP`, { userpassword, confirmpassword });
+            const response = await axios.post(`${Keys.base_url}/resetPassword`, { 
+                userpassword, 
+                confirmpassword 
+            });
             console.log(response.data);
+
+
+            setNewPassword("");
+            setConfirmPassword("");
+
             navigate("/login");
           } catch (error) {
             console.error("Error logging in: ", error);

@@ -31,7 +31,7 @@ const HomeNavBar = () => {
             <Link to="/articles" className='frame-7'>
                 <span className='articles'>Articles</span>
             </Link>
-            <span className='community'>Community</span>
+            <Link to="/community" className='community'>Community</Link>
             </div>
         </div>
     </div>
