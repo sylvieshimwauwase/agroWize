@@ -71,8 +71,8 @@ input[type="password"] {
 
 .lockIcon {
   position: absolute;
-  top: 55%;
-  right: 250px;
+  top: 58%;
+  right: 270px;
   transform: translateY(-50%);
   color: #808080;
   width: 10.7px;
