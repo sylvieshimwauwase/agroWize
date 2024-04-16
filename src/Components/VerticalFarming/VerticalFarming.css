@@ -1,48 +1,53 @@
+.verticalFarmingHero {
+  background-image: url("/public/resourcesHero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 23.563rem;
+}
 .verticalFarming {
-      font-family: NunitoSans;
-      
+  font-family: NunitoSans;
 }
 .farmingImage {
-      width: 100%;
+  width: 100%;
 }
 .verticalFarmingContent {
-      width: 100%;
-      font-size: 18px;
-      padding: 40px;
+  width: 100%;
+  font-size: 18px;
+  padding: 40px;
 }
 h3 {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
 }
- h4 {
-      margin-top: 15px;
-      margin-bottom: 15px;
-      color: #226d2c;
- }
+h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #226d2c;
+}
 
- .vegetable {
-      background-color: rgba(211, 254, 226, 0.22);
-      
- }
- .grains {
-      background-color: #ffffff;
- }
+.vegetable {
+  background-color: rgba(211, 254, 226, 0.22);
+}
+.grains {
+  background-color: #ffffff;
+}
 
- .tuber {
-      background-color: rgba(249, 247, 245, 0.45);
- }
- /*img {
+.tuber {
+  background-color: rgba(249, 247, 245, 0.45);
+}
+/*img {
       margin-top: 10px;
       width: 40%;
       height: 250px;
  }*/
 
- .moreExplanations {
-      color: #f29620;
-      margin-top: 10px;
- }
- ul {
-      list-style: none;
- }
- 
+.moreExplanations {
+  color: #f29620;
+  margin-top: 10px;
+}
+ul {
+  list-style: none;
+}

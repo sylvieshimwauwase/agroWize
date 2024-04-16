@@ -2,10 +2,16 @@ import React from "react";
 import "./ResourcePopup.css";
 
 const ResourcePopup = ({ text, titleText }) => {
-  return (
+  const [isVisible, setIsVisible] = useState(true);
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+
+
+  return isVisible ? (
     <div className="popup_container">
       <div>
-        <img className="cancelIcon" src="/cancelIcon.png" alt="cancel" />
+        <img className="cancelIcon" src="/cancelIcon.png" alt="cancel" onClick={handleClose} />
       </div>
       <div>
         <img
@@ -14,7 +20,7 @@ const ResourcePopup = ({ text, titleText }) => {
           alt="success"
         />
       </div>
-      <div popupDetails>
+      <div className="popupdetails">
         <h2 className="popUpText">{text}</h2>
         <p className="">
           You are one step closer to mastering{" "}

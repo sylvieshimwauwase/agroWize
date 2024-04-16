@@ -2,6 +2,8 @@ import React from 'react'
 import "./Resources.css"
 import { products } from '../../Constants/Products';
 import FormButton from '../FormButton';
+import SearchBar from '../Search/SearchBar';
+
 
 
 const Resources = () => {
@@ -12,14 +14,7 @@ const Resources = () => {
       </section>
       <div className="productDetails">
         <img className="images" src="/VerticalLearning.png" alt="Image" />
-        <div className="searchBarContainer">
-          <input
-            className="searchBar"
-            type="text"
-            placeholder="What do you want to learn?"
-          />
-          <img className="searchIcon" src="/searchIcon.svg" alt="searchIcon"  />
-        </div>
+        <SearchBar/>
       </div>
       {products.map((item) => {
         return (
