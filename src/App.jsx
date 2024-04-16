@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from "./Pages/SignUp.jsx";
 import Login from "./Pages/Login.jsx";
-import Homepage from "./Pages/HomePage.jsx";
+import HomePage from "./Pages/HomePage.jsx";
 import ForgotPasswordPage from "./Pages/ForgotPasswordPage.jsx";
 import OtpVerificationPage from "./Pages/OtpVerificationPage.jsx";
 import ResetPasswordPage from "./Pages/ResetPasswordPage.jsx";
@@ -17,11 +17,12 @@ import CommunityPage from "./Pages/CommunityPage.jsx";
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<CommunityPage/>} />
+        <Route index element={<HomePage/>} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
