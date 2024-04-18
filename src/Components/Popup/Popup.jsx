@@ -2,7 +2,7 @@ import React from 'react'
 import "./Popup.css"
 import FormButton from '../FormButton';
 
-const Popup = ({text}) => {
+const Popup = ({text, paragraph, button}) => {
   return (
     <div className="popup_container">
       <div>
@@ -17,7 +17,8 @@ const Popup = ({text}) => {
       </div>
       <div>
         <h3 className="popUpText">{text}</h3>
-        <FormButton name="User Profile" />
+        <p className="popUpText2">{paragraph}</p>
+        {button}
       </div>
     </div>
   );

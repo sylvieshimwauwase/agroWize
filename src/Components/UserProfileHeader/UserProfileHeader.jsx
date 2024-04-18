@@ -11,9 +11,9 @@ const UserProfileHeader = ({ userName }) => {
         </div>
         <div>
         <a className="formNavbarLink" href="/">Home</a>
-        <a className="formNavbarLink" href="/about">About Us</a>
-        <a className="formNavbarLink" href="/farm-mode">Farm Mode</a>
-        <a className="formNavbarLink" href="/resources">Resources</a>
+        <a className="formNavbarLink" href="/aboutUs">About Us</a>
+        <a className="formNavbarLink" href="/verticalFarming">Farm Mode</a>
+        <a className="formNavbarLink" href="/courses">Courses</a>
         <a className="formNavbarLink" href="/articles">Articles</a>
         <a className="formNavbarLink" href="/community">Community</a>
       </div>

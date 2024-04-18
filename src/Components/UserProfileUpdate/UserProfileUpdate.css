@@ -2,7 +2,6 @@
     margin: 0;
 }
 .userProfileUpdate {
-
     background-color: #226d2c;
     background: cover;
     background-repeat: no-repeat;
@@ -14,7 +13,7 @@
     right: 0;
 }
 
-.search-btn {
+/*.search-btn {
     width: 150px;
     background-color: #226d2c;
     color: white;
@@ -23,7 +22,7 @@
     border-radius: 15px;
     border-color: #fff;
     cursor: pointer;
-}
+}*/
 
 .profileCircleForm {
     width: 100px;

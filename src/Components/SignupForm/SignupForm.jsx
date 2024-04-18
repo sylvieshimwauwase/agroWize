@@ -66,7 +66,7 @@ const SignupForm = () => {
             const response = await axios.post(`${Keys.base_url}/signup`, data);
             console.log(response.data);
 
-            navigate('/login');
+            navigate('/signUpPopUpPage');
         } catch (error) {
             /*console.error('Error signing up: ', error);
             if (error.response && error.response.status === 400) {

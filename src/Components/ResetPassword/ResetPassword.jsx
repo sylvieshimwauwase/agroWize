@@ -31,20 +31,28 @@ const ResetPassword = () => {
         setErrorMessage("");
 
         try {
-            const response = await axios.post(`${Keys.base_url}/resetPassword`, { 
+            const response = await axios.put(`${Keys.base_url}/passwordReset`, { 
                 userpassword, 
                 confirmpassword 
             });
             console.log(response.data);
 
-
-            setNewPassword("");
-            setConfirmPassword("");
+            if (response.data.success) {
+                setNewPassword("");
+                setConfirmPassword("");
+                navigate("/login"); // Navigate to login page
+              } else {
+                setErrorMessage(response.data.error || "Password reset failed"); // Set specific error message
+              }
 
             navigate("/login");
           } catch (error) {
             console.error("Error logging in: ", error);
             /*setError("Invalid username or password");*/
+            setErrorMessage("An error occurred. Please try again later.");
+          } finally {
+            setNewPassword("");
+            setConfirmPassword("");
           }
     };
 
@@ -87,6 +95,7 @@ const ResetPassword = () => {
                                 onClick={togglePasswordVisibility}
                         />
                     </div>
+                    {errorMessage && <p>{errorMessage}</p>}
                     <FormButton name="Reset Password" />
                 </form>
             </div>
