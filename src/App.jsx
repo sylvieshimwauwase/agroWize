@@ -13,6 +13,8 @@ import ResourcesPage from "./Pages/ResourcesPage.jsx";
 import ArticlesPage from "./Pages/ArticlesPage.jsx";
 import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 import CommunityPage from "./Pages/CommunityPage.jsx";
+import SignUpPopUpPage from "./Pages/SignUpPopUpPage.jsx";
+import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
 
 
 
@@ -34,10 +36,12 @@ function App() {
           element={<UserProfileNotificationPage />}
         />
         <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="resources" element={<ResourcesPage />} />
+        <Route path="courses" element={<ResourcesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
         <Route path="community" element={<CommunityPage/>}/>
+        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />}/>
+        <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
       </Routes>
     </BrowserRouter>
   );

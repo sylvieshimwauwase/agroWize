@@ -66,7 +66,7 @@ const UserProfileUpdate = ({ userName }) => {
                         </div>
                         <div className="formLbl">
                             <label htmlFor="email" className="lbl">Email Address:</label>
-                            <Field type="email" name="email" className="input" placeholder="example@gmail.com" />
+                            <Field type="text" name="email" className="input" placeholder="example@gmail.com" />
                             <ErrorMessage name="email" component="div" className="error" />
                         </div>
                         <div className="formLbl">

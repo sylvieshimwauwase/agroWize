@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import FormButton from "../FormButton";
+import SmallSizeFormButton from "../SmallSizeFormButton/SmallSizeFormButton";
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
               <br />
               adequately informed.
             </p>
-            <FormButton name="Explore"/>
+            <SmallSizeFormButton name="Explore"/>
           </div>
         </div>
       </section>

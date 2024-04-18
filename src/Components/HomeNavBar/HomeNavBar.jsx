@@ -25,8 +25,8 @@ const HomeNavBar = () => {
             <Link to="/verticalFarming" className='frame-5'>
                 <span className='farm-mode'>Farm Mode</span>
             </Link>
-            <Link to="/resources" className='frame-6'>
-                <span className='resources'>Resources</span>
+            <Link to="/courses" className='frame-6'>
+                <span className='courses'>Courses</span>
             </Link>
             <Link to="/articles" className='frame-7'>
                 <span className='articles'>Articles</span>

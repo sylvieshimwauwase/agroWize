@@ -14,10 +14,19 @@ const LoginForm = ({onFormSubmit}) => {
   const [userpassword, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
+  const [selectedPopup, setSelectedPopup] = useState(null);
+  /*const navigate = useNavigate();*/
 
   const togglePassword = () => {
     setShowPassword((prev) => (!prev));
+  };
+
+  const openPopup = (popupName) => {
+    setSelectedPopup(popupName);
+  };
+
+  const closePopup = () => {
+    setSelectedPopup(null);
   };
 
   const handleSubmit = async (e) => {
@@ -26,10 +35,12 @@ const LoginForm = ({onFormSubmit}) => {
       const response = await axios.post(`${Keys.base_url}/login`, { username, userpassword });
       console.log(response.data);
       /*onFormSubmit(response.data);*/
-      navigate("/forgotPassword");
+      /*navigate("/loginPopUpPage");*/
+      openPopup("LoginPopUpPage");
     } catch (error) {
       console.error("Error logging in: ", error);
       setError("Invalid username or password");
+      openPopup("error");
     }
     
   };
@@ -72,6 +83,8 @@ const LoginForm = ({onFormSubmit}) => {
           alreadyHaveAccountText="Don't have an account?"
           loginText="Create Account" />
       </form>
+      {selectedPopup === "LoginPopUpPage"}
+      {selectedPopup === "Error"}
     </div>
   );
 };
