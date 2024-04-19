@@ -21,7 +21,7 @@ const Community = () => {
               <h6>
                 <span className="coloredText">Type:</span> {item.green}
               </h6>
-              <FormButton name="Start Learning" />
+              <FormButton name="Join Community" />
             </div>
           </div>
         );

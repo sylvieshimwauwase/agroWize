@@ -18,8 +18,10 @@ const VerticalNavBar = ({userName}) => {
     ];
 
     return (
+        
         <div className="verticalNavbar">
-            <div className="profileCircle">
+           <div className="backdrop">
+             <div className="profileCircle">
             <span>{userName}</span>
             </div>
         <ul>
@@ -37,6 +39,7 @@ const VerticalNavBar = ({userName}) => {
         </ul>
         <div className="button-container">
                 <button className="nav-button">Logout</button>
+        </div>
         </div>
         </div>
     );
