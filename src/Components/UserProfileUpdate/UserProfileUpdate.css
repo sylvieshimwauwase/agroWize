@@ -3,8 +3,8 @@
 }
 .userProfileUpdate {
     background-color: #226d2c;
-    background: cover;
     background-repeat: no-repeat;
+     /* background: cover; */
 }
 
 .search-button {
