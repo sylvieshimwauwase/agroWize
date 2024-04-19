@@ -4,6 +4,7 @@ import "./UserProfileUpdate.css";
 import FormButton from "../FormButton";
 import SearchBar from "../Search/SearchBar";
 
+
 const UserProfileUpdate = ({ userName }) => {
 
     const validate = values => {
@@ -38,11 +39,11 @@ const UserProfileUpdate = ({ userName }) => {
     };
 
     return (
-        <div className="userProfileUpdate">
-            <div className="userProfileUpdateForm">
-                <div className="search-button">
+        <div className="userProfileUpdate"> <div className="search-button">
                     <SearchBar />
                 </div>
+           <div className="userProfileUpdateForm">
+               
                 <Formik
                     initialValues={{
                         fullName: "",
@@ -83,7 +84,7 @@ const UserProfileUpdate = ({ userName }) => {
                     )}
                 </Formik>
                 <FormButton name="Update Profile"/>
-                </div>
+            </div>
         </div>
     )
 };

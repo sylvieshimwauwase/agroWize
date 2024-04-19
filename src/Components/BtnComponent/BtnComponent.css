@@ -1,0 +1,38 @@
+.btn {
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    font-size: 13px;
+    font-family: inter;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px 12px;
+}
+
+.btn[data-fullwidth="true"] {
+    width: 100%;
+}
+
+.btn[data-variant="primary"] {
+    background-color: #257830;
+    color: white;
+}
+
+.btn[data-variant="secondary"] {
+    background-color: #F29620;
+    color: white;
+}
+
+.btn[data-size="medium"] {
+    padding: 7px 16px;
+    font-size: 14px;
+}
+
+.btn[data-size="large"] {
+    padding: 10.5px 24px;
+    font-size: 16px;
+}
+.btnContainer{
+    display: flex;
+    gap: 8px;
+}

@@ -23,7 +23,7 @@ export const communityDetails = [
     image: "/Grain vertical.png",
     title: "Vertical Farming",
     about: "Grain",
-    green: "Tomatoe",
+    green: "Rice",
   },
   {
     image: "/tuber verticall 1.png",

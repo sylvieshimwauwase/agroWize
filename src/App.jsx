@@ -20,6 +20,7 @@ import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -39,8 +40,8 @@ function App() {
         <Route path="courses" element={<ResourcesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
-        <Route path="community" element={<CommunityPage/>}/>
-        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />}/>
+        <Route path="community" element={<CommunityPage />} />
+        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
       </Routes>
     </BrowserRouter>
