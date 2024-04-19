@@ -33,13 +33,13 @@
   gap: 30px;
   padding: 0;*/
 }
-h3 {
+.verticalFarmingContent h3 {
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
   font-size: 32px;
 }
-h4 {
+.verticalFarmingContent  h4 {
   margin-top: 15px;
   margin-bottom: 15px;
   color: #226d2c;

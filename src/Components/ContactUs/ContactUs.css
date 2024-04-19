@@ -21,7 +21,7 @@
   }
   
   .imageArea {
-      width: 40%;
+      width: 30%;
       padding: 10%;
   }
   .imageArea img {
@@ -30,20 +30,43 @@
       border-radius: 10px;
   }
   .contactUsForm {
-      flex: 40%;
+      width: 30%;
       padding: 20px;
+      margin-right: 50px;
   }
-  
-  .contactUsForm label,
-  .contactUsForm input,
-  .contactUsForm textarea {
-      width: 80%;
+
+
+  .contactUsInput {
+    width: 40%;
+    padding: 8px;
+    height: 2rem;
+    font-size: 1rem;
+    border: 1px solid #4285f4;
+    border-radius: 9px;
   }
-  
-  .contactUsForm textarea {
-      height: 100px;
+  .contactUsLabel {
+     margin-bottom: 10px;
+     text-align: left;
   }
-  
+  .contactUsTextArea {
+    width: 95%;
+    padding: 8px;
+    height: 7rem;
+    font-size: 1rem;
+    border: 1px solid #4285f4;
+    border-radius: 9px;
+  }
+  .contactUsButton {
+    width: 200px;
+    height: 40px;
+    flex-grow: 0;
+    border-radius: 5px;
+    background-color: #f29620;
+    color: #fff;
+    margin: 20px auto;
+    border: none;
+    text-decoration: none;
+  }
   @media screen and (max-width: 768px) {
       .contactUsGrid {
           flex-direction: column;

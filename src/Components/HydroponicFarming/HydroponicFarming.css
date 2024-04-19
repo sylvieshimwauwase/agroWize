@@ -1,0 +1,10 @@
+
+.ordListscolor {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 22px;
+      margin-top: 20px;
+      color: #f29620;
+}
