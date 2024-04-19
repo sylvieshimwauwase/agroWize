@@ -15,8 +15,6 @@ import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 import CommunityPage from "./Pages/CommunityPage.jsx";
 import SignUpPopUpPage from "./Pages/SignUpPopUpPage.jsx";
 import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
-import PasswordChangePopup from "./Components/PassordChangePopup/PasswordChangePopup.jsx";
-import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 
 
 
@@ -27,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<UserProfileUpdatePage/>} />
+        <Route index element={<HomePage/>} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
