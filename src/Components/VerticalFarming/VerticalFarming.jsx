@@ -195,11 +195,7 @@ const VerticalFarming = () => {
                         underwatering.
                       </li>
                       <li>
-                      <span className="paragraphSubHead">b. Watering and Irrigation:</span>c. Pruning and Training: Regularly prune and train
-                        vegetable plants to promote healthy growth and maximize
-                        productivity. Remove damaged or diseased foliage, and
-                        use trellising or support structures to guide plant
-                        growth vertically and prevent sprawling.
+                      <span className="paragraphSubHead">c. Pruning and Training:</span> Regularly prune and train vegetable plants to promote healthy growth and maximize productivity. Remove damaged or diseased foliage, and use trellising or support structures to guide plant growth vertically and prevent sprawling.
                       </li>
                     </ul>
                   </li>

@@ -15,6 +15,7 @@ import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 import CommunityPage from "./Pages/CommunityPage.jsx";
 import SignUpPopUpPage from "./Pages/SignUpPopUpPage.jsx";
 import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
+import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
 
 
 
@@ -40,6 +41,11 @@ function App() {
         <Route path="courses" element={<ResourcesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
+
+        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />}/>
+        <Route path="community" element={<CommunityPage/>}/>
+        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />}/>
+
         <Route path="community" element={<CommunityPage />} />
         <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
