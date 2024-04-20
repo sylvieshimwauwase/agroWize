@@ -16,6 +16,8 @@ import CommunityPage from "./Pages/CommunityPage.jsx";
 import SignUpPopUpPage from "./Pages/SignUpPopUpPage.jsx";
 import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
 import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
+import PasswordChangePopup from "./Components/PassordChangePopup/PasswordChangePopup.jsx";
+import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 
 
 
@@ -49,6 +51,7 @@ function App() {
         <Route path="community" element={<CommunityPage />} />
         <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
+        <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
       </Routes>
     </BrowserRouter>
   );
