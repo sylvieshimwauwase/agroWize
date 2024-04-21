@@ -22,6 +22,13 @@ import UserProfileBookmarkedResources from "./Components/UserProfile/UserProfile
 import UserProfileCertificates from "./Components/UserProfile/UserProfileCertificates/UserProfileCertificates.jsx";
 import UserProfileCommunity from "./Components/UserProfile/UserProfileCommunity/UserProfileCommunity.jsx"
 import UserProfileHelpCentre from "./Components/UserProfile/UserProfileHelpCentre/UserProfileHelpCentre.jsx";
+import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
+import PasswordChangePopup from "./Components/PassordChangePopup/PasswordChangePopup.jsx";
+import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
+
+
+
+
 
 function App() {
   return (
@@ -42,6 +49,11 @@ function App() {
         <Route path="courses" element={<ResourcesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
+
+        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />}/>
+        <Route path="community" element={<CommunityPage/>}/>
+        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />}/>
+
         <Route path="community" element={<CommunityPage />} />
         <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
@@ -64,6 +76,8 @@ function App() {
         />
         <Route path="userProfileCommunity" element={<UserProfileCommunity />} />
         <Route path="userProfileHelpCentre" element={<UserProfileHelpCentre />} />
+        <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -137,7 +137,7 @@ const SignupForm = () => {
                     Enter your email address
                   </label>
                   <Field
-                    type="email"
+                    type="text"
                     name="email"
                     className="input"
                     placeholder="example@gmail.com"

@@ -2,6 +2,7 @@
     margin: 0 auto;
     padding: 50px 0;
     width: 100%;
+    font-size: 18px;
     background-color: #3ec772;
     font-family: NunitoSans;
 }
@@ -13,7 +14,7 @@
 .missionVisionValuesDiv {
       display: flex;
       justify-content: space-between;
-      width: 80%;
+      width: 90%;
       align-items: center;
   }
   
@@ -33,13 +34,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-90%, -150%);
-      border-radius: 30px;
   }
   
   .innerDiv h3 {
       font-size: 20px;
       text-align: left;
-      margin-top: 10px !important;
+      margin-top: 50px !important;
+      margin-bottom: 10px;
   }
   
   .innerDiv p {

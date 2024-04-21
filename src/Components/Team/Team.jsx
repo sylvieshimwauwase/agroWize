@@ -11,73 +11,73 @@ const Team = () => {
                 <div className="teamGrid">
                     <div className="teamMember">
                         <img src="/Mentor.png" alt="Mentor" />
-                        <p>Emmanuel Daniel</p>
-                        <p>Mentor</p>
+                        <p className="cBlack">Emmanuel Daniel</p>
+                        <p className="cWhite">Mentor</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Juliana A..png" alt="Team Member" />
-                        <p>Juliana Akpaette</p>
-                        <p>Product Manager</p>
+                        <p className="cBlack">Juliana Akpaette</p>
+                        <p className="cYellow">Product Manager</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Juliana A-Martins.png" alt="Team Member" />
-                        <p>Juliana Adeniyi-Martins</p>
-                        <p>Product Manager</p>
+                        <p className="cBlack">Juliana Adeniyi-Martins</p>
+                        <p className="cYellow">Product Manager</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Justina Olayemi.png" alt="Team Member" />
-                        <p>Justina Olayemi</p>
-                        <p>Product Manager</p>
+                        <p className="cBlack">Justina Olayemi</p>
+                        <p className="cYellow">Product Manager</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Kidane.png" alt="Team Member" />
-                        <p>Kidstemariam Kidane</p>
-                        <p>Product Manager</p>
+                        <p className="cBlack">Kidstemariam Kidane</p>
+                        <p className="cYellow">Product Manager</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Toyibat Salako.png" alt="Team Member" />
-                        <p>Toyibat Salako</p>
-                        <p>Product Designer</p>
+                        <p className="cWhite">Toyibat Salako</p>
+                        <p className="cBlack">Product Designer</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Tracy O..png" alt="Team Member" />
-                        <p>Tracy Omoike</p>
-                        <p>Data Analyst</p>
+                        <p className="cBlack">Tracy Omoike</p>
+                        <p className="cGreen">Data Analyst</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Uchenna O..png" alt="Team Member" />
-                        <p>Uchenna Okafor</p>
-                        <p>Data Analyst</p>
+                        <p className="cBlack">Uchenna Okafor</p>
+                        <p className="cGreen">Data Analyst</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Sylvie's Selfie.jpeg" alt="Team Member" />
-                        <p>Sylvie SHIMWA UWASE</p>
-                        <p>Front-End Developer</p>
+                        <p className="cWhite">Sylvie SHIMWA UWASE</p>
+                        <p className="cBlue">Front-End Developer</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Temilola.jpeg" alt="Team Member" />
-                        <p>Temilola Oguntamu</p>
-                        <p>Front-End Developer</p>
+                        <p className="cWhite">Temilola Oguntamu</p>
+                        <p className="cBlue">Front-End Developer</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Roberta O..png" alt="Team Member" />
-                        <p>Roberta Okorie</p>
-                        <p>Cyber Security</p>
+                        <p className="cYellow">Roberta Okorie</p>
+                        <p className="cPink">Cyber Security</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Tolulope A..png" alt="Team Member" />
-                        <p>Tolulope Adesanya</p>
-                        <p>Back-End Developer</p>
+                        <p className="cBlue">Tolulope Adesanya</p>
+                        <p className="cRed">Back-End Developer</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Faith M..png" alt="Team Member" />
-                        <p>Faith Madamedon</p>
-                        <p>Data Analyst</p>
+                        <p className="cBlack">Faith Madamedon</p>
+                        <p className="cGreen">Data Analyst</p>
                     </div>
                     <div className="teamMember">
                         <img src="/Oluwadamilola.png" alt="Team Member" />
-                        <p>Oluwadamilola Ogunmodede</p>
-                        <p>Product Designer</p>
+                        <p className="cWhite">Oluwadamilola Ogunmodede</p>
+                        <p className="cBlack">Product Designer</p>
                     </div>
                         </div>
                   </section>
