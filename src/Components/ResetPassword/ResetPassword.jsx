@@ -8,8 +8,8 @@ import './ResetPassword.css';
 import FormButton from "../FormButton";
 
 const ResetPassword = () => {
-    const [userpassword, setNewPassword] = useState("");
-    const [confirmpassword, setConfirmPassword] = useState("");
+    const [password, setNewPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ const ResetPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (userpassword !== confirmpassword) {
+        if (password !== confirmPassword) {
             setErrorMessage("Passwords do not match");
             return;
         }
@@ -32,8 +32,8 @@ const ResetPassword = () => {
 
         try {
             const response = await axios.put(`${Keys.base_url}/passwordReset`, { 
-                userpassword, 
-                confirmpassword 
+                password, 
+                confirmPassword 
             });
             console.log(response.data);
 
@@ -70,7 +70,7 @@ const ResetPassword = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="newPassword"
-                            value={userpassword}
+                            value={password}
                             onChange={handleNewPasswordChange}
                             required
                         />
@@ -85,7 +85,7 @@ const ResetPassword = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="confirmPassword"
-                            value={confirmpassword}
+                            value={confirmPassword}
                             onChange={handleConfirmPasswordChange}
                             required
                         />
