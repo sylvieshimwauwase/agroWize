@@ -10,6 +10,7 @@ import FormButton from "../FormButton";
 const ResetPassword = () => {
     const [password, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
@@ -32,12 +33,14 @@ const ResetPassword = () => {
 
         try {
             const response = await axios.put(`${Keys.base_url}/passwordReset`, { 
+                email,
                 password, 
                 confirmPassword 
             });
             console.log(response.data);
 
             if (response.data.success) {
+                setEmail("");
                 setNewPassword("");
                 setConfirmPassword("");
                 navigate("/login"); // Navigate to login page
@@ -65,6 +68,21 @@ const ResetPassword = () => {
             <div className="resetPasswordForm">
                 <form onSubmit={handleSubmit}>
                     <h2>Reset Password</h2>
+                    <div className="resetPasswordInput">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type= "text"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <FontAwesomeIcon
+                                icon={showPassword ? faLockOpen : faLock}
+                                className="password-toggle"
+                                onClick={togglePasswordVisibility}
+                        />
+                    </div>
                     <div className="resetPasswordInput">
                         <label htmlFor="newPassword">New Password</label>
                         <input
