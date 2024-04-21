@@ -1,9 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import FormButton from "../FormButton";
 import SmallSizeFormButton from "../SmallSizeFormButton/SmallSizeFormButton";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    navigate('/courses');
+  };
+  const handleExploreClick = () => {
+    navigate('/community');
+  };
   return (
     <div>
       <section className="homeContainer">
@@ -18,7 +27,7 @@ const Home = () => {
               <br />
               <span style={{color:"#f29620"}}>Agriculture</span> and get certified.
             </p>
-            <FormButton name="Learn More"/>
+            <FormButton name="Learn More" onClick={handleLearnMoreClick}/>
           </div>
         </div>
         <div className='homeFirstContainer'>
@@ -34,7 +43,7 @@ const Home = () => {
               <br />
               adequately informed.
             </p>
-            <SmallSizeFormButton name="Explore"/>
+            <SmallSizeFormButton name="Explore" onClick={handleExploreClick}/>
           </div>
         </div>
       </section>

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import './Footer.css';
 import { Link } from "react-router-dom";
 import FormButton from "../FormButton";
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        alert("Thank you for subscribing!");
+        setEmail('');
+    };
+
     return (
         <div className='footer'>
 
@@ -79,8 +87,16 @@ const Footer = () => {
                 <h2>Subscribe to our newsletter</h2>
                 <p>Stay connected with information about our Agricultural Practices and Update</p>
                 <div className='input-box'>
-                    <input className='newsletter-input' placeholder='Enter your email address'></input>
-                    <FormButton name="Subscribe"/>
+                    <form onSubmit={handleSubscribe}>
+                        <input
+                        className='newsletter-input' 
+                        placeholder='Enter your email address'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button className='newsletter-button'>Subscribe</button>
+                    </form>
+                    
                 </div>
 
             </div>

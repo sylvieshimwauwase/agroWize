@@ -1,8 +1,15 @@
 import React from 'react'
 import './HomeAboutUs.css';
 import FormButton from '../../Components/FormButton';
+import { useNavigate } from 'react-router-dom';
 
 const HomeAboutUs = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    navigate('/aboutUs');
+  };
+
   return (
     <div>
       <section className="homeAboutUs">
@@ -40,7 +47,7 @@ const HomeAboutUs = () => {
             <br />
             positive change in the agricultural industry.
           </p>
-          <FormButton name="Learn More" />
+          <FormButton name="Learn More" onClick={handleLearnMoreClick} />
         </div>
       </div>
     </section>

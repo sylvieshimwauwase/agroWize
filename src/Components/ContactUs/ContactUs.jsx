@@ -15,13 +15,27 @@ const ContactUs = () => {
                               </div>
                               <div className="contactUsForm">
                                     <form >
-                                          <label htmlFor="name">Full name</label>
-                                          <input type="text" name="name" placeholder="Enter your name" />
-                                          <label htmlFor="email">Enter your email address</label>
-                                          <input type="text" name="email" placeholder="example@gmail.com" />
-                                          <label htmlFor="subject">Message</label>
-                                          <textarea id="subject" name="subject" placeholder="Write your message"></textarea>
-                                          <FormButton name="Send Message"/>
+                                          <label className="contactUsLabel" htmlFor="name">Full name</label>
+                                          <input 
+                                          className="contactUsInput"
+                                          type="text" 
+                                          name="name" 
+                                          placeholder="Enter your name" 
+                                          />
+                                          <label className="contactUsLabel" htmlFor="email">Enter your email address</label>
+                                          <input 
+                                          className="contactUsInput"
+                                          type="text" 
+                                          name="email" 
+                                          placeholder="example@gmail.com" />
+                                          <label  className="contactUsLabel"htmlFor="subject">Message</label>
+                                          <textarea 
+                                          className="contactUsTextArea"
+                                          id="subject" 
+                                          name="subject" 
+                                          placeholder="Write your message">
+                                          </textarea>
+                                          <button className="contactUsButton">Send Message</button>
                                     </form>
                               </div>
                         </div>
