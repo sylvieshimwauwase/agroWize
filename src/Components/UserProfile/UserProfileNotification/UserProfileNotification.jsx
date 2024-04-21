@@ -15,7 +15,7 @@ const UserProfileNotification = () => {
             <p className="formInfo">
               You currently do not have any Notifications.
             </p>
-            <p> When you do, they would appear here.</p>
+            <p className="formInfo"> When you do, they would appear here.</p>
           </div>
         </div>
       </div>

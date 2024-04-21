@@ -60,7 +60,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.active {
-  color: #226D2C; /* Example text color for active page */
-  font-weight: bold; /* Example font weight for active page */
+.verticalNavbar .active {
+  color: #226D2C;
+  font-weight: bold; 
 }
