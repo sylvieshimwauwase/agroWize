@@ -1,7 +1,7 @@
-import React from "react";
-import "./ResourcePopup.css";
+import React, {useState} from "react";
+import "./CoursesPopup.css";
 
-const ResourcePopup = ({ text, titleText }) => {
+const CoursesPopup = ({ text, titleText }) => {
   const [isVisible, setIsVisible] = useState(true);
   const handleClose = () => {
     setIsVisible(false);
@@ -10,9 +10,9 @@ const ResourcePopup = ({ text, titleText }) => {
 
   return isVisible ? (
     <div className="popup_container">
-      <div>
-        <img className="cancelIcon" src="/cancelIcon.png" alt="cancel" onClick={handleClose} />
-      </div>
+     <button className="cancelIcon" onClick={handleClose} aria-label="Close popup">
+  <img src="/cancelIcon.png" alt="Close" />
+  </button>
       <div>
         <img
           className="successIcon"
@@ -36,7 +36,7 @@ const ResourcePopup = ({ text, titleText }) => {
   );
 };
 
-export default ResourcePopup;
+export default CoursesPopup;
 
 // <div className="popup_container">
 //   <div>

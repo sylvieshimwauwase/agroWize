@@ -50,8 +50,10 @@ const UserProfileChangePassword = () => {
           <SearchBar />
         </div>
         <form onSubmit={handleSubmit} className="userProfileUpdateForm">
+          <h3 className="formTitle">Change Password</h3>
           <div className="input-group">
             {/* <i className="fa fa-lock icon"></i> */}
+            <label htmlFor="username">Enter Old Password</label>
             <input
               type="password"
               placeholder="Enter old password"
@@ -67,6 +69,7 @@ const UserProfileChangePassword = () => {
           </div>
           <div className="input-group">
             <i className="fa fa-lock icon"></i>
+            <label htmlFor="username">Enter New Password</label>
             <input
               type="password"
               placeholder="Enter new password"
@@ -79,6 +82,7 @@ const UserProfileChangePassword = () => {
           </div>
           <div className="input-group">
             <i className="fa fa-lock icon"></i>
+            <label htmlFor="username">Re-enter New Password</label>
             <input
               type="password"
               placeholder="Re-enter new password"
@@ -89,7 +93,7 @@ const UserProfileChangePassword = () => {
               <div className="error">{errors.confirmNewPassword}</div>
             )}
           </div>
-          <button type="submit">Reset Password</button>
+          <button type="submit">Change Password</button>
         </form>
       </div>
     </>
