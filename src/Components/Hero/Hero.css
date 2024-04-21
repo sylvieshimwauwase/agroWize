@@ -16,12 +16,13 @@
 
 .plainText{
     color: #FFFFFF;
-    font-family: NunitoSans;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 3rem;
     text-align: center;
     position: relative;
     top: 35%;
-}
+} 
+
 .coloredText{
     color: #f29620;
 }
