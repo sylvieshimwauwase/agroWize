@@ -1,16 +1,16 @@
 import React from 'react'
 import HomeNavBar from '../Components/HomeNavBar/HomeNavBar';
 import Footer from '../Components/Footer/Footer';
-import Resources from '../Components/Resources/Resources';
+import Courses from '../Components/Courses/Courses';
 
-const ResourcesPage = () => {
+const CoursesPage = () => {
   return (
     <div>
       <HomeNavBar />
-      <Resources/>
+      <Courses/>
       <Footer/>
     </div>
   );
 }
 
-export default ResourcesPage
+export default CoursesPage

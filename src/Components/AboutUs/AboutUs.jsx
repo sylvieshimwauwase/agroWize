@@ -9,15 +9,10 @@ import SearchBar from "../Search/SearchBar";
 const HeroSection = () => {
     return (
       <div className="aboutUsPage">
-        <div className="section">
-                    <img className="sectionImage1" src="/HeroSectionHomePage.png" alt="Logo" />
-                    <div className="searchBarWrapper">
-                        <SearchBar />
-                    </div>
-                    <div className="overlay">
-                        <h2>About Us</h2>
-                    </div>
-                </div>
+        <div className="aboutUsHero">
+          <SearchBar />
+          <h3 className="heroTitle">ABOUT US</h3>
+        </div>
         <div className="row-section-item">
           <p>
             Welcome to <span style={{ color: "#226d2c" }}>AgroWize</span>, the

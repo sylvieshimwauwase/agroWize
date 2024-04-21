@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import "./Resources.css"
+import "./Courses.css"
 import { products } from '../../Constants/Products';
 import FormButton from '../FormButton';
 import SearchBar from '../Search/SearchBar';
 
 
-const Resources = () => {
+const Courses = () => {
     const [learningStates, setLearningStates] = useState(
       Array(products.length).fill(false)
     );
@@ -18,15 +18,10 @@ const Resources = () => {
 
   return (
     <>
-      <div className="hero">
-        <h2 className="plainText">
-         Courses
-        </h2>
-      </div>
-      <div className="productDetails">
-        <img className="images" src="/VerticalLearning.png" alt="Image" />
-        <SearchBar />
-      </div>
+      <div className="coursesHero">
+      <SearchBar />
+      <h3 className="heroTitle">COURSES</h3>
+    </div>
       {products.map((item, index) => {
         return (
           <div className="productDetails" key={index}>
@@ -50,4 +45,4 @@ const Resources = () => {
   );
 }
 
-export default Resources
+export default Courses
