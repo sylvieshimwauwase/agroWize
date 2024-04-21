@@ -50,7 +50,7 @@ const UserProfileChangePassword = () => {
           <SearchBar />
         </div>
         <form onSubmit={handleSubmit} className="userProfileUpdateForm">
-          <h3 className="formTitle">Certificates</h3>
+          <h3 className="formTitle">Change Password</h3>
           <div className="input-group">
             {/* <i className="fa fa-lock icon"></i> */}
             <label htmlFor="username">Enter Old Password</label>

@@ -9,7 +9,6 @@ import ResetPasswordPage from "./Pages/ResetPasswordPage.jsx";
 import UserProfileUpdatePage from "./Pages/UserProfileUpdatePage.jsx";
 import UserProfileNotificationPage from "./Pages/UserProfileNotificationPage.jsx";
 import AboutUsPage from "./Pages/AboutUsPage.jsx";
-import ResourcesPage from "./Pages/ResourcesPage.jsx";
 import ArticlesPage from "./Pages/ArticlesPage.jsx";
 import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 import CommunityPage from "./Pages/CommunityPage.jsx";
@@ -23,8 +22,8 @@ import UserProfileCertificates from "./Components/UserProfile/UserProfileCertifi
 import UserProfileCommunity from "./Components/UserProfile/UserProfileCommunity/UserProfileCommunity.jsx"
 import UserProfileHelpCentre from "./Components/UserProfile/UserProfileHelpCentre/UserProfileHelpCentre.jsx";
 import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
-import PasswordChangePopup from "./Components/PassordChangePopup/PasswordChangePopup.jsx";
 import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
+import CoursesPage from "./Pages/CoursesPage.jsx";
 
 
 
@@ -46,7 +45,7 @@ function App() {
           element={<UserProfileNotificationPage />}
         />
         <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="courses" element={<ResourcesPage />} />
+        <Route path="courses" element={<CoursesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
 

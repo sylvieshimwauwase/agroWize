@@ -1,7 +1,7 @@
 import React from 'react'
-import ResourcePopup from '../Components/ResourcePopup/ResourcePopup';
+import ResourcePopup from '../Components/CoursesPopup/CoursesPopup';
 
-const ResourcesPopupPage = () => {
+const CoursesPopupPage = () => {
   return (
     <div>
       <ResourcePopup text="Congratulations" titleText="Vertical Farming." />
@@ -9,4 +9,4 @@ const ResourcesPopupPage = () => {
   );
 }
 
-export default ResourcesPopupPage
+export default CoursesPopupPage

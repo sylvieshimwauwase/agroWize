@@ -45,11 +45,12 @@
   }
 
 .userProfileUpdateForm {
+    /* max-width: 400px; */
     position: absolute;
     top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 28px 60px 25px 61px;
+    padding: 28px 60px 25px 61px; 
     /* height: 70%; */
     margin: 19px 170px 0 170px;
     border-radius: 10px;

@@ -10,7 +10,7 @@ const VerticalFarming = () => {
             <div className="searchBarWrapper">
               <SearchBar />
             </div>
-              <h3 className="heroTitle">FARMING TECHNIQUES</h3>
+              <h4 className="heroTitle">FARMING TECHNIQUES</h4>
             </div>
             <div className="verticalFarmingContent">
               <h3>Vertical Farming</h3>
