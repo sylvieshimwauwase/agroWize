@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import Keys from "../../Constants/Keys";
 import './ContactUs.css';
 import FormButton from "../FormButton";
 
 const ContactUs = () => {
-      return (
+      const [formData, setFormData] = useState({
+            name: '',
+            email: '',
+            subject: ''
+      });
+
+      const handleInputChange = (e) => {
+            const { name, value } = e.target;
+            setFormData({
+                  ...formData,
+                  [name]: value
+            });
+      };
+
+      const handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+                  await axios.post(`${Keys.base_url}/contact`, formData);
+                  console.log('Message sent successfully');
+                  setFormData({
+                        name: '',
+                        email: '',
+                        subject: ''
+                  });
+            } catch (error) {
+                  console.error('Error sending message: ', error);
+                  setFormData({
+                        name: '',
+                        email: '',
+                        subject: ''
+                  });
+            }
+      };
+            return (
             <div>
                   <section className="contactUsSection">
                         <div className="contactUsTitle">
@@ -14,34 +49,44 @@ const ContactUs = () => {
                                     <img src="/ContactUsImage.png" alt="Contact Us" />
                               </div>
                               <div className="contactUsForm">
-                                    <form >
-                                          <label className="contactUsLabel" htmlFor="name">Full name</label>
+                                    <form onSubmit={handleSubmit}>
+                                          <label className="contactUsLabel" 
+                                          htmlFor="name">Full name</label>
                                           <input 
                                           className="contactUsInput"
                                           type="text" 
-                                          name="name" 
+                                          name="name"
+                                          value={formData.name}
+                                          onChange={handleInputChange}
                                           placeholder="Enter your name" 
                                           />
-                                          <label className="contactUsLabel" htmlFor="email">Enter your email address</label>
+
+                                          <label className="contactUsLabel" 
+                                          htmlFor="email">Enter your email address</label>
                                           <input 
                                           className="contactUsInput"
                                           type="text" 
-                                          name="email" 
+                                          name="email"
+                                          value={formData.email}
+                                          onChange={handleInputChange}
                                           placeholder="example@gmail.com" />
-                                          <label  className="contactUsLabel"htmlFor="subject">Message</label>
+
+                                          <label  className="contactUsLabel"
+                                          htmlFor="subject">Message</label>
                                           <textarea 
                                           className="contactUsTextArea"
                                           id="subject" 
-                                          name="subject" 
+                                          name="subject"
+                                          value={formData.subject}
+                                          onChange={handleInputChange}
                                           placeholder="Write your message">
                                           </textarea>
-                                          <button className="contactUsButton">Send Message</button>
+                                          <button type="submit" className="contactUsButton">Send Message</button>
                                     </form>
                               </div>
                         </div>
                   </section>
             </div>
       );
-};
-
+      };
 export default ContactUs;

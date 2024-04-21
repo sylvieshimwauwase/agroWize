@@ -31,11 +31,16 @@ const LoginForm = ({onFormSubmit}) => {
       console.log(response.data);
       setIsLoggedIn(true);
       setIsLoading(false);
+      setUsername("");
+      setPassword("");
 
     } catch (error) {
       setIsLoading(false);
       console.error("Error logging in: ", error);
+      setUsername("");
+      setPassword("");
       setError("Invalid username or password");
+
     }
     
   };
@@ -73,6 +78,7 @@ const LoginForm = ({onFormSubmit}) => {
             className="lockIcon"
             onClick={togglePassword}
           />
+          {error && <div className="error">{error}</div>}
           <a href="/forgotPassword" className="forgot-password">
             Forgot password?
           </a>
