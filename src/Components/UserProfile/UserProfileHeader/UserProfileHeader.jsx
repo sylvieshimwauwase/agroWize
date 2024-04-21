@@ -12,10 +12,10 @@ const UserProfileHeader = ({ userName }) => {
         <div>
         <a className="formNavbarLink" href="/">Home</a>
         <a className="formNavbarLink" href="/aboutUs">About Us</a>
-        <a className="formNavbarLink" href="/verticalFarming">Farm Mode</a>
         <a className="formNavbarLink" href="/courses">Courses</a>
-        <a className="formNavbarLink" href="/articles">Articles</a>
+        {/*<a className="formNavbarLink" href="/articles">Articles</a>*/}
         <a className="formNavbarLink" href="/community">Community</a>
+        <a className="formNavbarLink" href="/userProfileUpdate">User Profile</a>
       </div>
         <div>
         <button className="userProfileButton">{userName}</button>
