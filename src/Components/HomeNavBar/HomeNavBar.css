@@ -240,6 +240,10 @@
     cursor: pointer;
     text-decoration: none;
   }
+  .home:hover, .about-us:hover, .farm-mode:hover, .courses:hover, .articles:hover, .community:hover {
+    text-decoration: underline; 
+    transform: scale(0.9);
+}
 
   @media screen and (max-width: 768px) {
     .agrowize-logo img {
@@ -261,6 +265,7 @@
     }
     .button-text-2 {
       font-size: 12px;
+      transition: transform 0.3s ease;
     }
     .frame-3 {
       gap: 10px;

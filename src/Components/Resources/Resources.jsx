@@ -18,12 +18,14 @@ const Resources = () => {
 
   return (
     <>
-      <section>
-        <img className="resourcesImg" src="/Frame 1000007856.png" alt="Image" />
-      </section>
+      <div className="hero">
+        <h2 className="plainText">
+         Courses
+        </h2>
+      </div>
       <div className="productDetails">
         <img className="images" src="/VerticalLearning.png" alt="Image" />
-        <SearchBar/>
+        <SearchBar />
       </div>
       {products.map((item, index) => {
         return (

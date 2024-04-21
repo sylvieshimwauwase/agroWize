@@ -1,14 +1,25 @@
 * {
     padding: 0;
 }
-.userProfileNotification {
+/* .userProfileNotification {
     background-color: #226d2c !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
+} */
+.notificationForm{
+    padding: 0rem 6rem 10rem 6rem;
 }
-.userProfileNotificationContainer {
+.formTitle{
+ border-bottom: 2px solid #226D2C;
+}
+.formInfo{
+    justify-content: center;
+    width: 350px;
+    font-weight: 500;
+}
+/* .userProfileNotificationContainer {
     position: absolute;
     top: 70%;
     left: 40%;
@@ -18,10 +29,10 @@
     height: 80%;
     margin: 19px 170px 0 170px;
     border-radius: 10px;
-    background-color: #226d2c;
+    background-color: white;
     align-items: center;
-}
-.userProfileNotificationTitle {
+} */
+/* .userProfileNotificationTitle {
     font-family: "Nunito", sans-serif;
     font-weight: 550;
     color: #000000;
@@ -29,7 +40,7 @@
     align-items: center;
     margin-left: 20px;
     padding-bottom: 30px;
-}
+} */
 .userProfileNotificationContent {
     font-family: "Nunito", sans-serif;
     font-weight: 500;

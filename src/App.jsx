@@ -15,17 +15,19 @@ import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 import CommunityPage from "./Pages/CommunityPage.jsx";
 import SignUpPopUpPage from "./Pages/SignUpPopUpPage.jsx";
 import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
-
-
-
-
-
+import UserProfileCourse from "./Components/UserProfile/UserProfileCourse/UserProfileCourse.jsx";
+import UserProfileLearningHistory from "./Components/UserProfile/UserProfileLearningHistory/UserProfileLearningHistory.jsx";
+import UserProfileChangePassword from "./Components/UserProfile/UserProfileChangePassword/UserProfileChangePassword.jsx";
+import UserProfileBookmarkedResources from "./Components/UserProfile/UserProfilebookmarkedResources/UserProfilebookmarkedResources.jsx";
+import UserProfileCertificates from "./Components/UserProfile/UserProfileCertificates/UserProfileCertificates.jsx";
+import UserProfileCommunity from "./Components/UserProfile/UserProfileCommunity/UserProfileCommunity.jsx"
+import UserProfileHelpCentre from "./Components/UserProfile/UserProfileHelpCentre/UserProfileHelpCentre.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage/>} />
+        <Route index element={<HomePage />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
@@ -43,6 +45,25 @@ function App() {
         <Route path="community" element={<CommunityPage />} />
         <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
+        <Route path="userProfileCourse" element={<UserProfileCourse />} />
+        <Route
+          path="userProfileLearningHistory"
+          element={<UserProfileLearningHistory />}
+        />
+        <Route
+          path="userProfileChangePassword"
+          element={<UserProfileChangePassword />}
+        />
+        <Route
+          path="UserProfileBookmarkedResources"
+          element={<UserProfileBookmarkedResources />}
+        />
+        <Route
+          path="userprofilecertificates"
+          element={<UserProfileCertificates />}
+        />
+        <Route path="userProfileCommunity" element={<UserProfileCommunity />} />
+        <Route path="userProfileHelpCentre" element={<UserProfileHelpCentre />} />
       </Routes>
     </BrowserRouter>
   );
