@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Popup from '../Components/Popup/Popup';
 import SmallSizeFormButton from "../Components/SmallSizeFormButton/SmallSizeFormButton";
 
-const SignUpPopUpPage = () => {
+const SignUpPopUpPage = ( {isOpen} ) => {
       const navigate = useNavigate();
 
       const handleHomeClick = () => {
@@ -11,7 +11,8 @@ const SignUpPopUpPage = () => {
       };
   return (
     <div>
-       <Popup  text="Congratulations!"
+       {isOpen && ( <Popup 
+       text="Congratulations!"
        paragraph="Your account has been created successfully."
        button={
        <div>
@@ -19,6 +20,7 @@ const SignUpPopUpPage = () => {
        </div>
        }
        />
+      )}
     </div>
   );
 }
