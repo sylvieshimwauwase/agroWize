@@ -7,7 +7,7 @@ const SignUpPopUpPage = () => {
       const navigate = useNavigate();
 
       const handleHomeClick = () => {
-        navigate("/");
+        navigate("/login");
       };
   return (
     <div>
@@ -15,7 +15,7 @@ const SignUpPopUpPage = () => {
        paragraph="Your account has been created successfully."
        button={
        <div>
-            <SmallSizeFormButton name="Home" onClick={handleHomeClick}/>
+            <SmallSizeFormButton name="Login" onClick={handleHomeClick}/>
        </div>
        }
        />
