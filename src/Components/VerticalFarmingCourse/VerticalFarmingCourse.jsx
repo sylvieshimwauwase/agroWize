@@ -58,8 +58,6 @@ const VerticalFarmingCourse = () => {
           </div>
         </div>
       </div>
-      <CourseContent/>
-      <Footer />
     </>
   );
 };

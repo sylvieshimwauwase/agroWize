@@ -1,5 +1,26 @@
+.colorpallete {
+  background-color: green;
+  height: 1160px;
+}
+.coursesContainer{
+    background-color: green;
+    height: 1096px;
+    width: 1200px;
+    margin: 36px auto;
+}
+.courseBar{
+    width: 1200px;
+    height: 56px;
+    background-color: white;
+    margin: 20px 0px 20px 0px;
+    border-radius: 8px;
+}
 .courseBarDetail{
     background-color: red;
     display: flex;
     width: 1000px;
+}
+.padlock{
+    width: 24px;
+    height: 24px;
 }

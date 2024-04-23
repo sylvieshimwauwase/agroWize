@@ -8,7 +8,7 @@ const ProgressRating = () => {
   const updateProgress = () => {
      setCurrent(current => {
       const newCurrent = current + 1;
-      return Math.min(newCurrent, total);  // Ensure it doesn't exceed total
+      return Math.min(newCurrent, total); 
     });
   };
   function getPercentage(current, total) {
