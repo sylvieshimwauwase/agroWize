@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import Keys from "../../Constants/Keys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
 import './ResetPassword.css';
 import FormButton from "../FormButton";
+import ResetPasswordPopupPage from "../../Pages/ResetPasswordPopupPage";
 
 const ResetPassword = () => {
     const [password, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [email, setEmail] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
-    const navigate = useNavigate();
+    const [error, setError] = useState("");
+    const [isChanged, setIsChanged] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleNewPasswordChange = (e) => {
         setNewPassword(e.target.value);
@@ -26,12 +27,13 @@ const ResetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
-            setErrorMessage("Passwords do not match");
+            setError("Passwords do not match");
             return;
         }
-        setErrorMessage("");
+        setError("");
 
         try {
+            setIsLoading(true);
             const response = await axios.put(`${Keys.base_url}/passwordReset`, { 
                 email,
                 password, 
@@ -39,21 +41,31 @@ const ResetPassword = () => {
             });
             console.log(response.data);
 
-            if (response.data.success) {
+            setIsChanged(true);
+            setIsLoading(false);
+
+            setEmail("");
+            setNewPassword("");
+            setConfirmPassword("");
+
+            /*if (response.data.success) {
+                setIsChanged(true);
+                setIsLoading(false);
+
                 setEmail("");
                 setNewPassword("");
                 setConfirmPassword("");
-                navigate("/login"); // Navigate to login page
-              } else {
-                setErrorMessage(response.data.error || "Password reset failed"); // Set specific error message
-              }
-
-            navigate("/login");
+              }*/ /*else {
+                setError(response.data.error || "Password reset failed");
+                navigate("/login") // Set specific error message
+              }*/
           } catch (error) {
+            setIsLoading(false);
             console.error("Error logging in: ", error);
             /*setError("Invalid username or password");*/
-            setErrorMessage("An error occurred. Please try again later.");
-          } finally {
+            setError("An error occurred. Please try again later.");
+
+            setEmail("");
             setNewPassword("");
             setConfirmPassword("");
           }
@@ -65,6 +77,11 @@ const ResetPassword = () => {
 
     return (
         <div className="resetPasswordPage">
+            {isLoading && (
+            <div className="loading">
+            <center>Loading...</center>
+            </div>
+            )}
             <div className="resetPasswordForm">
                 <form onSubmit={handleSubmit}>
                     <h2>Reset Password</h2>
@@ -113,10 +130,15 @@ const ResetPassword = () => {
                                 onClick={togglePasswordVisibility}
                         />
                     </div>
-                    {errorMessage && <p>{errorMessage}</p>}
+                    {error && <p>{error}</p>}
                     <FormButton name="Reset Password" />
                 </form>
             </div>
+            {isChanged && (
+                <div className="popupContainer">
+                <ResetPasswordPopupPage isOpen={isChanged} />
+                </div>
+      )}
         </div>
     );
 }

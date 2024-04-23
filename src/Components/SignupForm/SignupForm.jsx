@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Keys from "../../Constants/Keys";
-import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import './SignupForm.css';
 import FormButton from "../../Components/FormButton";
 import MediaBar from "../../Components/MediaBar";
+import SignUpPopUpPage from "../../Pages/SignUpPopUpPage";
 
 const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     /*const [isFormSubmitted, setIsFormSubmitted] = useState(false);*/
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const [isCreatedup, setIsCreatedup] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     
 
     const validate = values => {
@@ -44,12 +45,13 @@ const SignupForm = () => {
         return errors;
     };
 
-    const handleNavigate = (path) => {
+    /*const handleNavigate = (path) => {
         // Navigation logic
         console.log('Navigating to:', path);
-    };
+    };*/
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+        setIsLoading(true);
         setIsSubmitting(true);
         /*setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
@@ -66,8 +68,13 @@ const SignupForm = () => {
             const response = await axios.post(`${Keys.base_url}/signup`, data);
             console.log(response.data);
 
-            navigate('/signUpPopUpPage');
+            /*navigate('/signUpPopUpPage');*/
+            setIsCreatedup(true);
+            setIsLoading(false);
+            resetForm();
+
         } catch (error) {
+           setIsLoading(false);
             /*console.error('Error signing up: ', error);
             if (error.response && error.response.status === 400) {
                 setError('User already exists');
@@ -85,22 +92,28 @@ const SignupForm = () => {
         } finally {
             setIsSubmitting(false);
         }
+        resetForm();
     };
 
     const togglePassword = () => {
         setShowPassword((prev) => (!prev));
     };
 
-    useEffect(() => {
+    /*useEffect(() => {
         if (isSubmitting) {
             handleNavigate('/login');
         }
-    }, [isSubmitting, handleNavigate]);
+    }, [isSubmitting, handleNavigate]);*/
 
 
 
     return (
       <div className="signupPage">
+        {isLoading && (
+        <div className="loading">
+          <center>Loading...</center>
+        </div>
+      )}
         <div className="signupForm">
           <Formik
             initialValues={{
@@ -190,6 +203,7 @@ const SignupForm = () => {
                     className="error"
                   />
                 </div>
+                {error && <div className="error">{error}</div>}
                 <FormButton name="Create Account" disabled={isSubmitting} />
                 <MediaBar
                   registerText="Or Register with"
@@ -205,6 +219,11 @@ const SignupForm = () => {
                     loginText="Login"
                 />*/}
         </div>
+        {isCreatedup && (
+        <div className="popupContainer">
+          <SignUpPopUpPage isOpen={isCreatedup} />
+        </div>
+      )}
       </div>
     );
 };
