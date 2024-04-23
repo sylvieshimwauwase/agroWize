@@ -1,0 +1,27 @@
+.progress-container {
+  width: 325px;
+  height: 24px;
+  background-color: #f3f3f3;
+  margin-bottom: 10px;
+  line-height: 24px;
+  border-radius: 12px;
+  margin: auto ;
+  
+}
+
+.progress-bar {
+  width: 0%;
+  height: 24px;
+  background-color: #F29620;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 12px;
+  color: white;
+  
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

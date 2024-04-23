@@ -24,7 +24,7 @@ import UserProfileHelpCentre from "./Components/UserProfile/UserProfileHelpCentr
 import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
 import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
-import CoursesPage from "./Pages/CoursesPage.jsx";
+import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
 import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 
 
@@ -62,9 +62,9 @@ function App() {
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
 
-        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />}/>
-        <Route path="community" element={<CommunityPage/>}/>
-        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />}/>
+        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />} />
+        <Route path="community" element={<CommunityPage />} />
+        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
 
         <Route path="community" element={<CommunityPage />} />
         <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
@@ -87,6 +87,18 @@ function App() {
           element={<UserProfileCertificates />}
         />
         <Route path="userProfileCommunity" element={<UserProfileCommunity />} />
+        <Route
+          path="userProfileHelpCentre"
+          element={<UserProfileHelpCentre />}
+        />
+        <Route
+          path="passwordChangePopupPage"
+          element={<PasswordChangePopupPage />}
+        />
+        <Route
+          path="VerticalFarmingCoursePage"
+          element={<VerticalFarmingCoursePage />}
+        />
         <Route path="userProfileHelpCentre" element={<UserProfileHelpCentre />} />
 
         {/*pop up pages*/}
