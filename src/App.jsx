@@ -25,6 +25,7 @@ import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
 import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
+import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 
 
 
@@ -93,6 +94,7 @@ function App() {
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
         <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
         <Route path="subscribePopupPage" element={<SubscribePopupPage />} />
+        <Route path="resetPasswordPopupPage" element={<ResetPasswordPopupPage />} />
 
       </Routes>
     </BrowserRouter>

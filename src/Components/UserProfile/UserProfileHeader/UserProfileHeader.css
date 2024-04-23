@@ -37,7 +37,7 @@
   .userProfileButton:hover {
     background-color: #3ec772;
   }
-   .home:hover, .about-us:hover, .farm-mode:hover, .courses:hover, .articles:hover, .community:hover {
+   .formNavbarLink:hover {
     text-decoration: underline; 
     transform: scale(0.9);
 }
