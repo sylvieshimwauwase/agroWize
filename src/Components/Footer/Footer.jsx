@@ -1,15 +1,27 @@
 import React, { useState } from "react";
+import axios from "axios";
+import Keys from "../../Constants/Keys";
 import './Footer.css';
 import { Link } from "react-router-dom";
-import FormButton from "../FormButton";
+import SubscribePopupPage from "../../Pages/SubscribePopupPage";
 
 const Footer = () => {
     const [email, setEmail] = useState('');
+    const [showPopup, setShowPopup] = useState(false);
 
-    const handleSubscribe = (e) => {
+    const handleSubscribe = async (e) => {
         e.preventDefault();
-        alert("Thank you for subscribing!");
-        setEmail('');
+
+        try {
+            const response = await axios.post(`${Keys.base_url}/subscribe`, { email });
+            console.log('Subscription successful:', response.data);
+            setShowPopup(true);
+            setEmail('');
+
+        } catch (error) {
+            console.error('Error subscribing: ', error);
+            setEmail('');
+        }
     };
 
     return (
@@ -100,6 +112,7 @@ const Footer = () => {
                 </div>
 
             </div>
+            <SubscribePopupPage isOpen={showPopup} />
         </div>
     );
 }

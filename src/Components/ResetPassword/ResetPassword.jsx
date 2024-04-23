@@ -8,8 +8,9 @@ import './ResetPassword.css';
 import FormButton from "../FormButton";
 
 const ResetPassword = () => {
-    const [userpassword, setNewPassword] = useState("");
-    const [confirmpassword, setConfirmPassword] = useState("");
+    const [password, setNewPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ const ResetPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (userpassword !== confirmpassword) {
+        if (password !== confirmPassword) {
             setErrorMessage("Passwords do not match");
             return;
         }
@@ -32,12 +33,14 @@ const ResetPassword = () => {
 
         try {
             const response = await axios.put(`${Keys.base_url}/passwordReset`, { 
-                userpassword, 
-                confirmpassword 
+                email,
+                password, 
+                confirmPassword 
             });
             console.log(response.data);
 
             if (response.data.success) {
+                setEmail("");
                 setNewPassword("");
                 setConfirmPassword("");
                 navigate("/login"); // Navigate to login page
@@ -66,11 +69,26 @@ const ResetPassword = () => {
                 <form onSubmit={handleSubmit}>
                     <h2>Reset Password</h2>
                     <div className="resetPasswordInput">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type= "text"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <FontAwesomeIcon
+                                icon={showPassword ? faLockOpen : faLock}
+                                className="password-toggle"
+                                onClick={togglePasswordVisibility}
+                        />
+                    </div>
+                    <div className="resetPasswordInput">
                         <label htmlFor="newPassword">New Password</label>
                         <input
                             type={showPassword ? "text" : "password"}
                             id="newPassword"
-                            value={userpassword}
+                            value={password}
                             onChange={handleNewPasswordChange}
                             required
                         />
@@ -85,7 +103,7 @@ const ResetPassword = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="confirmPassword"
-                            value={confirmpassword}
+                            value={confirmPassword}
                             onChange={handleConfirmPasswordChange}
                             required
                         />
