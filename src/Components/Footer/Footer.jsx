@@ -7,7 +7,7 @@ import SubscribePopupPage from "../../Pages/SubscribePopupPage";
 
 const Footer = () => {
     const [email, setEmail] = useState('');
-    const [showPopup, setShowPopup] = useState(false);
+    const [isSubscribed, setIsSubscribed] = useState(false);
 
     const handleSubscribe = async (e) => {
         e.preventDefault();
@@ -15,7 +15,7 @@ const Footer = () => {
         try {
             const response = await axios.post(`${Keys.base_url}/subscribe`, { email });
             console.log('Subscription successful:', response.data);
-            setShowPopup(true);
+            setIsSubscribed(true);
             setEmail('');
 
         } catch (error) {
@@ -112,7 +112,7 @@ const Footer = () => {
                 </div>
 
             </div>
-            <SubscribePopupPage isOpen={showPopup} />
+            <SubscribePopupPage isOpen={isSubscribed} />
         </div>
     );
 }

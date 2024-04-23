@@ -26,6 +26,7 @@ import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
 import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
 import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
+import CoursesPage from "./Pages/CoursesPage.jsx";
 
 
 
@@ -57,18 +58,6 @@ function App() {
           path="userProfileNotification"
           element={<UserProfileNotificationPage />}
         />
-        <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="courses" element={<CoursesPage />} />
-        <Route path="articles" element={<ArticlesPage />} />
-        <Route path="verticalFarming" element={<VerticalFarmingPage />} />
-
-        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />} />
-        <Route path="community" element={<CommunityPage />} />
-        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
-
-        <Route path="community" element={<CommunityPage />} />
-        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
-        <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
         <Route path="userProfileCourse" element={<UserProfileCourse />} />
         <Route
           path="userProfileLearningHistory"
