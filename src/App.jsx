@@ -24,11 +24,11 @@ import UserProfileHelpCentre from "./Components/UserProfile/UserProfileHelpCentr
 import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
 import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
-import CoursesPage from "./Pages/CoursesPage.jsx";
 import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
 import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
 
 
+import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 
 
 
@@ -110,6 +110,7 @@ function App() {
         <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
         <Route path="subscribePopupPage" element={<SubscribePopupPage />} />
         <Route path="coursesPopupPage" element={<CoursesPopupPage/>}/>
+        <Route path="resetPasswordPopupPage" element={<ResetPasswordPopupPage />} />
 
       </Routes>
     </BrowserRouter>
