@@ -1,10 +1,17 @@
 import React from 'react'
-import ResourcePopup from '../Components/CoursesPopup/CoursesPopup';
+import CoursesPopup from '../Components/CoursesPopup/CoursesPopup';
 
-const CoursesPopupPage = () => {
+const CoursesPopupPage = ({product, onClose}) => {
+  if (!product){
+    return null;
+  }
   return (
     <div>
-      <ResourcePopup text="Congratulations" titleText="Vertical Farming." />
+      <CoursesPopup
+        text="Congratulations"
+        titleText={product.title || "Default Title"}
+      />
+      <button onClick={onClose}>Close</button>
     </div>
   );
 }
