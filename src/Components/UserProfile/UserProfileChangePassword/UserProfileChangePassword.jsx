@@ -1,45 +1,101 @@
 import React from 'react'
 import "./UserProfileChangePassword.css"
 import { useState } from 'react';
+import axios from 'axios';
+import Keys from "../../../Constants/Keys";
 import UserProfileHeader from "../UserProfileHeader/UserProfileHeader"
 import VerticalNavbar from "../../VerticalNavBar/VerticalNavBar"
 import SearchBar from '../../Search/SearchBar';
-import { Link } from 'react-router-dom';
+import FormButton from '../../FormButton';
+import ConfirmPasswordChangePopupPage from '../../../Pages/ConfirmPasswordChangePopupPage';
 
 
 const UserProfileChangePassword = () => {
-    const [oldPassword, setOldPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
-    const [confirmNewPassword, setConfirmNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({});
+    const [isPasswordChanged, setIsPasswordChanged] = useState(false);
 
         const validateForm = () => {
           let isValid = true;
           let errors = {};
 
-          if (!oldPassword) {
-            errors.oldPassword = "Old password is required";
+          if (!password) {
+            errors.password = "Old password is required";
             isValid = false;
           }
           if (newPassword.length < 8) {
             errors.newPassword = "Password must be at least 8 characters long";
             isValid = false;
           }
-          if (newPassword !== confirmNewPassword) {
-            errors.confirmNewPassword = "Passwords do not match";
+          if (newPassword !== confirmPassword) {
+            errors.confirmPassword = "Passwords do not match";
             isValid = false;
           }
 
           setErrors(errors);
           return isValid;
         };
-      const handleSubmit = (e) => {
+      /*const handleSubmit = async (e) => {
         e.preventDefault();
      if (validateForm()) {
-            console.log('Submitting new password');
+      try {
+        const response = await axios.post(`${Keys.base_url}/passwordChange`, {
+          email,
+          password,
+          newPassword,
+          confirmPassword
+        });
+        console.log(response.data);
+        setIsPasswordChanged(true);
+
+        setEmail('');
+        setPassword('');
+        setNewPassword('');
+        setConfirmPassword('');
+
+      } catch (error) {
+        console.error("Error changing password: ", error);
+        
+      }
+            //console.log('Submitting new password');
             // To add API call logic here to send data to the server
      }
+        };*/
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+          if (validateForm()) {
+            setIsPasswordChanged(true);
+          }
         };
+        
+        const handleConfirmPasswordChange = async () => {
+          try {
+            const response = await axios.post(`${Keys.base_url}/passwordChange`, {
+              email,
+              password,
+              newPassword,
+              confirmPassword
+            });
+            console.log(response.data);
+            setIsPasswordChanged(false); 
+
+            setEmail('');
+            setPassword('');
+            setNewPassword('');
+            setConfirmPassword('');
+          } catch (error) {
+            console.error("Error changing password: ", error);
+            setIsPasswordChanged(false); 
+          }
+        };
+        
+        const handleCancelPasswordChange = () => {
+          setIsPasswordChanged(false);
+        };
+      
   return (
     <>
       <UserProfileHeader />
@@ -49,30 +105,45 @@ const UserProfileChangePassword = () => {
         <div className="search-button">
           <SearchBar />
         </div>
-        <form onSubmit={handleSubmit} className="userProfileUpdateForm">
+        <form onSubmit={handleSubmit} className="userProfileChangePasswordForm">
           <h3 className="formTitle">Change Password</h3>
+          <div className="input-group">
+            {/* <i className="fa fa-lock icon"></i> */}
+            <label htmlFor="username">Email</label>
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.email && (
+              <div className="error">{errors.email}</div>
+            )}
+            </div>
           <div className="input-group">
             {/* <i className="fa fa-lock icon"></i> */}
             <label htmlFor="username">Enter Old Password</label>
             <input
               type="password"
-              placeholder="Enter old password"
-              value={oldPassword}
-              onChange={(e) => setOldPassword(e.target.value)}
+              placeholder="****************"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             {errors.oldPassword && (
               <div className="error">{errors.oldPassword}</div>
             )}
           </div>
           <div className="forgot-password">
-            <Link to="/forgot-password">Forgot password?</Link>
+          <a href="/forgotPassword" className="forgot-password">
+            Forgot password?
+          </a>
           </div>
           <div className="input-group">
             <i className="fa fa-lock icon"></i>
             <label htmlFor="username">Enter New Password</label>
             <input
               type="password"
-              placeholder="Enter new password"
+              placeholder="Create a secure password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
             />
@@ -86,15 +157,21 @@ const UserProfileChangePassword = () => {
             <input
               type="password"
               placeholder="Re-enter new password"
-              value={confirmNewPassword}
-              onChange={(e) => setConfirmNewPassword(e.target.value)}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            {errors.confirmNewPassword && (
-              <div className="error">{errors.confirmNewPassword}</div>
+            {errors.confirmPassword && (
+              <div className="error">{errors.confirmPassword}</div>
             )}
           </div>
-          <button type="submit">Change Password</button>
+          <FormButton name="Change Password" />
         </form>
+        <div className="popupContainer">
+          <ConfirmPasswordChangePopupPage
+          onConfirm={handleConfirmPasswordChange} 
+          onCancel={handleCancelPasswordChange}
+          isOpen={isPasswordChanged} />
+        </div>
       </div>
     </>
   );

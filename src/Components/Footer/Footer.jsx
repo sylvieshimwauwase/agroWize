@@ -7,18 +7,22 @@ import SubscribePopupPage from "../../Pages/SubscribePopupPage";
 
 const Footer = () => {
     const [email, setEmail] = useState('');
-    const [showPopup, setShowPopup] = useState(false);
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubscribe = async (e) => {
         e.preventDefault();
 
         try {
+            setIsLoading(true);
             const response = await axios.post(`${Keys.base_url}/subscribe`, { email });
             console.log('Subscription successful:', response.data);
-            setShowPopup(true);
+            setIsSubscribed(true);
+            setIsLoading(false);
             setEmail('');
 
         } catch (error) {
+            setIsLoading(false);
             console.error('Error subscribing: ', error);
             setEmail('');
         }
@@ -26,7 +30,7 @@ const Footer = () => {
 
     return (
         <div className='footer'>
-
+            
             <div className="footerSection1">
                 <div className='footerContainer1'>
 
@@ -96,9 +100,15 @@ const Footer = () => {
             </div>
 
             <div className="footerSection2">
+                {isLoading && (
+                    <div className="loading">
+                    <center>Loading...</center>
+                    </div>
+                )}
                 <h2>Subscribe to our newsletter</h2>
                 <p>Stay connected with information about our Agricultural Practices and Update</p>
                 <div className='input-box'>
+                    
                     <form onSubmit={handleSubscribe}>
                         <input
                         className='newsletter-input' 
@@ -112,7 +122,11 @@ const Footer = () => {
                 </div>
 
             </div>
-            <SubscribePopupPage isOpen={showPopup} />
+            {isSubscribed && (
+                <div className="popupContainer">
+                <SubscribePopupPage isOpen={isSubscribed} />
+                </div>
+            )}
         </div>
     );
 }

@@ -12,6 +12,9 @@ const CoursesPopupPage = ({product, onClose}) => {
         titleText={product.title || "Default Title"}
       />
       <button onClick={onClose}>Close</button>
+
+      <CoursesPopup text="Congratulations" titleText="Vertical Farming." />
+
     </div>
   );
 }
