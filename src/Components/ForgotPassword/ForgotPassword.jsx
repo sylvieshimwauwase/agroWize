@@ -61,8 +61,13 @@ const ForgotPassword = () => {
                             }}
                             required
                         />
+                        
                         {error && <p className="error">{error}</p>}
+                        
                     </div>
+                    <a href="/login" className="forgot-password">
+                        Back to login
+                    </a>
                     <FormButton name="Continue" />
                 </form>
             </div>

@@ -94,11 +94,6 @@ const ResetPassword = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        <FontAwesomeIcon
-                                icon={showPassword ? faLockOpen : faLock}
-                                className="password-toggle"
-                                onClick={togglePasswordVisibility}
-                        />
                     </div>
                     <div className="resetPasswordInput">
                         <label htmlFor="newPassword">New Password</label>

@@ -24,7 +24,7 @@ const CoursesPopup = ({ text, titleText }) => {
         <h2 className="popUpText">{text}</h2>
         <p className="">
           You are one step closer to mastering{" "}
-          <a className="titletext">{titleText}</a>
+          <span className="titletext">{titleText}</span>
           <span className="pryColor">
             {" "}
             Our online courses kick off next month.{" "}
@@ -33,8 +33,9 @@ const CoursesPopup = ({ text, titleText }) => {
         <p>Get ready for an immersive learning journey!</p>
       </div>
     </div>
-  );
-};
+  )
+  : null;
+}
 
 export default CoursesPopup;
 

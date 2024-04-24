@@ -27,7 +27,9 @@ import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
 import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
 import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
-
+import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
+import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
+import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
 
 
 
@@ -96,6 +98,9 @@ function App() {
         <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
         <Route path="subscribePopupPage" element={<SubscribePopupPage />} />
         <Route path="resetPasswordPopupPage" element={<ResetPasswordPopupPage />} />
+        <Route path="coursesPopupPage" element={<CoursesPopupPage />} />
+        <Route path="confirmPasswordChangePopupPage" element={<ConfirmPasswordChangePopupPage />} />
+        <Route path="passwordChangeSuccessPage" element={<PasswordChangeSuccessPage />} />
 
       </Routes>
     </BrowserRouter>
