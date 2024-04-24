@@ -64,8 +64,4 @@ const CoursesPopup = ({ text, titleText, selectedProduct }) => {
   ) : null;
 };
 
-  )
-  : null;
-}
-
 export default CoursesPopup;
