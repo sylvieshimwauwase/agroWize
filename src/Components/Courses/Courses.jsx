@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
-import "./Courses.css"
+import "./Courses.css";
+import { Link } from 'react-router-dom';
 import { products } from '../../Constants/Products';
 import CoursesHero from '../CoursesHero';
 import CoursesPopupPage from '../../Pages/CoursesPopupPage';
-
-import { Link} from "react-router-dom"
 import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
 
 
 const Courses = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [learningStates, setLearningStates] = useState(Array(products.length).fill(false));
 
     const openPopup = (product) => {
       setSelectedProduct(product);
@@ -20,6 +20,10 @@ const Courses = () => {
     const closePopup = () => {
       setIsPopupOpen(false);
         setSelectedProduct(null); 
+    };
+
+    const handleLearningClick = (index) => {
+      // Logic for handling learning click
     };
 
   return (
@@ -35,17 +39,18 @@ const Courses = () => {
               <h6>Certificate: Available Upon Completion</h6>
               <h5 className="primaryColor">Online</h5>
 
-              <FormButton
+              {/*<FormButton
                 onClick={() => openPopup(product)}
-                name="Enroll Now"
+        name="Enroll Now" />*/}
 
-               <Link to={`/${item.title.replace(/\s+/g, '')}CoursePage`}>
+              <Link to={`/${item.title.replace(/\s+/g, '')}CoursePage`}>
               <SmallSizeFormButton
                 name={
                   learningStates[index] ? "Continue Learning" : "Enroll Now"
                 }
                 onClick={() => handleLearningClick(index)}
               />
+              </Link>
             </div>
           </div>
         );
