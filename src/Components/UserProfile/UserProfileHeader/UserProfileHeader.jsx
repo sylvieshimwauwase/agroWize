@@ -13,6 +13,7 @@ const UserProfileHeader = ({ userName }) => {
         <Link to="/aboutUs" className="formNavbarLink">About Us</Link>
         <Link to="/courses" className="formNavbarLink">Courses</Link>
         <Link to="/community" className="formNavbarLink">Community</Link>
+        <Link to="/articles" className="formNavbarLink">Articles</Link>
         <Link to="/userProfileUpdate" className="formNavbarLink">User Profile</Link>
       </div>
         <div>

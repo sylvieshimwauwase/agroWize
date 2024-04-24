@@ -1,0 +1,47 @@
+.confirmPopup {
+      width: 28.938rem;
+      height: 20.375rem;
+      padding: 0.156rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 6px solid rgb(6, 59, 6);
+      border-radius: 20px;
+      background-color: #fff;
+      position: relative;
+      margin: auto auto;
+      font-size: 25px;
+  }
+  
+  .confirmPopupText {
+      align-self: center;
+      margin-bottom: 50px;
+      font-weight: 600;
+
+  }
+  
+  .confirmPopupButtonContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+  }
+  
+  .confirmPopupButtonContainer button {
+      width: 120px;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .yesButton {
+      background-color: #257830;
+      color: #fff;
+  }
+
+  .noButton {
+      background-color: #f29620;
+      color: #fff;
+  }

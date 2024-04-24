@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import "./Courses.css"
 import { products } from '../../Constants/Products';
-import FormButton from '../FormButton';
 import CoursesHero from '../CoursesHero';
 import { Link} from "react-router-dom"
+import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
 
 
 const Courses = () => {
@@ -31,9 +31,9 @@ const Courses = () => {
               <h6>Certificate: Available Upon Completion</h6>
               <h5 className="primaryColor">Online</h5>
                <Link to={`/${item.title.replace(/\s+/g, '')}CoursePage`}>
-              <FormButton
+              <SmallSizeFormButton
                 name={
-                  learningStates[index] ? "Continue Learning" : "Start Learning"
+                  learningStates[index] ? "Continue Learning" : "Enroll Now"
                 }
                 onClick={() => handleLearningClick(index)}
               />
