@@ -11,7 +11,7 @@ const CourseContent = ({updateProgress}) => {
             <div className="courseBarDetail">
               <img src="/clipboardIcon.png" alt="" />
               <p className="coursetitle">Lesson 1</p>
-              <p>courseBarDetail</p>
+              <p>Meaning of Vertical Farming</p>
               <p>5 Mins</p>
               <button className="padlock" onClick={updateProgress}>
               </button> <img src="/padlockicon.png" alt="" />

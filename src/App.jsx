@@ -25,6 +25,9 @@ import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
 import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
 import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
+import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
+
+
 import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
 import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
@@ -38,7 +41,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage />} />
+        <Route index element={<HomePage/>} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
@@ -97,6 +100,7 @@ function App() {
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
         <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
         <Route path="subscribePopupPage" element={<SubscribePopupPage />} />
+        <Route path="coursesPopupPage" element={<CoursesPopupPage/>}/>
         <Route path="resetPasswordPopupPage" element={<ResetPasswordPopupPage />} />
         <Route path="coursesPopupPage" element={<CoursesPopupPage />} />
         <Route path="confirmPasswordChangePopupPage" element={<ConfirmPasswordChangePopupPage />} />
