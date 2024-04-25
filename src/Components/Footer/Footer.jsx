@@ -7,18 +7,22 @@ import SubscribePopupPage from "../../Pages/SubscribePopupPage";
 
 const Footer = () => {
     const [email, setEmail] = useState('');
-    const [showPopup, setShowPopup] = useState(false);
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubscribe = async (e) => {
         e.preventDefault();
 
         try {
+            setIsLoading(true);
             const response = await axios.post(`${Keys.base_url}/subscribe`, { email });
             console.log('Subscription successful:', response.data);
-            setShowPopup(true);
+            setIsSubscribed(true);
+            setIsLoading(false);
             setEmail('');
 
         } catch (error) {
+            setIsLoading(false);
             console.error('Error subscribing: ', error);
             setEmail('');
         }

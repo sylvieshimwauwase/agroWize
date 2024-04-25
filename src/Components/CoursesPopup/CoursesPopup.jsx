@@ -46,7 +46,7 @@ const CoursesPopup = ({ text, titleText, selectedProduct }) => {
         <h2 className="popUpText">{text}</h2>
         <p className="">
           You are one step closer to mastering{" "}
-          <a className="titletext">{titleText}</a>
+          <span className="titletext">{titleText}</span>
           <span className="pryColor">
             {" "}
             Our online courses kick off next month.{" "}
@@ -60,6 +60,7 @@ const CoursesPopup = ({ text, titleText, selectedProduct }) => {
         onClick={handleLearningClick}
       />
     </div>
+
   ) : null;
 };
 

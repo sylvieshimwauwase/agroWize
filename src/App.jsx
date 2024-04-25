@@ -26,12 +26,10 @@ import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
 import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
 import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
 import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
-
-
 import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
-import Courses from "./Components/Courses/Courses.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
-
+import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
+import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
 
 
 
@@ -62,18 +60,6 @@ function App() {
           path="userProfileNotification"
           element={<UserProfileNotificationPage />}
         />
-        <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="coursesPage" element={<CoursesPage />} />
-        <Route path="articles" element={<ArticlesPage />} />
-        <Route path="verticalFarming" element={<VerticalFarmingPage />} />
-
-        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />} />
-        <Route path="community" element={<CommunityPage />} />
-        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
-
-        <Route path="community" element={<CommunityPage />} />
-        <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
-        <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
         <Route path="userProfileCourse" element={<UserProfileCourse />} />
         <Route
           path="userProfileLearningHistory"
@@ -113,6 +99,9 @@ function App() {
         <Route path="subscribePopupPage" element={<SubscribePopupPage />} />
         <Route path="coursesPopupPage" element={<CoursesPopupPage/>}/>
         <Route path="resetPasswordPopupPage" element={<ResetPasswordPopupPage />} />
+        <Route path="coursesPopupPage" element={<CoursesPopupPage />} />
+        <Route path="confirmPasswordChangePopupPage" element={<ConfirmPasswordChangePopupPage />} />
+        <Route path="passwordChangeSuccessPage" element={<PasswordChangeSuccessPage />} />
 
       </Routes>
     </BrowserRouter>

@@ -53,6 +53,7 @@
 }
 
 .nav-button {
+  width: 100px;
     background-color: #f29620;
     color: white;
     border: none;
