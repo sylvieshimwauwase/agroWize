@@ -1,11 +1,11 @@
 import React from "react";
-import HomeNavBar from "../Components/HomeNavBar/HomeNavBar";
+import HomeNavBar2 from "../Components/HomeNavBar/HomeNavBar2";
 import AboutUs from "../Components/AboutUs/AboutUs";
 
 const AboutUsPage = () => {
     return (
         <div>
-            <HomeNavBar />
+            <HomeNavBar2 />
             <AboutUs />
         </div>
     );
