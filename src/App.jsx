@@ -30,6 +30,7 @@ import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
 import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
 import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
+import Courses from "./Components/Courses/Courses.jsx";
 
 
 
@@ -38,21 +39,20 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage/>} />
+        <Route index element={<HomePage />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
         <Route path="courses" element={<Courses />} />
         <Route path="articles" element={<ArticlesPage />} />
-        <Route path="community" element={<CommunityPage/>}/>
+        <Route path="community" element={<CommunityPage />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
         <Route path="otpVerification" element={<OtpVerificationPage />} />
         <Route path="resetPassword" element={<ResetPasswordPage />} />
-        
-      
+
         {/*farming techniques pages */}
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
-        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />}/>
+        <Route path="hydroponicFarming" element={<HydroponicFarmingPage />} />
 
         {/*user profile pages */}
         <Route path="userProfileUpdate" element={<UserProfileUpdatePage />} />
@@ -90,19 +90,34 @@ function App() {
           path="VerticalFarmingCoursePage"
           element={<VerticalFarmingCoursePage />}
         />
-        <Route path="userProfileHelpCentre" element={<UserProfileHelpCentre />} />
+        <Route
+          path="userProfileHelpCentre"
+          element={<UserProfileHelpCentre />}
+        />
 
         {/*pop up pages*/}
         <Route path="signUpPopUpPage" element={<SignUpPopUpPage />} />
         <Route path="loginPopUpPage" element={<LoginPopUpPage />} />
-        <Route path="passwordChangePopupPage" element={<PasswordChangePopupPage />} />
+        <Route
+          path="passwordChangePopupPage"
+          element={<PasswordChangePopupPage />}
+        />
         <Route path="subscribePopupPage" element={<SubscribePopupPage />} />
-        <Route path="coursesPopupPage" element={<CoursesPopupPage/>}/>
-        <Route path="resetPasswordPopupPage" element={<ResetPasswordPopupPage />} />
         <Route path="coursesPopupPage" element={<CoursesPopupPage />} />
-        <Route path="confirmPasswordChangePopupPage" element={<ConfirmPasswordChangePopupPage />} />
-        <Route path="passwordChangeSuccessPage" element={<PasswordChangeSuccessPage />} />
-
+        <Route
+          path="resetPasswordPopupPage"
+          element={<ResetPasswordPopupPage />}
+        />
+        <Route path="coursesPopupPage" element={<CoursesPopupPage />} />
+        <Route
+          path="confirmPasswordChangePopupPage"
+          element={<ConfirmPasswordChangePopupPage />}
+        />
+        <Route
+          path="passwordChangeSuccessPage"
+          element={<PasswordChangeSuccessPage />}
+        />
+        <Route path="CoursesPage" element={<CoursesPage />} />
       </Routes>
     </BrowserRouter>
   );

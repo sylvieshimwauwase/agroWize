@@ -181,28 +181,6 @@
     white-space: nowrap;
     z-index: 166;
   }
-  /*.dropDownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }*/
-  .dropDownMenu {
-    display: flex;
-    flex-direction: column;
-    margin-top: 65px;
-    position: absolute;
-    z-index: 1;
-  }
-  .dropdown-item{
-    background: #ffffff;
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-  }
   .frame-6 {
     display: flex;
     align-items: center;
@@ -265,57 +243,9 @@
   .home:hover, .about-us:hover, .farm-mode:hover, .courses:hover, .articles:hover, .community:hover {
     text-decoration: underline; 
     transform: scale(0.9);
-}
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 20px;
-    height: 20px;
-}
-
-.line {
-    width: 100%;
-    height: 2px;
-    background: #000;
-}
-
-.menu-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 100px;
-    right: 0;
-    background-color: #fcfafa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    transform: translateX(100%);
-}
-
-.menu-items.open {
-    transform: translateX(0);
-}
-
+}z
 
   @media screen and (max-width: 768px) {
-     .menu-toggle {
-        display: block;
-    }
-    .main-nav-menu {
-        position: relative;
-    }
-    .menu-items {
-        top: 90px;
-    }
-   
     .agrowize-logo img {
         height: 30px;
     }

@@ -9,7 +9,8 @@ const Footer = () => {
     const [email, setEmail] = useState('');
     const [isSubscribed, setIsSubscribed] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
+     const [showPopup, setShowPopup] = useState(false); 
+     
     const handleSubscribe = async (e) => {
         e.preventDefault();
 
