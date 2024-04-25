@@ -94,6 +94,11 @@ const UserProfileChangePassword = () => {
         
         const handleCancelPasswordChange = () => {
           setIsPasswordChanged(false);
+
+          setEmail('');
+          setPassword('');
+          setNewPassword('');
+          setConfirmPassword('');
         };
       
   return (
