@@ -1,15 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import './HomeNavBar.css';
 
 const HomeNavBar = () => {
+     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+     const toggleMenu = () => {
+        console.log("Toggling menu");
+       setIsMenuOpen(!isMenuOpen);
+     };
     return (
         <div className='main-container'>
         <div className='main-nav-menu'>
             <div className='agrowize-logo'>
                 <img src="/AgroWizeLogo.png" alt="logo" />
             </div>
-            <div className='frame'>
+             <div className='menu-toggle' onClick={toggleMenu}>
+                    <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+                        <div className="line"></div>
+                        <div className="line"></div>
+                        <div className="line"></div>
+                    </div>
+                </div>
+                <div className={`frame menu-items ${isMenuOpen ? 'open' : ''}`}>
                 <Link to="/signup" className='primary-filled-button'>
                             <span className='button-text'>Create Account</span>
                 </Link>

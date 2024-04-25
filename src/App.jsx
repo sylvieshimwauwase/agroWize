@@ -29,6 +29,8 @@ import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
 
 
 import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
+import Courses from "./Components/Courses/Courses.jsx";
+import CoursesPage from "./Pages/CoursesPage.jsx";
 
 
 
@@ -42,7 +44,7 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="courses" element={<CoursesPage />} />
+        <Route path="courses" element={<Courses />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="community" element={<CommunityPage/>}/>
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
@@ -61,7 +63,7 @@ function App() {
           element={<UserProfileNotificationPage />}
         />
         <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="courses" element={<CoursesPage />} />
+        <Route path="coursesPage" element={<CoursesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
 

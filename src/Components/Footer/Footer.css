@@ -177,16 +177,23 @@
     .footerSection1 {
       height: auto;
       padding: 20px;
+      flex-direction: column;
+    align-items: center;
     }
   
     .footerContainer1 {
       margin-top: 20px;
       margin-bottom: 20px;
+      font-size: 12px;
+      
     }
   
     .logoSection {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
+    }
+    .size{
+      margin-left: 50px;
     }
   
     .logoSection img {
@@ -207,6 +214,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      font-size: 12px;
     }
   
     .footerContainer2 h2 {
@@ -235,13 +243,38 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      font-size: 12px;
+      row-gap: 10px;
     }
-  
+   
+  .newsletter-input {
+    width: 100px;
+    padding: 15px;
+  }
     .footerSection2 {
-      width: 100%;
-      margin-left: 0;
-      margin-top: -900px;
-      border-top-left-radius: 0;
-      border-bottom-right-radius: 0;
+      width: 80%;
+      height: 150px;
+      gap: 10px;
+      margin-left: 50px;
+      margin-top: -720px;
+      border-top-left-radius: 50px;
+      border-bottom-right-radius: 50px;
     }
+     .footerSection2 > h2{
+      font-weight: 400;
+     }
+    .footerSection2 > p{
+      text-align: center;
+      font-size:12px;
+    }
+    .newsletter-button {
+    width: 120px;
+    padding: 14px;
+    background-color: #226d2c;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+  }
   }
