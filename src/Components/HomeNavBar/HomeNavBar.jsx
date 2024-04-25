@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './HomeNavBar.css';
 
 const HomeNavBar = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const closeDropdown = () => {
+        setIsDropdownOpen(false);
+    };
+
     return (
         <div className='main-container'>
         <div className='main-nav-menu'>
@@ -22,7 +32,19 @@ const HomeNavBar = () => {
             <Link to="/aboutUs" className='frame-4'>
                 <span className='about-us'>About Us</span>
             </Link >
-            
+            <div className='frame-5' onMouseLeave={closeDropdown}>
+                <span className='farm-mode' onClick={toggleDropdown}>Farm Mode</span>
+                {isDropdownOpen && (
+                    <div className='dropDownMenu'>
+                        <Link to="/hydroponicFarming" className='dropdown-item'>HydroFarming</Link>
+                        <Link to="/verticalFarming" className='dropdown-item'>VerticalFarming</Link>
+                    </div>
+                )}
+            </div>
+            {/*<Link to="/userProfileUpdate" className='frame-5'>
+                <span className='farm-mode'>Farm Mode</span>
+    </Link>*/}
+
             <Link to="/courses" className='frame-6'>
                 <span className='courses'>Courses</span>
             </Link>
@@ -30,9 +52,6 @@ const HomeNavBar = () => {
                 <span className='articles'>Articles</span>
             </Link>
             <Link to="/community" className='community'>Community</Link>
-            <Link to="/userProfileUpdate" className='frame-5'>
-                <span className='farm-mode'>User Profile</span>
-            </Link>
             </div>
         </div>
     </div>
