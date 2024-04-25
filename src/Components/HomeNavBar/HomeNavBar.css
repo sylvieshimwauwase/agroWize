@@ -181,28 +181,6 @@
     white-space: nowrap;
     z-index: 166;
   }
-  /*.dropDownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }*/
-  .dropDownMenu {
-    display: flex;
-    flex-direction: column;
-    margin-top: 65px;
-    position: absolute;
-    z-index: 1;
-  }
-  .dropdown-item{
-    background: #ffffff;
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-  }
   .frame-6 {
     display: flex;
     align-items: center;
@@ -265,7 +243,7 @@
   .home:hover, .about-us:hover, .farm-mode:hover, .courses:hover, .articles:hover, .community:hover {
     text-decoration: underline; 
     transform: scale(0.9);
-}
+}z
 
   @media screen and (max-width: 768px) {
     .agrowize-logo img {
