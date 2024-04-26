@@ -243,7 +243,7 @@
   .home:hover, .about-us:hover, .farm-mode:hover, .courses:hover, .articles:hover, .community:hover {
     text-decoration: underline; 
     transform: scale(0.9);
-}z
+}
 
   @media screen and (max-width: 768px) {
     .agrowize-logo img {
@@ -311,5 +311,4 @@
       height: 20px;
       font-size: 14px;
     }
-  
 }

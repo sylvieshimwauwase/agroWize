@@ -26,9 +26,9 @@ const HomeNavBar = () => {
             <Link to="/courses" className='frame-6'>
                 <span className='courses'>Courses</span>
             </Link>
-            {/*<Link to="/articles" className='frame-7'>
+            <Link to="/articles" className='frame-7'>
                 <span className='articles'>Articles</span>
-    </Link>*/}
+    </Link>
             <Link to="/community" className='community'>Community</Link>
             <Link to="/userProfileUpdate" className='frame-5'>
                 <span className='farm-mode'>User Profile</span>
