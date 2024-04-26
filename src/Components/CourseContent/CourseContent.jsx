@@ -1,22 +1,36 @@
 import React from "react";
 import ProgressRating from "../ProgressRating/ProgressRating";
+import "./CourseContent.css"
+import { courseDetails } from "../../Constants/Products";
 
-const CourseContent = ({updateProgress}) => {
+const CourseContent = ({}) => {
   return (
     <>
       <div className="colorpallete">
         <div className="coursesContainer">
           <ProgressRating />
-          <div className="courseBar">
+          {courseDetails.map((detail)=>{
+            return(
+          <div className="courseBar" key={detail.id}>
             <div className="courseBarDetail">
-              <img src="/clipboardIcon.png" alt="" />
-              <p className="coursetitle">Lesson 1</p>
-              <p>Meaning of Vertical Farming</p>
-              <p>5 Mins</p>
-              <button className="padlock" onClick={updateProgress}>
-              </button> <img src="/padlockicon.png" alt="" />
+              <img
+                className="courseDetailIcon"
+                src="/clipboardIcon.png"
+                alt=""
+              />
+              <p className="coursetitle">{detail.lesson}</p>
+              <h4>{detail.title}</h4>
+              <p className="coursetitle">{detail.period}</p>
+              <button className="padlock">
+                <img
+                  className="courseDetailIcon"
+                  src="/padlockicon.png"
+                  alt=""
+                />
+              </button>
             </div>
           </div>
+           )})}
         </div>
       </div>
     </>

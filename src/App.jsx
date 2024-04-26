@@ -30,6 +30,8 @@ import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
 import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
 import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
+// import Courses from "./Components/Courses/Courses.jsx";
+
 import Courses from "./Components/Courses/Courses.jsx";
 import TomatoVerticalPopup from "./Components/CommunityPopup/TomatoVerticalPopup.jsx";
 import TuberHydroPopup from "./Components/CommunityPopup/TuberHydroPopup.jsx";
@@ -43,6 +45,7 @@ import LettuceHydroPopup from "./Components/CommunityPopup/LettuceHydroPopup.jsx
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -51,7 +54,7 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
-        <Route path="courses" element={<Courses />} />
+        <Route path="courses" element={<CoursesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
         <Route path="community" element={<CommunityPage />} />
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
