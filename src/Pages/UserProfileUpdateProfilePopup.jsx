@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import UserProfileUpdateSuccessPopup from "./UserProfileUpdateSuccessPopup";
 
-const UserProfileUpdateProfilePopup = () => {
+const UserProfileUpdateProfilePopup = ({ isOpen, onConfirm, onCancel }) => {
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
 
     const handleConfirm = () => {
@@ -34,7 +35,7 @@ const UserProfileUpdateProfilePopup = () => {
       </div>
         )};
         <div className="popupContainer">
-            <PasswordChangeSuccessPage
+            <UserProfileUpdateSuccessPopup
                 onClose={handleSuccessPopupClose}
                 onConfirm={handleSuccessPopupConfirm}
                 onCancel={handleSuccessPopupCancel}
