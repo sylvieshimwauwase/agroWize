@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+import Keys from "../../../Components/Keys";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./UserProfileUpdate.css";
 import FormButton from "../../FormButton";
@@ -29,11 +31,24 @@ const UserProfileUpdate = ({ userName }) => {
     return errors;
   };
 
-  const handleSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    /*setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
-    }, 400);
+    }, 400);*/
+    try {
+      let data = {
+        fullname: values.fullName,
+        email: values.username,
+        nickname: values.nickname,
+        Contact: values.phoneno
+      };
+      console.log("values", values);
+      const response = await axios.post(`${Keys.base_url}/updateProfile`, data);
+      console.log(response.data);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   return (
