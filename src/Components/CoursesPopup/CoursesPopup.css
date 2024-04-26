@@ -1,5 +1,5 @@
 
-.popup_container {
+.course_popup_container {
   width: 28.938rem;
   height: 20.375rem;
   padding: 0.156rem;
@@ -13,7 +13,7 @@
   position: relative;
   margin: auto auto;
 }
-.cancelIcon {
+.course_cancelIcon {
   width: 1.667rem;
   height: 1.667rem;
   /* align-self: flex-end; */
@@ -21,27 +21,28 @@
   right: 10px;
   top: 10px;
 }
-.successIcon {
+.course_successIcon {
   width: 6.25rem;
   height: 6.25rem;
 }
-/* .popUpText .popupDetails {
+ .popUpText .popupDetails {
   font-family: NunitoSans;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
   justify-content: center;
-} */
-.popupdetails{
+} 
+
+.course_popupdetails{
   text-align: center;
   font-family: NunitoSans;
   margin-top: 4px;
 }
-.titletext{
+.course_titletext{
   color: #226d2c;
   cursor: pointer;
   text-decoration: none;
 }
-.pryColor{
+.course_pryColor{
   color: #f29620;
 }

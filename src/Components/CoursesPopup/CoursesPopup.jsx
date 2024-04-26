@@ -27,9 +27,9 @@ const CoursesPopup = ({ text, titleText, selectedProduct }) => {
    return `/${selectedProduct.replace(/\s+/g, "")}CoursePage`;
  };
   return isVisible ? (
-    <div className="popup_container">
+    <div className="Course_popup_container">
       <button
-        className="cancelIcon"
+        className="course_cancelIcon"
         onClick={handleClose}
         aria-label="Close popup"
       >
@@ -37,17 +37,17 @@ const CoursesPopup = ({ text, titleText, selectedProduct }) => {
       </button>
       <div>
         <img
-          className="successIcon"
+          className="course_successIcon"
           src="/loginSuccessIcon.png"
           alt="success"
         />
       </div>
-      <div className="popupdetails">
+      <div className="course_popupdetails">
         <h2 className="popUpText">{text}</h2>
         <p className="">
           You are one step closer to mastering{" "}
-          <span className="titletext">{titleText}</span>
-          <span className="pryColor">
+          <span className="course_titletext">{titleText}</span>
+          <span className="course_pryColor">
             {" "}
             Our online courses kick off next month.{" "}
           </span>

@@ -6,12 +6,12 @@ import BtnComponent from '../BtnComponent/BtnComponent';
 
 const PasswordChangePopup = ({text}) => {
   return (
-    <div className="popup_container">
+    <div className="password_popup_container">
       <div>
-        <img className="cancelIcon" src="/cancelIcon.png" alt="cancel" />
+        <img className="password_cancelIcon" src="/cancelIcon.png" alt="cancel" />
       </div>
       <div>
-        <h3 className="popUpText">{text}</h3>
+        <h3 className="password_popUpText">{text}</h3>
       </div>
         <div className="btnContainer">
           <BtnComponent

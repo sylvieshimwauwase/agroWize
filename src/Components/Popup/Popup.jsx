@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./Popup.css"
 import FormButton from '../FormButton';
 
-const Popup = ({text, paragraph, button}) => {
+const Popup = ({text, paragraph, button }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleCancelClick = () => {
@@ -12,7 +12,7 @@ const Popup = ({text, paragraph, button}) => {
   return (
     <div>
       {isVisible && (
-    <div className="popup_container" >
+    <div className="popup_container view" >
       <div>
         <img className="cancelIcon"
         src="/cancelIcon.png"
