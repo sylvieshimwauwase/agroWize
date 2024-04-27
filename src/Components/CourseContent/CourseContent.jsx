@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ProgressRating from "../ProgressRating/ProgressRating";
 import "./CourseContent.css"
 import { courseDetails } from "../../Constants/Products";
+import axios from "axios";
 
-const CourseContent = ({}) => {
+const CourseContent = () => {
+  
    const [progress, setProgress] = useState(0);
    const totalLessons = 14;
 

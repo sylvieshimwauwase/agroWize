@@ -1,11 +1,7 @@
 import React from "react";
 import "./VerticalFarmingCourse.css";
-import CoursesHero from "../CoursesHero";
-import HomeNavBar from "../HomeNavBar/HomeNavBar";
 import StarRating from "../StarRating";
-import Footer from "../Footer/Footer";
-import ProgressRating from "../ProgressRating/ProgressRating";
-import CourseContent from "../CourseContent/CourseContent";
+
 
 
 const VerticalFarmingCourse = ({title}) => {
