@@ -9,6 +9,8 @@ import UserProfileUpdateSuccessPopup from "../../../Pages/UserProfileUpdateSucce
 
 const UserProfileUpdate = ({ userName }) => {
   const [isProfileUpdated, setIsProfileUpdated] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const validate = (values) => {
     const errors = {};
@@ -42,6 +44,8 @@ const UserProfileUpdate = ({ userName }) => {
   };
   const handleUpdateProfile = async (e) => {
     try {
+      setIsLoading(true);
+      setErrorMessage("");
       const values = e.target.elements;
       let data = {
         fullname: values.fullName.value,
@@ -53,14 +57,20 @@ const UserProfileUpdate = ({ userName }) => {
       const response = await axios.post(`${Keys.base_url}/updateProfile`, data);
       console.log(response.data);
       setIsProfileUpdated(true);
+      setIsLoading(false);
 
       /*resetForm();*/
 
     } catch (error) {
+      setIsLoading(false);
       console.log("error", error);
-      setIsProfileUpdated(false);
+      const errorMessage =
+        error.response && error.response.data && error.response.data.message
+          ? error.response.data.message
+          : "An error occurred. Please try again later.";
+      setErrorMessage(errorMessage);
     }
-  };
+    }
 
   const handleCancelUpdateProfile = () => {
     setIsProfileUpdated(false);
@@ -70,7 +80,13 @@ const UserProfileUpdate = ({ userName }) => {
 
   return (
     <div className="userProfileUpdate">
+      
       {" "}
+      {isLoading && (
+        <div className="loading">
+          <center>Loading...</center>
+        </div>
+      )}
       <div className="search-button">
         <SearchBar />
       </div>
@@ -164,6 +180,6 @@ const UserProfileUpdate = ({ userName }) => {
       </div>
     </div>
   );
-};
+  };
 
 export default UserProfileUpdate;
