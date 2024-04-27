@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import Keys from "../../../Constants/Keys";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./UserProfileUpdate.css";
 import FormButton from "../../FormButton";
 import SearchBar from "../../Search/SearchBar";
+import UserProfileUpdateSuccessPopup from "../../../Pages/UserProfileUpdateSuccessPopup";
 
 const UserProfileUpdate = ({ userName }) => {
+  const [isProfileUpdated, setIsProfileUpdated] = useState(false);
+
   const validate = (values) => {
     const errors = {};
 
@@ -29,12 +34,39 @@ const UserProfileUpdate = ({ userName }) => {
     return errors;
   };
 
-  const handleSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 400);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (validate()) {
+      handleUpdateProfile(e);
+    }
   };
+  const handleUpdateProfile = async (e) => {
+    try {
+      const values = e.target.elements;
+      let data = {
+        fullname: values.fullName.value,
+        email: values.email.value,
+        nickname: values.nickname.value,
+        Contact: values.contact.value,
+      };
+      console.log("values", values);
+      const response = await axios.post(`${Keys.base_url}/updateProfile`, data);
+      console.log(response.data);
+      setIsProfileUpdated(true);
+
+      /*resetForm();*/
+
+    } catch (error) {
+      console.log("error", error);
+      setIsProfileUpdated(false);
+    }
+  };
+
+  const handleCancelUpdateProfile = () => {
+    setIsProfileUpdated(false);
+
+    /*resetForm();*/
+  }
 
   return (
     <div className="userProfileUpdate">
@@ -54,7 +86,7 @@ const UserProfileUpdate = ({ userName }) => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
-            <Form action="" className="form">
+            <Form onSubmit={handleSubmit} action="" className="form">
               <div className="profileCircleForm">
                 {/* Placeholder for profile picture */}
                 <span>{userName}</span>
@@ -123,6 +155,12 @@ const UserProfileUpdate = ({ userName }) => {
           )}
         </Formik>
         <FormButton name="Update Profile" />
+      </div>
+      <div className="popupContainer">
+        <UserProfileUpdateSuccessPopup
+        onConfirm={handleUpdateProfile} 
+        onCancel={handleCancelUpdateProfile}
+        isOpen={isProfileUpdated} />
       </div>
     </div>
   );

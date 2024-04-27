@@ -34,6 +34,17 @@ import HydroFarmingCoursePage from "./Pages/HydroFarmingCoursePage.jsx";
 import CropRotationCoursePage from "./Pages/CropRotationCoursePage.jsx";
 // import Courses from "./Components/Courses/Courses.jsx";
 
+import Courses from "./Components/Courses/Courses.jsx";
+import TomatoVerticalPopup from "./Components/CommunityPopup/TomatoVerticalPopup.jsx";
+import TuberHydroPopup from "./Components/CommunityPopup/TuberHydroPopup.jsx";
+import GrainVerticalPopup from "./Components/CommunityPopup/GrainVerticalPopup.jsx";
+import PotatoVerticalPopup from "./Components/CommunityPopup/PotatoVerticalPopup.jsx";
+import GrainHydroPopup from "./Components/CommunityPopup/GrainHydroPopup.jsx";
+import TomatoHydroPopup from "./Components/CommunityPopup/TomatoHydroPopup.jsx";
+import LettuceVerticalPopup from "./Components/CommunityPopup/LettuceVerticalPopup.jsx";
+import LettuceHydroPopup from "./Components/CommunityPopup/LettuceHydroPopup.jsx";
+
+
 
 
 
@@ -51,6 +62,7 @@ function App() {
         <Route path="forgotPassword" element={<ForgotPasswordPage />} />
         <Route path="otpVerification" element={<OtpVerificationPage />} />
         <Route path="resetPassword" element={<ResetPasswordPage />} />
+        <Route path="CoursesPage" element={<CoursesPage />} />
 
         {/*farming techniques pages */}
         <Route path="verticalFarming" element={<VerticalFarmingPage />} />
@@ -110,7 +122,6 @@ function App() {
           path="resetPasswordPopupPage"
           element={<ResetPasswordPopupPage />}
         />
-        <Route path="coursesPopupPage" element={<CoursesPopupPage />} />
         <Route
           path="confirmPasswordChangePopupPage"
           element={<ConfirmPasswordChangePopupPage />}
@@ -119,7 +130,13 @@ function App() {
           path="passwordChangeSuccessPage"
           element={<PasswordChangeSuccessPage />}
         />
-        <Route path="CoursesPage" element={<CoursesPage />} />
+        <Route path="tomatoVerticalPopup" element={<TomatoVerticalPopup />}/>
+        <Route path="grainHydroPopup" element={<GrainHydroPopup />} />
+        <Route path="grainVerticalPopup" element={<GrainVerticalPopup />} />
+        <Route path="lettuceHydroPopup" element={<LettuceHydroPopup />} />
+        <Route path="lettuceVerticalPopup" element={<LettuceVerticalPopup />} />
+        <Route path="tomatoHydroPopup" element={<TomatoHydroPopup />} />
+        <Route path="tuberHydroPopup" element={<TuberHydroPopup />} />
         <Route
           path="hydroFarmingCoursePage"
           element={<HydroFarmingCoursePage />}
