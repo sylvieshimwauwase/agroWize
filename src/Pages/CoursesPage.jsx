@@ -1,12 +1,12 @@
 import React from 'react'
-import HomeNavBar from '../Components/HomeNavBar/HomeNavBar';
+import HomeNavBar2 from '../Components/HomeNavBar/HomeNavBar2';
 import Footer from '../Components/Footer/Footer';
 import Courses from '../Components/Courses/Courses';
 
 const CoursesPage = () => {
   return (
     <div>
-      <HomeNavBar />
+      <HomeNavBar2 />
       <Courses/>
       <Footer/>
     </div>
