@@ -8,7 +8,7 @@ const PasswordChangeSuccessPage = ({ isOpen }) => {
   const navigate = useNavigate();
 
   const handleClose = () => {
-    navigate('/');
+    navigate('/login');
   };
 
     return ( isOpen && 

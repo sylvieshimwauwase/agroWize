@@ -208,7 +208,7 @@ const SignupForm = () => {
                 <MediaBar
                   registerText="Or Register with"
                   loginText="Login"
-                  alreadyHaveAccountText="Already have an account?"
+                  alreadyHaveAccountText="Already on AgroWize?"
                 />
               </Form>
             )}

@@ -69,7 +69,7 @@ const Community = () => {
               </h6>
               <Link to={`/${item.popupPage}`}>
                 <FormButton name="Join Community" />
-        </Link>
+              </Link>
               {/*<FormButton name="Join Community" onClick={() => openPopup(item.popupPage)} />*/}
             </div>
           </div>

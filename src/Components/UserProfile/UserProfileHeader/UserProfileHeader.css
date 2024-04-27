@@ -12,7 +12,11 @@
     height: 40px;
     width: 40px;
   }
-  
+  .userProfileHeaderDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .formNavbarLink {
     font-family: NunitoSans;
     font-weight: 600;

@@ -1,9 +1,14 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import Keys from "../../Constants/Keys";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./VerticalNavBar.css";
 
 const VerticalNavBar = ({ userName }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const pages = [
     { name: "Profile Update", path: "/userProfileUpdate" },
     { name: "Notifications", path: "/userProfileNotification" },
@@ -17,8 +22,35 @@ const VerticalNavBar = ({ userName }) => {
     { name: "Settings", path: "/userProfilesettings" },
   ];
 
+  const handleLogout = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.post(`${Keys.base_url}/Logout`);
+      if (response.status === 200) {
+        // localStorage.removeItem("token");
+        localStorage.deleteItem("token");
+        navigate("/login");
+        setIsLoading(false);
+      } else {
+        console.error("Error logging out:", response.data);
+      }
+    } catch (error) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+      setIsLoading(false);
+      navigate("/login");
+      console.error("Error logging out:", error);
+  }
+};
+
   return (
     <div className="verticalNavbar">
+      {isLoading && (
+        <div className="loading">
+          <center>Loading...</center>
+        </div>
+      )}
       <div className="backdrop">
         <div className="profileCircle">
           <span>{userName}</span>
@@ -33,7 +65,7 @@ const VerticalNavBar = ({ userName }) => {
           ))}
         </ul>
         <div className="button-container">
-          <button className="nav-button">Logout</button>
+          <button className="nav-button" onClick={handleLogout} >Logout</button>
         </div>
       </div>
     </div>
