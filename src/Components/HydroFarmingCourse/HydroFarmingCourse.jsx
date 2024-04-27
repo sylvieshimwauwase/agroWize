@@ -1,15 +1,16 @@
-import React, {useState} from "react";
+import React,{useState} from 'react'
 import ProgressRating from "../ProgressRating/ProgressRating";
-import "./CourseContent.css"
+import "./HydroFarmingCourse.css";
 import { courseDetails } from "../../Constants/Products";
 
-const CourseContent = ({}) => {
-   const [progress, setProgress] = useState(0);
-   const totalLessons = 14;
 
-   const handlePadlockClick = () => {
-    setProgress((prevProgress) => prevProgress + 1);
-   };
+const HydroFarmingCourse = () => {
+       const [progress, setProgress] = useState(0);
+       const totalLessons = 15;
+
+       const handlePadlockClick = () => {
+         setProgress((prevProgress) => prevProgress + 1);
+       };
   return (
     <>
       <div className="colorpallete">
@@ -48,4 +49,5 @@ const CourseContent = ({}) => {
   );
 };
 
-export default CourseContent;
+
+export default HydroFarmingCourse

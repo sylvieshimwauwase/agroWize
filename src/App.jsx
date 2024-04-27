@@ -30,6 +30,8 @@ import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
 import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
 import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
+import HydroFarmingCoursePage from "./Pages/HydroFarmingCoursePage.jsx";
+import CropRotationCoursePage from "./Pages/CropRotationCoursePage.jsx";
 // import Courses from "./Components/Courses/Courses.jsx";
 
 
@@ -118,6 +120,14 @@ function App() {
           element={<PasswordChangeSuccessPage />}
         />
         <Route path="CoursesPage" element={<CoursesPage />} />
+        <Route
+          path="hydroFarmingCoursePage"
+          element={<HydroFarmingCoursePage />}
+        />
+        <Route
+          path="cropRotationCoursePage"
+          element={<CropRotationCoursePage/>}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 import "./ProgressRating.css"
 
-const ProgressRating = () => {
-     const total = 25; 
-    const [current, setCurrent] = useState(0);
+const ProgressRating = ({progress, total}) => {
+ 
+    // const [current, setCurrent] = useState(0);
 
-  const updateProgress = () => {
-     setCurrent(current => {
-      const newCurrent = current + 1;
-      return Math.min(newCurrent, total); 
-    });
-  };
+  // const updateProgress = () => {
+  //    setCurrent(current => {
+  //     const newCurrent = current + 1;
+  //     return Math.min(newCurrent, total); 
+  //   });
+  // };
   function getPercentage(current, total) {
     if (total === 0) {
       return "0%";
@@ -19,7 +19,7 @@ const ProgressRating = () => {
     return `${Math.min(Math.max(percentage, 0), 100)}%`;
   }
 
-  const progressPercentage = getPercentage(current, total);
+  const progressPercentage = getPercentage(progress, total);
 
   return (
     <div>
