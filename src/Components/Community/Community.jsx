@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "../Search/SearchBar";
 import FormButton from "../FormButton";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ import TomatoHydroPopup from "../CommunityPopup/TomatoHydroPopup.jsx";
 import LettuceHydroPopup from "../CommunityPopup/LettuceHydroPopup.jsx";
 import GrainHydroPopup from "../CommunityPopup/GrainHydroPopup.jsx";
 import TuberHydroPopup from "../CommunityPopup/TuberHydroPopup.jsx";
-import Popup from "../Popup/Popup.jsx";
+// import Popup from "../Popup/Popup.jsx";
 
 const popupPageComponentMap = {
   TomatoVerticalPopup,
@@ -57,7 +57,7 @@ const Community = () => {
       <h3 className="heroTitle">COMMUNITY</h3>
     </div>
     {communityDetails.map((item) => {
-      const PopupPageComponent = popupPageComponentMap[item.popupPage];
+      // const PopupPageComponent = popupPageComponentMap[item.popupPage];
         return (
           <div className="productDetails">
             <img className="images" src={item.image} alt="Image" />
