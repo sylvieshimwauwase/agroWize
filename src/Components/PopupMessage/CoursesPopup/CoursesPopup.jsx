@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./CoursesPopup.css";
-import FormButton from "../FormButton";
-import { products } from "../../Constants/Products";
+import FormButton from "../../../Components/FormButton"
+import { products } from "../../../Constants/Products";
 
 
 const CoursesPopup = ({ text, titleText, selectedProduct }) => {

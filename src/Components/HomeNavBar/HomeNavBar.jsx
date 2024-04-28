@@ -13,7 +13,7 @@ const HomeNavBar = () => {
                 <Link to="/aboutUs" className="homeNavBarLinks">About Us</Link>
                 <Link to="/courses" className="homeNavBarLinks">Courses</Link>
                 <Link to="/articles" className="homeNavBarLinks">Articles</Link>
-                <Link to="/community" className="homeNavBarLinks"></Link>
+                <Link to="/community" className="homeNavBarLinks">Community</Link>
             </div>
             <div className="homeNavBarButtonSection">
                 <Link  to="/signup" className="accCreation">Create Account</Link>

@@ -12,8 +12,8 @@ import AboutUsPage from "./Pages/AboutUsPage.jsx";
 import ArticlesPage from "./Pages/ArticlesPage.jsx";
 import VerticalFarmingPage from "./Pages/VerticalFarmingPage.jsx";
 import CommunityPage from "./Pages/CommunityPage.jsx";
-import SignUpPopUpPage from "./Pages/SignUpPopUpPage.jsx";
-import LoginPopUpPage from "./Pages/LoginPopUpPage.jsx";
+import SignUpPopUpPage from "./Components/PopupMessage/SignUpPopUpPage.jsx";
+import LoginPopUpPage from "./Components/PopupMessage/LoginPopUpPage.jsx";
 import UserProfileCourse from "./Components/UserProfile/UserProfileCourse/UserProfileCourse.jsx";
 import UserProfileLearningHistory from "./Components/UserProfile/UserProfileLearningHistory/UserProfileLearningHistory.jsx";
 import UserProfileChangePassword from "./Components/UserProfile/UserProfileChangePassword/UserProfileChangePassword.jsx";
@@ -22,25 +22,25 @@ import UserProfileCertificates from "./Components/UserProfile/UserProfileCertifi
 import UserProfileCommunity from "./Components/UserProfile/UserProfileCommunity/UserProfileCommunity.jsx"
 import UserProfileHelpCentre from "./Components/UserProfile/UserProfileHelpCentre/UserProfileHelpCentre.jsx";
 import HydroponicFarmingPage from "./Pages/HydroponicFarmingPage.jsx";
-import PasswordChangePopupPage from "./Pages/PasswordChangePopupPage.jsx";
-import SubscribePopupPage from "./Pages/SubscribePopupPage.jsx";
+import PasswordChangePopupPage from "./Components/PopupMessage/PasswordChangePopupPage.jsx";
+import SubscribePopupPage from "./Components/PopupMessage/SubscribePopupPage.jsx";
 import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
-import CoursesPopupPage from "./Pages/CoursesPopupPage.jsx";
-import ResetPasswordPopupPage from "./Pages/ResetPasswordPopupPage.jsx";
+import CoursesPopupPage from "./Components/PopupMessage/CoursesPopupPage.jsx";
+import ResetPasswordPopupPage from "./Components/PopupMessage/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
-import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
-import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
+import ConfirmPasswordChangePopupPage from "./Components/PopupMessage/ConfirmPasswordChangePopupPage.jsx";
+import PasswordChangeSuccessPage from "./Components/PopupMessage/PasswordChangeSuccessPage.jsx";
 // import Courses from "./Components/Courses/Courses.jsx";
 
 import Courses from "./Components/Courses/Courses.jsx";
-import TomatoVerticalPopup from "./Components/CommunityPopup/TomatoVerticalPopup.jsx";
-import TuberHydroPopup from "./Components/CommunityPopup/TuberHydroPopup.jsx";
-import GrainVerticalPopup from "./Components/CommunityPopup/GrainVerticalPopup.jsx";
-import PotatoVerticalPopup from "./Components/CommunityPopup/PotatoVerticalPopup.jsx";
-import GrainHydroPopup from "./Components/CommunityPopup/GrainHydroPopup.jsx";
-import TomatoHydroPopup from "./Components/CommunityPopup/TomatoHydroPopup.jsx";
-import LettuceVerticalPopup from "./Components/CommunityPopup/LettuceVerticalPopup.jsx";
-import LettuceHydroPopup from "./Components/CommunityPopup/LettuceHydroPopup.jsx";
+import TomatoVerticalPopup from "./Components/PopupMessage/CommunityPopup/TomatoVerticalPopup.jsx";
+import TuberHydroPopup from "./Components/PopupMessage/CommunityPopup/TuberHydroPopup.jsx";
+import GrainVerticalPopup from "./Components/PopupMessage/CommunityPopup/GrainVerticalPopup.jsx";
+import PotatoVerticalPopup from "./Components/PopupMessage/CommunityPopup/PotatoVerticalPopup.jsx";
+import GrainHydroPopup from "./Components/PopupMessage/CommunityPopup/GrainHydroPopup.jsx";
+import TomatoHydroPopup from "./Components/PopupMessage/CommunityPopup/TomatoHydroPopup.jsx";
+import LettuceVerticalPopup from "./Components/PopupMessage/CommunityPopup/LettuceVerticalPopup.jsx";
+import LettuceHydroPopup from "./Components/PopupMessage/CommunityPopup/LettuceHydroPopup.jsx";
 
 
 

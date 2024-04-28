@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./UserProfileUpdate.css";
 import FormButton from "../../FormButton";
 import SearchBar from "../../Search/SearchBar";
-import UserProfileUpdateSuccessPopup from "../../../Pages/UserProfileUpdateSuccessPopup";
+import UserProfileUpdateSuccessPopup from "../../../Components/PopupMessage/UserProfileUpdateSuccessPopup";
 
 const UserProfileUpdate = ({ userName }) => {
   const [isProfileUpdated, setIsProfileUpdated] = useState(false);

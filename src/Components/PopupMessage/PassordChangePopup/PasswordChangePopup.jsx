@@ -1,6 +1,6 @@
 import React from 'react' 
 import "./PasswordChangePopup.css"
-import BtnComponent from '../BtnComponent/BtnComponent';
+import BtnComponent from '../../BtnComponent/BtnComponent'
 
 
 
