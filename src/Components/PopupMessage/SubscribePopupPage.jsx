@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "../Components/Popup/Popup";
+import Popup from "../PopupMessage/Popup/Popup";
 
 const SubscribePopupPage = ({ isOpen }) => {
       return (

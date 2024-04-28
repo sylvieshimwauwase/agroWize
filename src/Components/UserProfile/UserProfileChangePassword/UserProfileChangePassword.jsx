@@ -7,7 +7,7 @@ import UserProfileHeader from "../UserProfileHeader/UserProfileHeader"
 import VerticalNavbar from "../../VerticalNavBar/VerticalNavBar"
 import SearchBar from '../../Search/SearchBar';
 import FormButton from '../../FormButton';
-import ConfirmPasswordChangePopupPage from '../../../Pages/ConfirmPasswordChangePopupPage';
+import ConfirmPasswordChangePopupPage from '../../../Components/PopupMessage/ConfirmPasswordChangePopupPage';
 
 
 const UserProfileChangePassword = () => {

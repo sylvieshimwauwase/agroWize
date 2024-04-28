@@ -1,5 +1,5 @@
 import React from 'react'
-import CoursesPopup from '../Components/CoursesPopup/CoursesPopup';
+import CoursesPopup from '../../Components/PopupMessage/CoursesPopup/CoursesPopup';
 
 const CoursesPopupPage = ({product, onClose}) => {
   if (!product){
