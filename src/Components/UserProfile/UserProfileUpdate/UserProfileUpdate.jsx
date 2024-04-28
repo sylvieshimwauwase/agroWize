@@ -54,7 +54,7 @@ const UserProfileUpdate = ({ userName }) => {
         Contact: values.contact.value,
       };
       console.log("values", values);
-      const response = await axios.post(`${Keys.base_url}/updateProfile`, data);
+      const response = await axios.put(`${Keys.base_url}/updateProfile`, data);
       console.log(response.data);
       setIsProfileUpdated(true);
       setIsLoading(false);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "../Search/SearchBar";
 import FormButton from "../FormButton";
 import { Link } from "react-router-dom";
-import {communityDetails} from "../../Constants/Products.js"
+import { communityDetails } from "../../Constants/Products.js"
 import "./community.css";
 
 import TomatoVerticalPopup from "../PopupMessage/CommunityPopup/TomatoVerticalPopup.jsx";
@@ -27,39 +27,35 @@ const popupPageComponentMap = {
 };
 
 const Community = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [paragraph, setParagraph] = useState(<></>);
 
-  /*const [popupCommunity, setPopupCommunity] = useState(null);
 
-  const openPopup = (popupPage) => {
-    const PopupComponent = popupPageComponentMap[popupPage];
-    setPopupCommunity(PopupComponent);
-  };
-
-  const closePopup = () => {
-    setPopupCommunity(null);
-  };*/
-
+  const handleCancelClick = () => {
+    
+    setIsVisible(!isVisible);
+  }
 
   return (
     <div>
-     {/*<Popup
-      text="Congratulations!"
-      paragraph={
-        <>
-          You have successfully joined
-          <span style={{ color: "#f29620" }}> Vegetable</span> and
-          <span style={{ color: "#257830" }}> Vertical Farming</span> Community
-        </>
-      }
-    />*/}
-    <div className="communityHero">
-      <SearchBar />
-      <h3 className="heroTitle">COMMUNITY</h3>
-    </div>
-    {communityDetails.map((item) => {
-      const PopupPageComponent = popupPageComponentMap[item.popupPage];
+      <Popup isVisible={isVisible}
+        handleCancelClick={() => {
+
+          handleCancelClick();
+        }}
+        text="Congratulations!"
+        paragraph={
+          paragraph
+        }
+      />
+      <div className="communityHero">
+        <SearchBar />
+        <h3 className="heroTitle">COMMUNITY</h3>
+      </div>
+      {communityDetails.map((item, index) => {
+        const PopupPageComponent = popupPageComponentMap[item.popupPage];
         return (
-          <div className="productDetails">
+          <div key={index} className="productDetails">
             <img className="images" src={item.image} alt="Image" />
             <div className="borderDetails">
               <h3>{item.title}</h3>
@@ -67,20 +63,14 @@ const Community = () => {
               <h6>
                 <span className="coloredText">Type:</span> {item.green}
               </h6>
-              <Link to={`/${item.popupPage}`}>
-                <FormButton name="Join Community" />
-              </Link>
-              {/*<FormButton name="Join Community" onClick={() => openPopup(item.popupPage)} />*/}
+              <FormButton name="Join Community" onClick={() => {
+                setParagraph(item.paragraph);
+                handleCancelClick()}} />
             </div>
           </div>
         );
       })}
-      {/*{popupCommunity && (
-        <div className="popupContainer">
-          <popupCommunity isOpen={popupCommunity} />
-        </div>
-        
-      )}*/}
+
     </div>
   );
 };
