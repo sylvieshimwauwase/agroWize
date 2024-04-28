@@ -9,6 +9,8 @@ import MediaBar from "../MediaBar";
 import FormButton from "../FormButton";
 import Keys from "../../Constants/Keys";
 import LoginPopUpPage from "../../Components/PopupMessage/LoginPopUpPage";
+import Popup from "../PopupMessage/Popup/Popup";
+import SmallSizeFormButton from "../SmallSizeFormButton/SmallSizeFormButton";
 
 const LoginForm = ({onFormSubmit}) => {
   const [username, setUsername] = useState("");
@@ -17,23 +19,46 @@ const LoginForm = ({onFormSubmit}) => {
   const [error, setError] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setShowPassword((prev) => (!prev));
   };
 
+  const handleCancelClick = (text) => {
+    setIsVisible(!isVisible);
+  }
+  const handleHomeClick = () => {
+    navigate("/userProfileUpdate");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setIsLoading(true);
-      const response = await axios.post(`${Keys.base_url}/login`, { username, userpassword });
+      const response = await axios.post(`${Keys.base_url}/login`, {
+        username,
+        userpassword
+      });
       console.log(response.data);
-      setIsLoggedIn(true);
+      const token = response.data.token;
+      localStorage.setItem("auth_token", token);
+
+      
+      //setIsLoggedIn(true);
       setIsLoading(false);
+      handleCancelClick();
+      // navigate("/userProfileUpdate");
       setUsername("");
       setPassword("");
+      
 
+      /*if (onFormSubmit) {
+        onFormSubmit();
+      } else {
+        navigate("/dashboard");
+      }*/
     } catch (error) {
       setIsLoading(false);
       console.error("Error logging in: ", error);
@@ -51,6 +76,10 @@ const LoginForm = ({onFormSubmit}) => {
           <center>Loading...</center>
         </div>
       )}
+      <Popup isVisible={isVisible}
+       handleCancelClick={handleCancelClick}
+    text="Login Successful!"
+    button={<SmallSizeFormButton name="User Profile" onClick={handleHomeClick}/>} />
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="welcomeBack">
           <h3>Welcome Back</h3>
@@ -89,11 +118,11 @@ const LoginForm = ({onFormSubmit}) => {
           alreadyHaveAccountText="Don't have an account?"
           loginText="Create Account" />
       </form>
-      {isLoggedIn && (
+      {/* {isLoggedIn && (
         <div className="popupContainer">
           <LoginPopUpPage isOpen={isLoggedIn} />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

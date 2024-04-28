@@ -1,5 +1,6 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ProtectedRoute from "./Constants/ProtectedRoute.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import Login from "./Pages/Login.jsx";
 import HomePage from "./Pages/HomePage.jsx";
@@ -29,8 +30,6 @@ import CoursesPopupPage from "./Components/PopupMessage/CoursesPopupPage.jsx";
 import ResetPasswordPopupPage from "./Components/PopupMessage/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
 
-import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
-import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
 import HydroFarmingCoursePage from "./Pages/HydroFarmingCoursePage.jsx";
 import CropRotationCoursePage from "./Pages/CropRotationCoursePage.jsx";
 
@@ -54,12 +53,23 @@ import LettuceHydroPopup from "./Components/PopupMessage/CommunityPopup/LettuceH
 
 
 function App() {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("auth_token");
+    setIsUserLoggedIn(storedToken? true: false);
+  }, []);
+
+  const handleUserLogin = () => {
+    setIsUserLoggedIn(true);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login onLogin={handleUserLogin} />} />
         <Route path="aboutUs" element={<AboutUsPage />} />
         <Route path="courses" element={<CoursesPage />} />
         <Route path="articles" element={<ArticlesPage />} />
@@ -74,7 +84,14 @@ function App() {
         <Route path="hydroponicFarming" element={<HydroponicFarmingPage />} />
 
         {/*user profile pages */}
-        <Route path="userProfileUpdate" element={<UserProfileUpdatePage />} />
+        <Route
+          path="userProfileUpdate"
+          element={
+            <ProtectedRoute isUserLoggedIn={isUserLoggedIn}>
+              <UserProfileUpdatePage />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="userProfileNotification"
           element={<UserProfileNotificationPage />}
@@ -150,6 +167,7 @@ function App() {
           path="cropRotationCoursePage"
           element={<CropRotationCoursePage/>}
         />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

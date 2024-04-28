@@ -27,8 +27,8 @@ const VerticalNavBar = ({ userName }) => {
       setIsLoading(true);
       const response = await axios.post(`${Keys.base_url}/Logout`);
       if (response.status === 200) {
-        // localStorage.removeItem("token");
-        localStorage.deleteItem("token");
+        localStorage.removeItem("auth_token");
+        // localStorage.deleteItem("auth_token");
         navigate("/login");
         setIsLoading(false);
       } else {
@@ -39,7 +39,6 @@ const VerticalNavBar = ({ userName }) => {
         setIsLoading(false);
       }, 2000);
       setIsLoading(false);
-      navigate("/login");
       console.error("Error logging out:", error);
   }
 };

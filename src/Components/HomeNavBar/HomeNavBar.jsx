@@ -21,7 +21,7 @@ const HomeNavBar = () => {
             </div>
             <div className="homeNavBarButtonSection">
                 <Link  to="/signup" className="accCreation">Create Account</Link>
-                <Link className="accLogin">Login</Link>
+                <Link to="/login" className="accLogin">Login</Link>
             </div>
         {/*<div className='main-nav-menu'>
             <div className='agrowize-logo'>

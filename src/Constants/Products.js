@@ -17,6 +17,11 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Tomato",
     popupPage: "TomatoVerticalPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Vegetables</span>
+    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+  </>
   },
   {
     image: "/FrameHome.png",
@@ -24,6 +29,11 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Lettuce",
     popupPage: "LettuceVerticalPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Lettuce</span>
+    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+  </>
   },
   {
     image: "/Grain vertical.png",
@@ -31,6 +41,11 @@ export const communityDetails = [
     about: "Grain",
     green: "Rice",
     popupPage: "GrainVerticalPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Grain</span>
+    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+  </>
   },
   {
     image: "/tuber verticall 1.png",
@@ -38,6 +53,11 @@ export const communityDetails = [
     about: "Tuber",
     green: "Potato",
     popupPage: "PotatoVerticalPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Tuber</span>
+    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+  </>
   },
   {
     image: "/hydroponic vegetable 1 1.png",
@@ -45,6 +65,11 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Tomato",
     popupPage: "TomatoHydroPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Vegetables</span>
+    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+  </>
   },
   {
     image: "/hydro vegetable 3 1.png",
@@ -52,6 +77,11 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Lettuce",
     popupPage: "LettuceHydroPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Lettuce</span>
+    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+  </>
   },
   {
     image: "/hydroponic 1 1.png",
@@ -59,6 +89,11 @@ export const communityDetails = [
     about: "Grain",
     green: "Tomato",
     popupPage: "GrainHydroPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Grain</span>
+    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+  </>
   },
   {
     image: "/hydroponic 1 1.png",
@@ -66,6 +101,11 @@ export const communityDetails = [
     about: "Tuber",
     green: "Rice",
     popupPage: "TuberHydroPopup",
+    paragraph:<>
+    You have successfully joined
+    <span style={{ color: "#f29620" }}> Tuber</span>
+    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+  </>
   },
 ];
 export const courseDetails = [
