@@ -1,5 +1,5 @@
 import React from 'react'
-import PasswordChangePopup from '../Components/PassordChangePopup/PasswordChangePopup'
+import PasswordChangePopup from './../../Components/PopupMessage/PassordChangePopup/PasswordChangePopup';
 
 const PasswordChangePopupPage = () => {
   return (

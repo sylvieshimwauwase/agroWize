@@ -8,7 +8,7 @@ import "./LoginForm.css"
 import MediaBar from "../MediaBar";
 import FormButton from "../FormButton";
 import Keys from "../../Constants/Keys";
-import LoginPopUpPage from "../../Pages/LoginPopUpPage";
+import LoginPopUpPage from "../../Components/PopupMessage/LoginPopUpPage";
 
 const LoginForm = ({onFormSubmit}) => {
   const [username, setUsername] = useState("");

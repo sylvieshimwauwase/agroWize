@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 import {communityDetails} from "../../Constants/Products.js"
 import "./community.css";
 
-import TomatoVerticalPopup from "../CommunityPopup/TomatoVerticalPopup.jsx";
-import LettuceVerticalPopup from "../CommunityPopup/LettuceVerticalPopup.jsx";
-import GrainVerticalPopup from "../CommunityPopup/GrainVerticalPopup.jsx";
-import PotatoVerticalPopup from "../CommunityPopup/PotatoVerticalPopup.jsx";
-import TomatoHydroPopup from "../CommunityPopup/TomatoHydroPopup.jsx";
-import LettuceHydroPopup from "../CommunityPopup/LettuceHydroPopup.jsx";
-import GrainHydroPopup from "../CommunityPopup/GrainHydroPopup.jsx";
-import TuberHydroPopup from "../CommunityPopup/TuberHydroPopup.jsx";
-// import Popup from "../Popup/Popup.jsx";
+import TomatoVerticalPopup from "../PopupMessage/CommunityPopup/TomatoVerticalPopup.jsx";
+import LettuceVerticalPopup from "../PopupMessage/CommunityPopup/LettuceVerticalPopup.jsx";
+import GrainVerticalPopup from "../PopupMessage/CommunityPopup/GrainVerticalPopup.jsx";
+import PotatoVerticalPopup from "../PopupMessage/CommunityPopup/PotatoVerticalPopup.jsx";
+import TomatoHydroPopup from "../PopupMessage/CommunityPopup/TomatoHydroPopup.jsx";
+import LettuceHydroPopup from "../PopupMessage/CommunityPopup/LettuceHydroPopup.jsx";
+import GrainHydroPopup from "../PopupMessage/CommunityPopup/GrainHydroPopup.jsx";
+import TuberHydroPopup from "../PopupMessage/CommunityPopup/TuberHydroPopup.jsx";
+import Popup from "../PopupMessage/Popup/Popup.jsx";
 
 const popupPageComponentMap = {
   TomatoVerticalPopup,

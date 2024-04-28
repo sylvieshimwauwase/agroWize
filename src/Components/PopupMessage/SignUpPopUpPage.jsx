@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Popup from '../Components/Popup/Popup';
-import SmallSizeFormButton from "../Components/SmallSizeFormButton/SmallSizeFormButton";
+import Popup from '../PopupMessage/Popup/Popup'
+import SmallSizeFormButton from "../../Components/SmallSizeFormButton/SmallSizeFormButton";
 
 const SignUpPopUpPage = ( {isOpen} ) => {
       const navigate = useNavigate();

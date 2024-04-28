@@ -7,7 +7,7 @@ import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import './SignupForm.css';
 import FormButton from "../../Components/FormButton";
 import MediaBar from "../../Components/MediaBar";
-import SignUpPopUpPage from "../../Pages/SignUpPopUpPage";
+import SignUpPopUpPage from "../../Components/PopupMessage/SignUpPopUpPage";
 
 const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);

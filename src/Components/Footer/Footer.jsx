@@ -3,7 +3,7 @@ import axios from "axios";
 import Keys from "../../Constants/Keys";
 import './Footer.css';
 import { Link } from "react-router-dom";
-import SubscribePopupPage from "../../Pages/SubscribePopupPage";
+import SubscribePopupPage from "../../Components/PopupMessage/SubscribePopupPage";
 
 const Footer = () => {
     const [email, setEmail] = useState('');

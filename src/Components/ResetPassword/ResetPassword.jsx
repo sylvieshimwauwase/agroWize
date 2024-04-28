@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
 import './ResetPassword.css';
 import FormButton from "../FormButton";
-import ResetPasswordPopupPage from "../../Pages/ResetPasswordPopupPage";
+import ResetPasswordPopupPage from "../../Components/PopupMessage/ResetPasswordPopupPage"
 
 const ResetPassword = () => {
     const [password, setNewPassword] = useState("");

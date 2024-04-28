@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import '../Components/ConfirmPopup.css';
+import './ConfirmPopup.css';
 import PasswordChangeSuccessPage from "./PasswordChangeSuccessPage";
 
 const ConfirmPasswordChangePopupPage = ({ isOpen, onConfirm, onCancel}) => {

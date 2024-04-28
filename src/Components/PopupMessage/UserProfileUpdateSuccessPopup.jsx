@@ -1,20 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Popup from '../Components/Popup/Popup';
-import SmallSizeFormButton from '../Components/SmallSizeFormButton/SmallSizeFormButton';
+import Popup from '../PopupMessage/Popup/Popup'
+import SmallSizeFormButton from '../../Components/SmallSizeFormButton/SmallSizeFormButton'
 
 
-const PasswordChangeSuccessPage = ({ isOpen }) => {
+const UserProfileUpdateSuccessPopup = ({ isOpen }) => {
   const navigate = useNavigate();
 
   const handleClose = () => {
-    navigate('/login');
+    navigate('/');
   };
 
     return ( isOpen && 
       <Popup
             text="Congratulations!"
-            paragraph="You have successfully changed your password."
+            paragraph="You have successfully Updated your Profile."
             button={
               <div>
                    <SmallSizeFormButton name="Login" onClick={handleClose}/>
@@ -24,4 +24,4 @@ const PasswordChangeSuccessPage = ({ isOpen }) => {
     );
 }
 
-export default PasswordChangeSuccessPage;
+export default UserProfileUpdateSuccessPopup;
