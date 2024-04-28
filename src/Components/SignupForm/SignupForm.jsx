@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import Keys from "../../Constants/Keys";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -12,7 +12,7 @@ import SignUpPopUpPage from "../../Components/PopupMessage/SignUpPopUpPage";
 const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     /*const [isFormSubmitted, setIsFormSubmitted] = useState(false);*/
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
     const [isCreatedup, setIsCreatedup] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
