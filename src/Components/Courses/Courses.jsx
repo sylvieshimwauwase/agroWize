@@ -3,7 +3,7 @@ import "./Courses.css";
 import { Link } from 'react-router-dom';
 import { products } from '../../Constants/Products';
 import CoursesHero from '../CoursesHero';
-import CoursesPopupPage from '../../Pages/CoursesPopupPage';
+import CoursesPopupPage from '../../Components/PopupMessage/CoursesPopupPage';
 import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
 
 

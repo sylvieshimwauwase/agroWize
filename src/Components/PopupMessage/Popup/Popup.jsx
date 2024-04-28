@@ -1,6 +1,6 @@
 import React, { useState } from 'react' 
 import "./Popup.css"
-import FormButton from '../FormButton';
+import FormButton from '../../../Components/FormButton';
 
 const Popup = ({text, paragraph, button }) => {
   const [isVisible, setIsVisible] = useState(true);
