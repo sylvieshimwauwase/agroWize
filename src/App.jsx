@@ -29,8 +29,6 @@ import CoursesPopupPage from "./Components/PopupMessage/CoursesPopupPage.jsx";
 import ResetPasswordPopupPage from "./Components/PopupMessage/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
 
-import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
-import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
 import HydroFarmingCoursePage from "./Pages/HydroFarmingCoursePage.jsx";
 import CropRotationCoursePage from "./Pages/CropRotationCoursePage.jsx";
 
