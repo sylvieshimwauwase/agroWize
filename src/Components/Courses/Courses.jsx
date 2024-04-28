@@ -1,13 +1,24 @@
 import React, {useState} from 'react'
 import "./Courses.css";
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { products } from '../../Constants/Products';
 import CoursesHero from '../CoursesHero';
+import Popup from '../PopupMessage/Popup/Popup';
 import CoursesPopupPage from '../../Components/PopupMessage/CoursesPopupPage';
 import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
-
+import FormButton from '../FormButton';
 
 const Courses = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+
+  const handleEnrollClick = () => {
+    
+    setIsVisible(!isVisible);
+  }
+  const handleLearningClick = () => {
+    navigate("/VerticalFarmingCoursePage");
+  };
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
     // const [selectedProduct, setSelectedProduct] = useState(null);
     // const [learningStates, setLearningStates] = useState(Array(products.length).fill(false));
@@ -28,6 +39,15 @@ const Courses = () => {
 
   return (
     <>
+    <Popup isVisible={isVisible}
+        handleEnrollClick={() => {
+
+          handleEnrollClick();
+        }}
+        text="Congratulations!"
+        paragraph="description"
+        button={<FormButton name="Start Learning" onClick={handleLearningClick}/>}
+      />
       <CoursesHero />
       {products.map((item, index, product) => {
         return (
@@ -51,7 +71,8 @@ const Courses = () => {
                 onClick={() => handleLearningClick(index)}
               /> */}
               {/* </Link> */}
-              <SmallSizeFormButton name="Enroll Now"/>
+              <SmallSizeFormButton name="Enroll Now" onClick={() => {
+                handleEnrollClick()}} />
             </div>
           </div>
         );
