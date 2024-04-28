@@ -28,8 +28,15 @@ import VerticalFarmingCoursePage from "./Pages/VerticalFarmingCoursePage.jsx";
 import CoursesPopupPage from "./Components/PopupMessage/CoursesPopupPage.jsx";
 import ResetPasswordPopupPage from "./Components/PopupMessage/ResetPasswordPopupPage.jsx";
 import CoursesPage from "./Pages/CoursesPage.jsx";
+
+import ConfirmPasswordChangePopupPage from "./Pages/ConfirmPasswordChangePopupPage.jsx";
+import PasswordChangeSuccessPage from "./Pages/PasswordChangeSuccessPage.jsx";
+import HydroFarmingCoursePage from "./Pages/HydroFarmingCoursePage.jsx";
+import CropRotationCoursePage from "./Pages/CropRotationCoursePage.jsx";
+
 import ConfirmPasswordChangePopupPage from "./Components/PopupMessage/ConfirmPasswordChangePopupPage.jsx";
 import PasswordChangeSuccessPage from "./Components/PopupMessage/PasswordChangeSuccessPage.jsx";
+
 // import Courses from "./Components/Courses/Courses.jsx";
 
 import Courses from "./Components/Courses/Courses.jsx";
@@ -135,6 +142,14 @@ function App() {
         <Route path="lettuceVerticalPopup" element={<LettuceVerticalPopup />} />
         <Route path="tomatoHydroPopup" element={<TomatoHydroPopup />} />
         <Route path="tuberHydroPopup" element={<TuberHydroPopup />} />
+        <Route
+          path="hydroFarmingCoursePage"
+          element={<HydroFarmingCoursePage />}
+        />
+        <Route
+          path="cropRotationCoursePage"
+          element={<CropRotationCoursePage/>}
+        />
       </Routes>
     </BrowserRouter>
   );

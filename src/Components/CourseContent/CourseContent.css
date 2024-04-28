@@ -1,6 +1,6 @@
 .colorpallete {
   background-color: green;
-  height: 1160px;
+  /* height: ; */
   margin: auto;
 }
 .coursesContainer{
@@ -32,6 +32,12 @@
     color: #F29620;
     font-size: 20px;
     font-weight: 700;
+    margin: 0;
+}
+.iconAlignment{
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 .padlock{
  color: green;

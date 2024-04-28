@@ -1,8 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './HomeNavBar.css';
 
 const HomeNavBar = () => {
+    const location = useLocation();
+    
+    const isActive = (path) => location.pathname === path ? "active-link" : "";
+
     return (
         <div className='homeNavBarmain-container'>
             <div className="homeNavBarLogoSection">

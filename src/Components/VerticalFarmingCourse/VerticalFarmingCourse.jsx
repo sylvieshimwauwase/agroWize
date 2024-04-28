@@ -1,14 +1,10 @@
 import React from "react";
 import "./VerticalFarmingCourse.css";
-import CoursesHero from "../CoursesHero";
-import HomeNavBar from "../HomeNavBar/HomeNavBar";
 import StarRating from "../StarRating";
-import Footer from "../Footer/Footer";
-import ProgressRating from "../ProgressRating/ProgressRating";
-import CourseContent from "../CourseContent/CourseContent";
 
 
-const VerticalFarmingCourse = () => {
+
+const VerticalFarmingCourse = ({title}) => {
   return (
     <>
       <div className="VFContainer">
@@ -16,7 +12,7 @@ const VerticalFarmingCourse = () => {
           <img className="vfImage" src="/AboutUs3.png" alt="Image" />
           <div className="detailsContainer">
             <div className="detailsTitle">
-              <h3>vertical Farming</h3>
+              <h3>{title}</h3>
             </div>
             <div className="starRatingContainer">
               <StarRating />

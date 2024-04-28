@@ -10,7 +10,7 @@ const VerticalFarmingCoursePage = () => {
    <>
    <HomeNavBar/>
   <CoursesHero/>
-  <VerticalFarmingCourse/>
+  <VerticalFarmingCourse title="Vertical Farming"/>
   <CourseContent/>
   <Footer/>
    </>

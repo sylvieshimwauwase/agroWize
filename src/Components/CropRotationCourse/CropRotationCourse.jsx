@@ -1,22 +1,20 @@
-import React, {useState, useEffect} from "react";
-import ProgressRating from "../ProgressRating/ProgressRating";
-import "./CourseContent.css"
+import React, {useState} from 'react'
+import ProgressRating from '../ProgressRating/ProgressRating';
 import { courseDetails } from "../../Constants/Products";
-import axios from "axios";
 
-const CourseContent = () => {
-  
-   const [progress, setProgress] = useState(0);
-   const totalLessons = 14;
 
-   const handlePadlockClick = () => {
-    setProgress((prevProgress) => prevProgress + 1);
-   };
+const CropRotationCourse = () => {
+     const [progress, setProgress] = useState(0);
+     const totalLessons = 25;
+
+     const handlePadlockClick = () => {
+       setProgress((prevProgress) => prevProgress + 1);
+     };
   return (
     <>
       <div className="colorpallete">
         <div className="coursesContainer">
-          <ProgressRating progress={progress} total={totalLessons} />
+          <ProgressRating total={totalLessons} progress={progress} />
           {courseDetails.map((detail) => {
             return (
               <div className="courseBar" key={detail.id}>
@@ -48,6 +46,6 @@ const CourseContent = () => {
       </div>
     </>
   );
-};
+}
 
-export default CourseContent;
+export default CropRotationCourse

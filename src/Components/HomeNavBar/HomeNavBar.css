@@ -350,8 +350,16 @@
   .home:hover, .about-us:hover, .farm-mode:hover, .courses:hover, .articles:hover, .community:hover {
     text-decoration: underline; 
     transform: scale(0.9);
+    color: #257830;
 }
+/* .home:active, .about-us:active, .farm-mode:hover, .courses:active, .articles:active, .community:active{
 
+  transform: scale();
+} */
+.active-link {
+    text-decoration: underline;  
+    color: #257830;
+  }
   @media screen and (max-width: 768px) {
     .agrowize-logo img {
         height: 30px;
@@ -418,6 +426,6 @@
       height: 20px;
       font-size: 14px;
     }
-}*/
+}
 
 
