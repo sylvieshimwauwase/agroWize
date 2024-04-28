@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "../Search/SearchBar";
 import FormButton from "../FormButton";
 import { Link } from "react-router-dom";
@@ -54,6 +54,23 @@ const Community = () => {
       </div>
       {communityDetails.map((item, index) => {
         const PopupPageComponent = popupPageComponentMap[item.popupPage];
+
+     {/*<Popup
+      text="Congratulations!"
+      paragraph={
+        <>
+          You have successfully joined
+          <span style={{ color: "#f29620" }}> Vegetable</span> and
+          <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+        </>
+      }
+    />*/}
+    <div className="communityHero">
+      <SearchBar />
+      <h3 className="heroTitle">COMMUNITY</h3>
+    </div>
+    {communityDetails.map((item) => {
+      // const PopupPageComponent = popupPageComponentMap[item.popupPage];
         return (
           <div key={index} className="productDetails">
             <img className="images" src={item.image} alt="Image" />

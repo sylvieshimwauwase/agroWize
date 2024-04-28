@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './HomeNavBar.css';
 
 const HomeNavBar = () => {
-    const location = useLocation();
+    // const location = useLocation();
     
-    const isActive = (path) => location.pathname === path ? "active-link" : "";
+    // const isActive = (path) => location.pathname === path ? "active-link" : "";
 
     return (
         <div className='homeNavBarmain-container'>
