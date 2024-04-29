@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Keys from "../../Constants/Keys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
 import './ResetPassword.css';
 import FormButton from "../FormButton";
+import Popup from "../PopupMessage/Popup/Popup";
+import SmallSizeFormButton from "../SmallSizeFormButton/SmallSizeFormButton";
 import ResetPasswordPopupPage from "../../Components/PopupMessage/ResetPasswordPopupPage"
 
 const ResetPassword = () => {
@@ -14,7 +17,9 @@ const ResetPassword = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
     const [isChanged, setIsChanged] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleNewPasswordChange = (e) => {
         setNewPassword(e.target.value);
@@ -23,6 +28,13 @@ const ResetPassword = () => {
     const handleConfirmPasswordChange = (e) => {
         setConfirmPassword(e.target.value);
     };
+    const handleCancelClick = (text) => {
+        setIsVisible(!isVisible);
+      }
+      const handleLoginClick = () => {
+        navigate("/login");
+      };
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,8 +53,9 @@ const ResetPassword = () => {
             });
             console.log(response.data);
 
-            setIsChanged(true);
+            // setIsChanged(true);
             setIsLoading(false);
+            handleCancelClick();
 
             setEmail("");
             setNewPassword("");
@@ -82,6 +95,10 @@ const ResetPassword = () => {
             <center>Loading...</center>
             </div>
             )}
+            <Popup isVisible={isVisible}
+            handleCancelClick={handleCancelClick}
+            text="Password Reset Successful!"
+            button={<SmallSizeFormButton name="Login" onClick={handleLoginClick}/>} />
             <div className="resetPasswordForm">
                 <form onSubmit={handleSubmit}>
                     <h2>Reset Password</h2>
@@ -129,11 +146,11 @@ const ResetPassword = () => {
                     <FormButton name="Reset Password" />
                 </form>
             </div>
-            {isChanged && (
+            {/* {isChanged && (
                 <div className="popupContainer">
                 <ResetPasswordPopupPage isOpen={isChanged} />
                 </div>
-      )}
+      )} */}
         </div>
     );
 }
