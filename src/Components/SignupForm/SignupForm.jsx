@@ -7,6 +7,9 @@ import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import './SignupForm.css';
 import FormButton from "../../Components/FormButton";
 import MediaBar from "../../Components/MediaBar";
+import Popup from "../../Components/PopupMessage/Popup/Popup";
+import SmallSizeFormButton from "../../Components/SmallSizeFormButton/SmallSizeFormButton";
+import { useNavigate } from "react-router-dom";
 import SignUpPopUpPage from "../../Components/PopupMessage/SignUpPopUpPage";
 
 const SignupForm = () => {
@@ -16,6 +19,8 @@ const SignupForm = () => {
     const [error, setError] = useState('');
     const [isCreatedup, setIsCreatedup] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const  navigate = useNavigate();
     
 
     const validate = values => {
@@ -52,7 +57,7 @@ const SignupForm = () => {
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         setIsLoading(true);
-        setIsSubmitting(true);
+        // setIsSubmitting(true);
         /*setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
@@ -69,8 +74,9 @@ const SignupForm = () => {
             console.log(response.data);
 
             /*navigate('/signUpPopUpPage');*/
-            setIsCreatedup(true);
+            // setIsCreatedup(true);
             setIsLoading(false);
+            handleCancelClick();
             resetForm();
 
         } catch (error) {
@@ -99,6 +105,12 @@ const SignupForm = () => {
         setShowPassword((prev) => (!prev));
     };
 
+    const handleCancelClick = (text) => {
+      setIsVisible(!isVisible);
+    }
+    const handleLoginClick = () => {
+      navigate("/login");
+    };
     /*useEffect(() => {
         if (isSubmitting) {
             handleNavigate('/login');
@@ -114,6 +126,16 @@ const SignupForm = () => {
           <center>Loading...</center>
         </div>
       )}
+      <Popup isVisible={isVisible}
+      handleCancelClick={handleCancelClick}
+       text="Congratulations!"
+       paragraph="Your account has been created successfully."
+       button={
+       <div>
+            <SmallSizeFormButton name="Login" onClick={handleLoginClick}/>
+       </div>
+       }
+       />
         <div className="signupForm">
           <Formik
             initialValues={{
@@ -219,11 +241,11 @@ const SignupForm = () => {
                     loginText="Login"
                 />*/}
         </div>
-        {isCreatedup && (
+        {/* {isCreatedup && (
         <div className="popupContainer">
           <SignUpPopUpPage isOpen={isCreatedup} />
         </div>
-      )}
+      )} */}
       </div>
     );
 };
