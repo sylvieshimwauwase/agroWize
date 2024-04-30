@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+// import { useDispatch } from 'react-redux';
 import "./Courses.css";
 import { useNavigate } from 'react-router-dom';
 import { products } from '../../Constants/Products';
@@ -7,18 +8,36 @@ import Popup from '../PopupMessage/Popup/Popup';
 import CoursesPopupPage from '../../Components/PopupMessage/CoursesPopupPage';
 import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
 import FormButton from '../FormButton';
+import axios from 'axios';
+import Keys from '../../Constants/Keys';
 
 const Courses = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
   const handleEnrollClick = () => {
-    
+    // const clickedCourse = dispatch ({
+    //   type: "ENROLL_COURSE",
+    //   payload: clickedCourse
+    // })
     setIsVisible(!isVisible);
   }
-  const handleLearningClick = () => {
+  const handleLearningClick = async() => {
     navigate("/VerticalFarmingCoursePage");
+    try {
+      const response = await axios.get(`${Keys.base_url}/fetchCourses`)
+      .then((response) => {
+        console.log(response.data);
+      })
+    }
+    catch (error) {
+      console.error("Error fetching data:", error);
+    }
+   
   };
+
+
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
     // const [selectedProduct, setSelectedProduct] = useState(null);
     // const [learningStates, setLearningStates] = useState(Array(products.length).fill(false));
