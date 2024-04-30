@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 // import { createStore } from "redux";
+
+import BackToTopArrow from "./Components/BackToTopArrow/BackToTopArrow.jsx";
+
 import ProtectedRoute from "./Constants/ProtectedRoute.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import Login from "./Pages/Login.jsx";
@@ -85,6 +89,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <BackToTopArrow/>
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="signup" element={<SignUp />} />

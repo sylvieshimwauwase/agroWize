@@ -17,6 +17,7 @@
 .vfImage {
   width: 399px;
   height: 266px;
+  border-radius: 20px;
 }
 .detailsContainer {
   width: 783px;

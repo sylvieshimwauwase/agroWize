@@ -5,14 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { products } from '../../Constants/Products';
 import CoursesHero from '../CoursesHero';
 import Popup from '../PopupMessage/Popup/Popup';
-import CoursesPopupPage from '../../Components/PopupMessage/CoursesPopupPage';
 import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
 import FormButton from '../FormButton';
 import axios from 'axios';
 import Keys from '../../Constants/Keys';
 
+
 const Courses = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedTitle, setSelectedTitle] = useState("");
   const navigate = useNavigate();
   // const dispatch = useDispatch();
 
@@ -35,6 +36,14 @@ const Courses = () => {
       console.error("Error fetching data:", error);
     }
    
+  const handleEnrollClick = (title) => {
+    setSelectedTitle(title);
+    setIsVisible(true);
+  }
+  const handleLearningClick = () => {
+    navigate(`/${selectedTitle.replace(/\s+/g, "")}CoursePage`);
+    setIsVisible(false); 
+
   };
 
 
@@ -58,20 +67,31 @@ const Courses = () => {
 
   return (
     <>
-    <Popup isVisible={isVisible}
-        handleEnrollClick={() => {
-
-          handleEnrollClick();
-        }}
+      <Popup
+        isVisible={isVisible}
+        onClose={() => setIsVisible(false)}
         text="Congratulations!"
-        paragraph="description"
-        button={<FormButton name="Start Learning" onClick={handleLearningClick}/>}
+        paragraph={
+          <>
+            You have successfully enrolled for mastering
+            <span style={{ color: "#226D2C" }}> {selectedTitle}</span> course.
+            <br />
+            Get ready for an{" "}
+            <span style={{ color: "#F29620" }}>
+              {" "}
+              immersive learning journey
+            </span>
+          </>
+        }
+        button={
+          <FormButton name="Start Learning" onClick={handleLearningClick} />
+        }
       />
       <CoursesHero />
-      {products.map((item, index, product) => {
+      {products.map((item, index) => {
         return (
           <div className="productDetails" key={index}>
-            <img className="images" src={item.image} alt="Image" />
+            <img className="images" src={item.image} alt="" />
             <div className="borderDetails">
               <h3>{item.title}</h3>
               <h6>Duration: 1 - 3 Months</h6>
@@ -90,8 +110,12 @@ const Courses = () => {
                 onClick={() => handleLearningClick(index)}
               /> */}
               {/* </Link> */}
-              <SmallSizeFormButton name="Enroll Now" onClick={() => {
-                handleEnrollClick()}} />
+              <SmallSizeFormButton
+                name="Enroll Now"
+                onClick={() => {
+                  handleEnrollClick(item.title);
+                }}
+              />
             </div>
           </div>
         );
