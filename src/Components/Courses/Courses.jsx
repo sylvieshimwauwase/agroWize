@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+// import { useDispatch } from 'react-redux';
 import "./Courses.css";
 import { useNavigate } from 'react-router-dom';
 import { products } from '../../Constants/Products';
@@ -6,13 +7,35 @@ import CoursesHero from '../CoursesHero';
 import Popup from '../PopupMessage/Popup/Popup';
 import SmallSizeFormButton from '../SmallSizeFormButton/SmallSizeFormButton';
 import FormButton from '../FormButton';
+import axios from 'axios';
+import Keys from '../../Constants/Keys';
 
 
 const Courses = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState("");
   const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
+  const handleEnrollClick = () => {
+    // const clickedCourse = dispatch ({
+    //   type: "ENROLL_COURSE",
+    //   payload: clickedCourse
+    // })
+    setIsVisible(!isVisible);
+  }
+  const handleLearningClick = async() => {
+    navigate("/VerticalFarmingCoursePage");
+    try {
+      const response = await axios.get(`${Keys.base_url}/fetchCourses`)
+      .then((response) => {
+        console.log(response.data);
+      })
+    }
+    catch (error) {
+      console.error("Error fetching data:", error);
+    }
+   
   const handleEnrollClick = (title) => {
     setSelectedTitle(title);
     setIsVisible(true);
@@ -20,7 +43,10 @@ const Courses = () => {
   const handleLearningClick = () => {
     navigate(`/${selectedTitle.replace(/\s+/g, "")}CoursePage`);
     setIsVisible(false); 
+
   };
+
+
     // const [isPopupOpen, setIsPopupOpen] = useState(false);
     // const [selectedProduct, setSelectedProduct] = useState(null);
     // const [learningStates, setLearningStates] = useState(Array(products.length).fill(false));
