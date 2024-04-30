@@ -2,28 +2,30 @@ import React, {useState, useEffect} from "react";
 import ProgressRating from "../ProgressRating/ProgressRating";
 import "./CourseContent.css"
 import { courseDetails } from "../../Constants/Products";
-import axios from "axios";
-import Keys from "../../Constants/Keys";
+// import axios from "axios";
+// import Keys from "../../Constants/Keys";
+import CourseContentTray from "../CourseDetailTray/CourseContentTray";
 
 const CourseContent = () => {
    const [progress, setProgress] = useState(0);
    const totalLessons = 14;
-   const [courses, setCourses] = useState([]);
+  //  const [courses, setCourses] = useState([]);
    const [unlockedLessons, setUnlockedLessons] = useState([])
 
-    useEffect(() => {
-      fetchLessonContent();
-    }, []);
+  //   useEffect(() => {
+  //     fetchLessonContent();
+  //   }, []);
 
-   const fetchLessonContent = async () => {
-     try {
-       const url = `${Keys.base_url}/allLessons`;
-       const response = await axios.get(url);
-       setCourses(response.data);
-     } catch (error) {
-       console.error("Error fetching lesson content:", error);
-     }
-   };
+  //  const fetchLessonContent = async () => {
+  //    try {
+  //      const url = `${Keys.base_url}/allLessons`;
+  //      const response = await axios.get(url);
+  //      setCourses(response.data);
+  //    } catch (error) {
+  //      console.error("Error fetching lesson content:", error);
+  //    }
+  //  };
+  
    
    const handlePadlockClick = (lessonId) => {
     setProgress((prevProgress) => prevProgress + 1);
@@ -40,6 +42,7 @@ const CourseContent = () => {
           {courseDetails.map((course) => {
            const isUnlocked = unlockedLessons.includes(course.id);
             return (
+              <div className="courseWrapper" key={course.id}>
               <div className="courseBar" key={course.id}>
                 <div className="courseBarDetail">
                   <div className="iconAlignment">
@@ -73,6 +76,8 @@ const CourseContent = () => {
                   ) : null} */}
                 </div>
               </div>
+               {isUnlocked && <CourseContentTray lesson={course} />}
+            </div>
             );
           })}
         </div>
