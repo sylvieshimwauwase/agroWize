@@ -10,9 +10,9 @@ const UserProfileCommunity = () => {
       <VerticalNavBar />
       <div className="userProfileUpdate">
         {" "}
-        <div className="search-button">
+        {/* <div className="search-button">
           <SearchBar />
-        </div>
+        </div> */}
         <div className="userProfileUpdateForm notificationForm">
           <h3 className="formTitle">Community</h3>
           <div className="userProfileNotificationContent">

@@ -17,9 +17,9 @@ const UserProfileCourse = () => {
       <VerticalNavbar />
       <div className="userProfileUpdate">
         {" "}
-        <div className="search-button">
+        {/* <div className="search-button">
           <SearchBar />
-        </div>
+        </div> */}
         <div className="userProfileUpdateForm notificationForm">
           <h3 className="formTitle">My Courses</h3>
           {/* {filteredProducts.length > 0 ? (

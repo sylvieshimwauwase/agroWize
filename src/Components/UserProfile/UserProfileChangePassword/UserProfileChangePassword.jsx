@@ -107,9 +107,9 @@ const UserProfileChangePassword = () => {
       <VerticalNavbar />
       <div className="userProfileUpdate">
         {" "}
-        <div className="search-button">
+        {/* <div className="search-button">
           <SearchBar />
-        </div>
+        </div> */}
         <form onSubmit={handleSubmit} className="userProfileChangePasswordForm">
           <h3 className="formTitle">Change Password</h3>
           <div className="input-group">
