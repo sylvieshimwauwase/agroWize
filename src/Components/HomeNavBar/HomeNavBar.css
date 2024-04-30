@@ -23,6 +23,14 @@
   text-decoration: none;
   color: #000000;
   font-weight: 600;
+  font-size: 15px;
+}
+
+.homeNavBarLinks:hover,
+.homeNavBarLinks.active-link {
+  color: #257830;
+  text-decoration: underline;
+  transform: scale(0.95);
 }
 .homeNavBarButtonSection {
   display: flex;
