@@ -66,12 +66,14 @@ const Community = () => {
                 <span className="coloredText">Type:</span> {item.green}
               </h6>
               <FormButton name="Join Community" onClick={() => {
-                if (isUserLoggedIn) {
-                  setParagraph(item.paragraph);
-                  handleCancelClick()
-              } else {
-                Navigate("/login")
-              }
+                 setParagraph(item.paragraph);
+                 handleCancelClick()
+              //   if (isUserLoggedIn) {
+              //     setParagraph(item.paragraph);
+              //     handleCancelClick()
+              // } else {
+              //   Navigate("/login")
+              // }
               }} />
             </div>
           </div>
