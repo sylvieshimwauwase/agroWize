@@ -111,9 +111,10 @@ function App() {
         <Route
           path="userProfileUpdate"
           element={
-            <ProtectedRoute isUserLoggedIn={isUserLoggedIn}>
-              <UserProfileUpdatePage />
-            </ProtectedRoute>
+            <UserProfileUpdatePage />
+            // <ProtectedRoute isUserLoggedIn={isUserLoggedIn}>
+            //   <UserProfileUpdatePage />
+            // </ProtectedRoute>
           }
         />
         <Route

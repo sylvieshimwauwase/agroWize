@@ -30,7 +30,7 @@
     height: 30px;
     font-family: NunitoSans;
     font-weight: 600;
-    color: #fff;
+    color: #226d2c;
     border-radius: 10px;
     text-decoration: none;
     list-style: none;
@@ -38,9 +38,9 @@
     cursor: pointer;
     border: 1px solid #226d2c;
   }
-  .userProfileButton:hover {
+  /* .userProfileButton:hover {
     background-color: #3ec772;
-  }
+  } */
    .formNavbarLink:hover {
     text-decoration: underline; 
     transform: scale(0.9);
