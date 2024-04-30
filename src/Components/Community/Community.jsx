@@ -57,7 +57,7 @@ const Community = () => {
 
         return (
           <div key={index} className="productDetails">
-            <img className="images" src={item.image} alt="Image" />
+            <img className="images" src={item.image} alt="" />
             <div className="borderDetails">
               <h3>{item.title}</h3>
               <h6 className="primaryColor">{item.about}</h6>
