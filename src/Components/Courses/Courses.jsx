@@ -126,5 +126,5 @@ const Courses = () => {
     </>
   );
 }
-
-export default Courses
+};
+export default Courses;
