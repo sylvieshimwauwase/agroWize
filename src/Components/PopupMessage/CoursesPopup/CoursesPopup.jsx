@@ -7,7 +7,7 @@ import { products } from "../../../Constants/Products";
 const CoursesPopup = ({ text, titleText, selectedProduct }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [learningState, setLearningState] = useState(false);
-  //    Array(products.length).fill(false)
+     Array(products.length).fill(false)
   // );
 
   const handleClose = () => {
