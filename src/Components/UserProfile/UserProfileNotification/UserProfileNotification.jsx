@@ -6,9 +6,9 @@ const UserProfileNotification = () => {
     return (
       <div className="userProfileUpdate">
         {" "}
-        <div className="search-button">
+        {/* <div className="search-button">
           <SearchBar />
-        </div>
+        </div> */}
         <div className="userProfileUpdateForm notificationForm">
           <h3 className="formTitle">Notifications</h3>
           <div className="userProfileNotificationContent">

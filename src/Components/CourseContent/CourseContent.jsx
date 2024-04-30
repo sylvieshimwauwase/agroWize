@@ -17,7 +17,7 @@ const CourseContent = () => {
 
    const fetchLessonContent = async () => {
      try {
-       const url = `${Keys.base_url}/api/Courses`;
+       const url = `${Keys.base_url}/allLessons`;
        const response = await axios.get(url);
        setCourses(response.data);
      } catch (error) {

@@ -87,9 +87,9 @@ const UserProfileUpdate = ({ userName }) => {
           <center>Loading...</center>
         </div>
       )}
-      <div className="search-button">
+      {/* <div className="search-button">
         <SearchBar />
-      </div>
+      </div> */}
       <div className="userProfileUpdateForm">
         <Formik
           initialValues={{
