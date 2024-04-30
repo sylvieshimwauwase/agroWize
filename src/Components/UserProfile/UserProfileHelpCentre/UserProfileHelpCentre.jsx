@@ -10,9 +10,9 @@ const UserProfileHelpCentre = () => {
       <VerticalNavBar />
       <div className="userProfileUpdate">
         {" "}
-        <div className="search-button">
+        {/* <div className="search-button">
           <SearchBar />
-        </div>
+        </div> */}
         <div className="userProfileUpdateForm notificationForm">
           <h3 className="formTitle">Help Center</h3>
           <div className="userProfileNotificationContent">

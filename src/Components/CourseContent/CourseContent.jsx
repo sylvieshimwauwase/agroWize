@@ -25,6 +25,7 @@ const CourseContent = () => {
   //      console.error("Error fetching lesson content:", error);
   //    }
   //  };
+  
    
    const handlePadlockClick = (lessonId) => {
     setProgress((prevProgress) => prevProgress + 1);
