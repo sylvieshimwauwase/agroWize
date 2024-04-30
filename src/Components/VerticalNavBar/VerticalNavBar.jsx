@@ -29,7 +29,7 @@ const VerticalNavBar = ({ userName }) => {
       if (response.status === 200) {
         localStorage.removeItem("auth_token");
         // localStorage.deleteItem("auth_token");
-        navigate("/login");
+        navigate("/");
         setIsLoading(false);
       } else {
         console.error("Error logging out:", response.data);
@@ -38,9 +38,12 @@ const VerticalNavBar = ({ userName }) => {
       // setTimeout(() => {
       //   setIsLoading(false);
       // }, 2000);
-      setIsLoading(false);
+     
       console.error("Error logging out:", error);
+  } finally {
+    setIsLoading(false);
   }
+
 };
 
   return (

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// import { createStore } from "redux";
+
 import BackToTopArrow from "./Components/BackToTopArrow/BackToTopArrow.jsx";
+
 import ProtectedRoute from "./Constants/ProtectedRoute.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import Login from "./Pages/Login.jsx";
@@ -65,6 +69,24 @@ function App() {
     setIsUserLoggedIn(true);
   };
 
+  // const initialState = {
+  //   enrolledCourses: [],
+  // };
+
+  // const reducer = (state = initialState, action) => {
+  //   switch (action.type) {
+  //     case "ENROLL_COURSE":
+  //       return {
+  //         ...state,
+  //         enrolledCourses: [...state.enrolledCourses, action.payload],
+  //       };
+  //     default:
+  //       return state;
+  //   }
+  // };
+
+  // const store = createStore(reducer);
+
   return (
     <BrowserRouter>
     <BackToTopArrow/>
@@ -89,9 +111,10 @@ function App() {
         <Route
           path="userProfileUpdate"
           element={
-            <ProtectedRoute isUserLoggedIn={isUserLoggedIn}>
-              <UserProfileUpdatePage />
-            </ProtectedRoute>
+            <UserProfileUpdatePage />
+            // <ProtectedRoute isUserLoggedIn={isUserLoggedIn}>
+            //   <UserProfileUpdatePage />
+            // </ProtectedRoute>
           }
         />
         <Route

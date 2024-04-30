@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "../Search/SearchBar";
 import FormButton from "../FormButton";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { communityDetails } from "../../Constants/Products.js"
 import "./community.css";
 
@@ -29,7 +29,8 @@ const popupPageComponentMap = {
 const Community = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [paragraph, setParagraph] = useState(<></>);
-
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const Navigate = useNavigate();
 
   const handleCancelClick = () => {
     
@@ -65,8 +66,13 @@ const Community = () => {
                 <span className="coloredText">Type:</span> {item.green}
               </h6>
               <FormButton name="Join Community" onClick={() => {
-                setParagraph(item.paragraph);
-                handleCancelClick()}} />
+                if (isUserLoggedIn) {
+                  setParagraph(item.paragraph);
+                  handleCancelClick()
+              } else {
+                Navigate("/login")
+              }
+              }} />
             </div>
           </div>
         );

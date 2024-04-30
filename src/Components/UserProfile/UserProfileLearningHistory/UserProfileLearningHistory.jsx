@@ -9,9 +9,9 @@ const UserProfileLearningHistory = () => {
       <UserProfileHeader />
       <VerticalNavBar />
       <div className="userProfileUpdate">
-        <div className="search-button">
+        {/* <div className="search-button">
           <SearchBar />
-        </div>
+        </div> */}
         <div className="userProfileUpdateForm notificationForm">
           <h3 className="formTitle">Learning History</h3>
           <div className="userProfileNotificationContent">
