@@ -14,31 +14,37 @@ import Keys from '../../Constants/Keys';
 const Courses = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState("");
-  const navigate = useNavigate();
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const navigate = useNavigate(); 
   // const dispatch = useDispatch();
 
-  const handleEnrollClick = () => {
-    // const clickedCourse = dispatch ({
-    //   type: "ENROLL_COURSE",
-    //   payload: clickedCourse
-    // })
-    setIsVisible(!isVisible);
-  }
-  const handleLearningClick = async() => {
-    navigate("/VerticalFarmingCoursePage");
-    try {
-      const response = await axios.get(`${Keys.base_url}/fetchCourses`)
-      .then((response) => {
-        console.log(response.data);
-      })
-    }
-    catch (error) {
-      console.error("Error fetching data:", error);
-    }
+  // const handleEnrollClick = () => {
+  //   // const clickedCourse = dispatch ({
+  //   //   type: "ENROLL_COURSE",
+  //   //   payload: clickedCourse
+  //   // })
+  //   setIsVisible(!isVisible);
+  // }
+  // const handleLearningClick = async() => {
+  //   navigate("/VerticalFarmingCoursePage");
+  //   try {
+  //     const response = await axios.get(`${Keys.base_url}/fetchCourses`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //     })
+  //   }
+  //   catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  
    
   const handleEnrollClick = (title) => {
-    setSelectedTitle(title);
-    setIsVisible(true);
+    if (isUserLoggedIn) {
+      setSelectedTitle(title);
+      setIsVisible(true);
+    } else {
+      navigate("/login");
+    }
   }
   const handleLearningClick = () => {
     navigate(`/${selectedTitle.replace(/\s+/g, "")}CoursePage`);
@@ -126,5 +132,5 @@ const Courses = () => {
     </>
   );
 }
-};
+// };
 export default Courses;
