@@ -90,11 +90,11 @@ const SignupForm = () => {
             }*/
             if (!error?.response) {
                 setError('No Server Response');
-            } else if (error.response?.status === 409) {
-                setError('Username Taken');
+           
             } else {
-                setError('Registration Failed')
+                setError('user already exists')
             }
+            resetForm();
         } finally {
             setIsSubmitting(false);
         }

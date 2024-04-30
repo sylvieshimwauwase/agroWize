@@ -39,12 +39,14 @@ const Courses = () => {
   
    
   const handleEnrollClick = (title) => {
-    if (isUserLoggedIn) {
-      setSelectedTitle(title);
-      setIsVisible(true);
-    } else {
-      navigate("/login");
-    }
+    setSelectedTitle(title);
+    setIsVisible(true);
+    // if (isUserLoggedIn) {
+    //   setSelectedTitle(title);
+    //   setIsVisible(true);
+    // } else {
+    //   navigate("/login");
+    // }
   }
   const handleLearningClick = () => {
     navigate(`/${selectedTitle.replace(/\s+/g, "")}CoursePage`);
