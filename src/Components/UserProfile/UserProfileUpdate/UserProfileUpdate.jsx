@@ -4,15 +4,21 @@ import Keys from "../../../Constants/Keys";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./UserProfileUpdate.css";
 import FormButton from "../../FormButton";
+import Popup from "../../PopupMessage/Popup/Popup";
+import SmallSizeFormButton from "../../SmallSizeFormButton/SmallSizeFormButton";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "../../Search/SearchBar";
 import UserProfileUpdateSuccessPopup from "../../../Components/PopupMessage/UserProfileUpdateSuccessPopup";
 
-const UserProfileUpdate = ({ userName }) => {
+const UserProfileUpdate = () => {
+  const [setIsSubmitting] = useState(false);
   const [isProfileUpdated, setIsProfileUpdated] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+  const  navigate = useNavigate();
 
-  const validate = (values) => {
+  const validate = values => {
     const errors = {};
 
     if (!values.fullName) {
@@ -36,61 +42,73 @@ const UserProfileUpdate = ({ userName }) => {
     return errors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-      handleUpdateProfile(e);
-    }
-  };
-  const handleUpdateProfile = async (e) => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    setIsLoading(true);
+
     try {
-      setIsLoading(true);
-      setErrorMessage("");
-      const values = e.target.elements;
       let data = {
-        fullname: values.fullName.value,
-        email: values.email.value,
-        nickname: values.nickname.value,
-        Contact: values.contact.value,
+        fullname: values.fullName,
+        email: values.email,
+        nickname: values.password,
+        contact: values.confirmPassword
       };
-      console.log("values", values);
+
       const response = await axios.put(`${Keys.base_url}/updateProfile`, data);
       console.log(response.data);
-      setIsProfileUpdated(true);
+      // setIsProfileUpdated(true);
       setIsLoading(false);
-
-      /*resetForm();*/
+      handleCancelClick();
+      resetForm();
 
     } catch (error) {
       setIsLoading(false);
-      console.log("error", error);
-      const errorMessage =
-        error.response && error.response.data && error.response.data.message
-          ? error.response.data.message
-          : "An error occurred. Please try again later.";
-      setErrorMessage(errorMessage);
+      if (!error?.response) {
+        setError('No Server Response');
+      } else {
+        setError('user already exists');
+      }
+      resetForm();
+    } finally {
+      setIsSubmitting(false);
+      resetForm();
     }
-    }
+  };
 
-  const handleCancelUpdateProfile = () => {
-    setIsProfileUpdated(false);
-
-    /*resetForm();*/
+  const handleCancelClick = () => {
+    setIsVisible(!isVisible);
   }
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+  
+
+  // const handleCancelUpdateProfile = () => {
+  //   setIsProfileUpdated(false);
+
+  //   /*resetForm();*/
+  // }
 
   return (
     <div className="userProfileUpdate">
-      
-      {" "}
       {isLoading && (
         <div className="loading">
           <center>Loading...</center>
         </div>
       )}
-      {/* <div className="search-button">
-        <SearchBar />
-      </div> */}
+      <Popup isVisible={isVisible}
+      handleCancelClick={handleCancelClick}
+       text="Congratulations!"
+       paragraph="Your account has been created successfully."
+       button={
+       <div>
+            <SmallSizeFormButton name="Login" onClick={handleLoginClick}/>
+       </div>
+       }
+       />
+      {/* {" "} */}
+      
       <div className="userProfileUpdateForm">
+      
         <Formik
           initialValues={{
             fullName: "",
@@ -105,7 +123,7 @@ const UserProfileUpdate = ({ userName }) => {
             <Form onSubmit={handleSubmit} action="" className="form">
               <div className="profileCircleForm">
                 {/* Placeholder for profile picture */}
-                <span>{userName}</span>
+                {/* <span>{userName}</span> */}
               </div>
               <div className="formLbl">
                 <label htmlFor="fullName" className="lbl">
@@ -166,20 +184,17 @@ const UserProfileUpdate = ({ userName }) => {
                   component="div"
                   className="error"
                 />
+                {error && <div className="error">{error}</div>}
               </div>
+              <FormButton name="Update Profile" disabled={isSubmitting}/>
             </Form>
           )}
         </Formik>
-        <FormButton name="Update Profile" />
+        
       </div>
-      <div className="popupContainer">
-        <UserProfileUpdateSuccessPopup
-        onConfirm={handleUpdateProfile} 
-        onCancel={handleCancelUpdateProfile}
-        isOpen={isProfileUpdated} />
-      </div>
+      
     </div>
   );
-  };
+};
 
 export default UserProfileUpdate;

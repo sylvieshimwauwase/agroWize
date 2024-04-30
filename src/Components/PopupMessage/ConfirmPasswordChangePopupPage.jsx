@@ -1,49 +1,62 @@
 import React from "react";
 import { useState } from "react";
 import './ConfirmPopup.css';
+import { useNavigate } from "react-router-dom"
+import Popup from "./Popup/Popup";
+import SmallSizeFormButton from "../SmallSizeFormButton/SmallSizeFormButton";
 import PasswordChangeSuccessPage from "./PasswordChangeSuccessPage";
 
-const ConfirmPasswordChangePopupPage = ({ isOpen, onConfirm, onCancel}) => {
+const ConfirmPasswordChangePopupPage = ({ isOpen, onConfirm, onCancel }) => {
+    const [isVisible, setIsVisible] = useState(false);
     const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleConfirm = () => {
         setIsSuccessPopupOpen(true);
         onConfirm();
     };
 
-    const handleSuccessPopupClose = () => {
-        setIsSuccessPopupOpen(false);
-    };
+    // const handleSuccessPopupClose = () => {
+    //     setIsSuccessPopupOpen(false);
+    // };
 
-    const handleSuccessPopupConfirm = () => {
-        setIsSuccessPopupOpen(false);
-        onCancel();
-    };
+    // const handleSuccessPopupConfirm = () => {
+    //     setIsSuccessPopupOpen(false);
+    //     onCancel();
+    // };
 
-    const handleSuccessPopupCancel = () => {
-        setIsSuccessPopupOpen(false);
-        
-    };
+    // const handleSuccessPopupCancel = () => {
+    //     setIsSuccessPopupOpen(false);
 
-    return ( 
+    // };
+    const handleClose = () => {
+        navigate('/login');
+    };
+    const handleCancelClick = (text) => {
+        setIsVisible(!isVisible);
+    }
+
+    return (
         <>
-        {isOpen && (
-            <div className="confirmPopup">
-            <p className='confirmPopupText'>Are you sure you want to change your password?</p>
-            <div className="confirmPopupButtonContainer">
-                <button className='yesButton' onClick={handleConfirm}>Yes</button>
-                <button className='noButton'onClick={onCancel}>No</button>
-            </div>
-      </div>
-        )};
-        <div className="popupContainer">
-            <PasswordChangeSuccessPage
-                onClose={handleSuccessPopupClose}
-                onConfirm={handleSuccessPopupConfirm}
-                onCancel={handleSuccessPopupCancel}
-                isOpen={isSuccessPopupOpen}
+            {isOpen && (
+                <div className="confirmPopup">
+                    <p className='confirmPopupText'>Are you sure you want to change your password?</p>
+                    <div className="confirmPopupButtonContainer">
+                        <button className='yesButton' onClick={handleCancelClick}>Yes</button>
+                        <button className='noButton' onClick={onCancel}>No</button>
+                    </div>
+                </div>
+            )};
+            <Popup isVisible={isVisible}
+                handleCancelClick={handleCancelClick}
+                text="Congratulations!"
+                paragraph="You have successfully changed your password."
+                button={
+                    <div>
+                        <SmallSizeFormButton name="Login" onClick={handleClose} />
+                    </div>
+                }
             />
-        </div>
         </>
     );
 }

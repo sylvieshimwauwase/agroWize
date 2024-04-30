@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import Keys from "../../../Constants/Keys";
 import "./UserProfileHeader.css";
 
 const UserProfileHeader = () => {
@@ -14,12 +15,8 @@ const UserProfileHeader = () => {
       setError(null);
 
       try {
-        const response = await axios.get('/api/user/name', { // Assuming endpoint to fetch name
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token') || ''}`, // Assuming token-based auth
-          },
-        });
-        setFullName(response.data.fullName); // Update state with fetched fullName
+        const response = await axios.post(`${Keys.base_url}/addUserName`);
+        setFullName(response.data.fullName);
       } catch (error) {
         console.error("Error fetching user name:", error);
         setError(error.message || "An error occurred.");
