@@ -55,7 +55,7 @@ import LettuceHydroPopup from "./Components/PopupMessage/CommunityPopup/LettuceH
 
 
 
-import { jwtDecode } from 'jwt-decode';
+// import { jwtDecode } from 'jwt-decode';
 
 // Decode JWT
 
@@ -65,9 +65,9 @@ function App() {
 
   useEffect(() => {
     const storedToken = localStorage.getItem("auth_token");
-    setIsUserLoggedIn(storedToken? true: false);
-    const decoded = jwtDecode(storedToken);
-console.log(decoded);
+    setIsUserLoggedIn(storedToken ? true : false);
+    // const decoded = jwtDecode(storedToken);
+    // console.log(decoded);
   }, []);
 
   const handleUserLogin = () => {
@@ -94,7 +94,7 @@ console.log(decoded);
 
   return (
     <BrowserRouter>
-    <BackToTopArrow/>
+      <BackToTopArrow />
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="signup" element={<SignUp />} />
@@ -182,7 +182,7 @@ console.log(decoded);
           path="passwordChangeSuccessPage"
           element={<PasswordChangeSuccessPage />}
         />
-        <Route path="tomatoVerticalPopup" element={<TomatoVerticalPopup />}/>
+        <Route path="tomatoVerticalPopup" element={<TomatoVerticalPopup />} />
         <Route path="grainHydroPopup" element={<GrainHydroPopup />} />
         <Route path="grainVerticalPopup" element={<GrainVerticalPopup />} />
         <Route path="lettuceHydroPopup" element={<LettuceHydroPopup />} />
@@ -195,7 +195,7 @@ console.log(decoded);
         />
         <Route
           path="cropRotationCoursePage"
-          element={<CropRotationCoursePage/>}
+          element={<CropRotationCoursePage />}
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

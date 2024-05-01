@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Keys from "../../../Constants/Keys";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -16,7 +16,7 @@ const UserProfileUpdate = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-  const  navigate = useNavigate();
+  const navigate = useNavigate();
 
   const validate = values => {
     const errors = {};
@@ -80,7 +80,20 @@ const UserProfileUpdate = () => {
   const handleLoginClick = () => {
     navigate("/login");
   };
-  
+
+  useEffect(() => {
+    console.log("useEffec");
+    const fetchProfile = async () => {
+      try {
+        console.log("fetchProfile");
+        const response = await axios.get(`${Keys.base_url}/profile`);
+        console.log("fetchedProfile", response.data);
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+      }
+    };
+    fetchProfile();
+  }, []);
 
   // const handleCancelUpdateProfile = () => {
   //   setIsProfileUpdated(false);
@@ -96,19 +109,19 @@ const UserProfileUpdate = () => {
         </div>
       )}
       <Popup isVisible={isVisible}
-      handleCancelClick={handleCancelClick}
-       text="Congratulations!"
-       paragraph="Your account has been created successfully."
-       button={
-       <div>
-            <SmallSizeFormButton name="Login" onClick={handleLoginClick}/>
-       </div>
-       }
-       />
+        handleCancelClick={handleCancelClick}
+        text="Congratulations!"
+        paragraph="Your account has been created successfully."
+        button={
+          <div>
+            <SmallSizeFormButton name="Login" onClick={handleLoginClick} />
+          </div>
+        }
+      />
       {/* {" "} */}
-      
+
       <div className="userProfileUpdateForm">
-      
+
         <Formik
           initialValues={{
             fullName: "",
@@ -186,13 +199,13 @@ const UserProfileUpdate = () => {
                 />
                 {error && <div className="error">{error}</div>}
               </div>
-              <FormButton name="Update Profile" disabled={isSubmitting}/>
+              <FormButton name="Update Profile" disabled={isSubmitting} />
             </Form>
           )}
         </Formik>
-        
+
       </div>
-      
+
     </div>
   );
 };
