@@ -34,9 +34,9 @@ const UserProfileHeader = () => {
         <div className="userProfileHeaderDiv">
         <Link to="/" className="formNavbarLink">Home</Link>
         <Link to="/aboutUs" className="formNavbarLink">About Us</Link>
+        <Link to="/verticalFarming" className="formNavbarLink">farm Mode</Link>
         <Link to="/courses" className="formNavbarLink">Courses</Link>
         <Link to="/community" className="formNavbarLink">Community</Link>
-        <Link to="/articles" className="formNavbarLink">Articles</Link>
       </div>
         <div>
         <button className="userProfileButton">{fullName}</button>

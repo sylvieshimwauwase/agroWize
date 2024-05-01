@@ -35,10 +35,10 @@ const VerticalNavBar = ({ userName }) => {
         console.error("Error logging out:", response.data);
       }
     } catch (error) {
-      // setTimeout(() => {
-      //   setIsLoading(false);
-      // }, 2000);
-     
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+      navigate("/");
       console.error("Error logging out:", error);
   } finally {
     setIsLoading(false);
@@ -55,7 +55,7 @@ const VerticalNavBar = ({ userName }) => {
       )}
       <div className="backdrop">
         <div className="profileCircle">
-          <span>{userName}</span>
+        <img src="/User Profile Avatar.png" alt="Profile pic" />
         </div>
         <ul>
           {pages.map((page, index) => (

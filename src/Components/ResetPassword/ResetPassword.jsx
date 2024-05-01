@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Keys from "../../Constants/Keys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
+import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import './ResetPassword.css';
 import FormButton from "../FormButton";
 import Popup from "../PopupMessage/Popup/Popup";
@@ -30,11 +30,11 @@ const ResetPassword = () => {
     };
     const handleCancelClick = (text) => {
         setIsVisible(!isVisible);
-      }
-      const handleLoginClick = () => {
+    }
+    const handleLoginClick = () => {
         navigate("/login");
-      };
-    
+    };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,10 +46,10 @@ const ResetPassword = () => {
 
         try {
             setIsLoading(true);
-            const response = await axios.put(`${Keys.base_url}/passwordReset`, { 
+            const response = await axios.put(`${Keys.base_url}/passwordReset`, {
                 email,
-                password, 
-                confirmPassword 
+                password,
+                confirmPassword
             });
             console.log(response.data);
 
@@ -69,10 +69,10 @@ const ResetPassword = () => {
                 setNewPassword("");
                 setConfirmPassword("");
               }*/ /*else {
-                setError(response.data.error || "Password reset failed");
-                navigate("/login") // Set specific error message
-              }*/
-          } catch (error) {
+              setError(response.data.error || "Password reset failed");
+              navigate("/login") // Set specific error message
+            }*/
+        } catch (error) {
             setIsLoading(false);
             console.error("Error logging in: ", error);
             /*setError("Invalid username or password");*/
@@ -81,7 +81,7 @@ const ResetPassword = () => {
             setEmail("");
             setNewPassword("");
             setConfirmPassword("");
-          }
+        }
     };
 
     const togglePasswordVisibility = () => {
@@ -91,21 +91,21 @@ const ResetPassword = () => {
     return (
         <div className="resetPasswordPage">
             {isLoading && (
-            <div className="loading">
-            <center>Loading...</center>
-            </div>
+                <div className="loading">
+                    <center>Loading...</center>
+                </div>
             )}
             <Popup isVisible={isVisible}
-            handleCancelClick={handleCancelClick}
-            text="Password Reset Successful!"
-            button={<SmallSizeFormButton name="Login" onClick={handleLoginClick}/>} />
+                handleCancelClick={handleCancelClick}
+                text="Password Reset Successful!"
+                button={<SmallSizeFormButton name="Login" onClick={handleLoginClick} />} />
             <div className="resetPasswordForm">
                 <form onSubmit={handleSubmit}>
                     <h2>Reset Password</h2>
                     <div className="resetPasswordInput">
                         <label htmlFor="email">Email</label>
                         <input
-                            type= "text"
+                            type="text"
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -122,9 +122,9 @@ const ResetPassword = () => {
                             required
                         />
                         <FontAwesomeIcon
-                                icon={showPassword ? faLockOpen : faLock}
-                                className="password-toggle"
-                                onClick={togglePasswordVisibility}
+                            icon={showPassword ? faLockOpen : faLock}
+                            className="password-toggle"
+                            onClick={togglePasswordVisibility}
                         />
                     </div>
                     <div className="resetPasswordInput">
@@ -137,9 +137,9 @@ const ResetPassword = () => {
                             required
                         />
                         <FontAwesomeIcon
-                                icon={showPassword ? faLockOpen : faLock}
-                                className="password-toggle"
-                                onClick={togglePasswordVisibility}
+                            icon={showPassword ? faLockOpen : faLock}
+                            className="password-toggle"
+                            onClick={togglePasswordVisibility}
                         />
                     </div>
                     {error && <p>{error}</p>}

@@ -28,9 +28,10 @@
     margin-bottom: 20px;
   }
   
-  .profileCircle span {
-    font-size: 16px;
-    margin-bottom: 10px;
+  .profileCircle img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
   
   .verticalNavbar ul {
