@@ -21,12 +21,12 @@ const UserProfileUpdate = () => {
   const validate = values => {
     const errors = {};
 
-    if (!values.fullName) {
+    if (!values.fullname) {
       errors.fullName = "Required";
-    } else if (values.fullName.length < 3) {
-      errors.fullName = "must be at least 3 characters";
-    } else if (values.fullName.length > 15) {
-      errors.fullName = "must be 15 characters or less";
+    } else if (values.fullname.length < 3) {
+      errors.fullname = "must be at least 3 characters";
+    } else if (values.fullname.length > 15) {
+      errors.fullname = "must be 15 characters or less";
     }
 
     if (!values.email) {
@@ -36,8 +36,8 @@ const UserProfileUpdate = () => {
       errors.nickname = "Required";
     }
 
-    if (!values.contact) {
-      errors.contact = "Required";
+    if (!values.phoneno) {
+      errors.phoneno = "Required";
     }
     return errors;
   };
@@ -47,10 +47,10 @@ const UserProfileUpdate = () => {
 
     try {
       let data = {
-        fullname: values.fullName,
+        fullname: values.fullname,
         email: values.email,
-        nickname: values.password,
-        contact: values.confirmPassword
+        nickname: values.nickname,
+        phoneno: values.phoneno
       };
 
       const response = await axios.put(`${Keys.base_url}/updateProfile`, data);
@@ -124,10 +124,10 @@ const UserProfileUpdate = () => {
 
         <Formik
           initialValues={{
-            fullName: "",
+            fullname: "",
             email: "",
             nickname: "",
-            contact: "",
+            phoneno: "",
           }}
           validate={validate}
           onSubmit={handleSubmit}
@@ -135,21 +135,21 @@ const UserProfileUpdate = () => {
           {({ isSubmitting }) => (
             <Form onSubmit={handleSubmit} action="" className="form">
               <div className="profileCircleForm">
-                {/* Placeholder for profile picture */}
-                {/* <span>{userName}</span> */}
+                <img src="/User Profile Avatar.png" alt="Profile pic" />
+                <a href="/userProfileUpdate" className="editProfile">Replace image</a>
               </div>
               <div className="formLbl">
-                <label htmlFor="fullName" className="lbl">
+                <label htmlFor="fullname" className="lbl">
                   Name:
                 </label>
                 <Field
                   type="text"
-                  name="fullName"
+                  name="fullname"
                   className="input"
                   placeholder="Enter your full name"
                 />
                 <ErrorMessage
-                  name="fullName"
+                  name="fullname"
                   component="div"
                   className="error"
                 />
@@ -183,17 +183,17 @@ const UserProfileUpdate = () => {
                 />
               </div>
               <div className="formLbl">
-                <label htmlFor="contact" className="lbl">
-                  Contact:
+                <label htmlFor="phoneno" className="lbl">
+                  phoneno:
                 </label>
                 <Field
                   type="text"
-                  name="contact"
+                  name="phoneno"
                   className="input"
                   placeholder="Enter your Phone Number"
                 />
                 <ErrorMessage
-                  name="contact"
+                  name="phoneno"
                   component="div"
                   className="error"
                 />

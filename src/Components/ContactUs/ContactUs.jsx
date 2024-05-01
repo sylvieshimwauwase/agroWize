@@ -6,16 +6,16 @@ import FormButton from "../FormButton";
 
 const ContactUs = () => {
       const [formData, setFormData] = useState({
-            name: '',
-            email: '',
-            subject: ''
+            fullname: '',
+            username: '',
+            message: ''
       });
 
       const handleInputChange = (e) => {
-            const { name, value } = e.target;
+            const { fullname, value } = e.target;
             setFormData({
                   ...formData,
-                  [name]: value
+                  [fullname]: value
             });
       };
 
@@ -25,16 +25,16 @@ const ContactUs = () => {
                   await axios.post(`${Keys.base_url}/contact`, formData);
                   console.log('Message sent successfully');
                   setFormData({
-                        name: '',
-                        email: '',
-                        subject: ''
+                        fullname: '',
+                        username: '',
+                        message: ''
                   });
             } catch (error) {
                   console.error('Error sending message: ', error);
                   setFormData({
-                        name: '',
-                        email: '',
-                        subject: ''
+                        fullname: '',
+                        username: '',
+                        message: ''
                   });
             }
       };
@@ -51,33 +51,33 @@ const ContactUs = () => {
                               <div className="contactUsForm">
                                     <form onSubmit={handleSubmit}>
                                           <label className="contactUsLabel" 
-                                          htmlFor="name">Full name</label>
+                                          htmlFor="fullname">Full name</label>
                                           <input 
                                           className="contactUsInput"
                                           type="text" 
-                                          name="name"
-                                          value={formData.name}
+                                          name="fullname"
+                                          value={formData.fullname}
                                           onChange={handleInputChange}
-                                          placeholder="Enter your name" 
+                                          placeholder="Enter your names" 
                                           />
 
                                           <label className="contactUsLabel" 
-                                          htmlFor="email">Enter your email address</label>
+                                          htmlFor="username">Enter your username address</label>
                                           <input 
                                           className="contactUsInput"
                                           type="text" 
-                                          name="email"
-                                          value={formData.email}
+                                          name="username"
+                                          value={formData.username}
                                           onChange={handleInputChange}
                                           placeholder="example@gmail.com" />
 
                                           <label  className="contactUsLabel"
-                                          htmlFor="subject">Message</label>
+                                          htmlFor="message">Message</label>
                                           <textarea 
                                           className="contactUsTextArea"
-                                          id="subject" 
-                                          name="subject"
-                                          value={formData.subject}
+                                          id="message" 
+                                          name="message"
+                                          value={formData.message}
                                           onChange={handleInputChange}
                                           placeholder="Write your message">
                                           </textarea>

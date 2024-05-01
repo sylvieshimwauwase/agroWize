@@ -6,7 +6,27 @@ import axios from "axios";
 import Keys from "../../Constants/Keys.js";
 import { communityDetails } from "../../Constants/Products.js"
 import "./community.css";
+
+import TomatoVerticalPopup from "../PopupMessage/CommunityPopup/TomatoVerticalPopup.jsx";
+import LettuceVerticalPopup from "../PopupMessage/CommunityPopup/LettuceVerticalPopup.jsx";
+import GrainVerticalPopup from "../PopupMessage/CommunityPopup/GrainVerticalPopup.jsx";
+import PotatoVerticalPopup from "../PopupMessage/CommunityPopup/PotatoVerticalPopup.jsx";
+import TomatoHydroPopup from "../PopupMessage/CommunityPopup/TomatoHydroPopup.jsx";
+import LettuceHydroPopup from "../PopupMessage/CommunityPopup/LettuceHydroPopup.jsx";
+import GrainHydroPopup from "../PopupMessage/CommunityPopup/GrainHydroPopup.jsx";
+import TuberHydroPopup from "../PopupMessage/CommunityPopup/TuberHydroPopup.jsx";
 import Popup from "../PopupMessage/Popup/Popup.jsx";
+
+const popupPageComponentMap = {
+  TomatoVerticalPopup,
+  LettuceVerticalPopup,
+  GrainVerticalPopup,
+  PotatoVerticalPopup,
+  TomatoHydroPopup,
+  LettuceHydroPopup,
+  GrainHydroPopup,
+  TuberHydroPopup,
+};
 
 const Community = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,37 +85,38 @@ const Community = () => {
     <div>
       <Popup isVisible={isVisible}
         handleCancelClick={() => {
-
           handleCancelClick();
         }}
         text="Congratulations!"
         paragraph={
-          <>
-            You have successfully joined
-            <span style={{ color: "#f29620" }}> Lettuce</span>
-            <span style={{ color: "#257830" }}> Hydro Farming</span> Community
-          </>
+         paragraph
         }
       />
       <div className="communityHero">
         <SearchBar />
         <h3 className="heroTitle">COMMUNITY</h3>
       </div>
-      {communitiesList.map((item, index) => {
+      {communityDetails.map((item, index) => {
+        const PopupPageComponent = popupPageComponentMap[item.popupPage];
 
         return (
           <div key={index} className="productDetails">
-            <img className="images" src={`/AboutUs3.png`} alt="" />
+            <img className="images" src={item.image} alt="" />
             <div className="borderDetails">
-              <h3>{item.name}</h3>
-              <h6 className="primaryColor">{`Vegetable`}</h6>
+              <h3>{item.title}</h3>
+              <h6 className="primaryColor">{item.about}</h6>
               <h6>
-                <span className="coloredText">Type:</span> {`Tomato`}
+                <span className="coloredText">Type:</span> {item.green}
               </h6>
               <FormButton name="Join Community" onClick={() => {
                 setParagraph(item.paragraph);
                 handleCommunityClick(item.id);
-                
+                //   if (isUserLoggedIn) {
+                //     setParagraph(item.paragraph);
+                //     handleCancelClick()
+                // } else {
+                //   Navigate("/login")
+                // }
               }} />
             </div>
           </div>
