@@ -9,23 +9,23 @@ const UserProfileHeader = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchUserName = async () => {
-      setIsLoading(true);
-      setError(null);
+  // useEffect(() => {
+  //   const fetchUserName = async () => {
+  //     setIsLoading(true);
+  //     setError(null);
 
-      try {
-        const response = await axios.post(`${Keys.base_url}/addUserName`);
-        setFullName(response.data.fullName);
-      } catch (error) {
-        console.error("Error fetching user name:", error);
-        setError(error.message || "An error occurred.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchUserName();
-  }, []);
+  //     try {
+  //       const response = await axios.post(`${Keys.base_url}/addUserName`, );
+  //       setFullName(response.data.fullName);
+  //     } catch (error) {
+  //       console.error("Error fetching user name:", error);
+  //       setError(error.message || "An error occurred.");
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchUserName();
+  // }, []);
   return (
     <div className="userProfileHeader">
         <div>

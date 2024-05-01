@@ -55,6 +55,9 @@ import LettuceHydroPopup from "./Components/PopupMessage/CommunityPopup/LettuceH
 
 
 
+import { jwtDecode } from 'jwt-decode';
+
+// Decode JWT
 
 
 function App() {
@@ -63,6 +66,8 @@ function App() {
   useEffect(() => {
     const storedToken = localStorage.getItem("auth_token");
     setIsUserLoggedIn(storedToken? true: false);
+    const decoded = jwtDecode(storedToken);
+console.log(decoded);
   }, []);
 
   const handleUserLogin = () => {

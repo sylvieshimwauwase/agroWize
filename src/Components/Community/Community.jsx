@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SearchBar from "../Search/SearchBar";
 import FormButton from "../FormButton";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Keys from "../../Constants/Keys.js";
 import { communityDetails } from "../../Constants/Products.js"
 import "./community.css";
 
@@ -37,6 +39,24 @@ const Community = () => {
     setIsVisible(!isVisible);
   }
 
+  const handleJoinCommunity = async (communityId) => {
+    try {
+      const response = await axios.post(`${Keys.base_url}/joinCommunity`, {
+        communityId: communityId,
+      });
+      console.log(response.data);
+      setIsUserLoggedIn(true);
+    } catch (error) {
+      console.error("Error joining community:", error);
+    }
+  }
+  const [communityId, setCommunityId] = useState("");
+  const handleCommunityClick = (id) => {
+    setCommunityId(id);
+    setIsVisible(!isVisible);
+  }
+  
+
   return (
     <div>
       <Popup isVisible={isVisible}
@@ -67,7 +87,7 @@ const Community = () => {
               </h6>
               <FormButton name="Join Community" onClick={() => {
                  setParagraph(item.paragraph);
-                 handleCancelClick()
+                 handleCommunityClick()
               //   if (isUserLoggedIn) {
               //     setParagraph(item.paragraph);
               //     handleCancelClick()
