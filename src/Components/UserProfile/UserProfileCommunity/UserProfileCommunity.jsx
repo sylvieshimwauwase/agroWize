@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import UserProfileHeader from '../UserProfileHeader/UserProfileHeader';
 import VerticalNavBar from '../../VerticalNavBar/VerticalNavBar';
+import axios from 'axios';
+import Keys from '../../../Constants/Keys';
 import SearchBar from '../../Search/SearchBar';
 
 const UserProfileCommunity = () => {
+
+  const fetchCommunity = async () => {
+    console.log(localStorage.getItem("auth_token"))
+    try {
+      const response = await axios.get(`${Keys.base_url}/communitiesJoined`, 
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching community:", error);
+    }
+  }
+  useEffect(() => {
+    fetchCommunity();
+  },[]);
   return (
     <>
       <UserProfileHeader />
