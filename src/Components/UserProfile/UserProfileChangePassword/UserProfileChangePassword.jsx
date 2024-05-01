@@ -11,96 +11,75 @@ import ConfirmPasswordChangePopupPage from '../../../Components/PopupMessage/Con
 
 
 const UserProfileChangePassword = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [errors, setErrors] = useState({});
-    const [isPasswordChanged, setIsPasswordChanged] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errors, setErrors] = useState({});
+  const [isPasswordChanged, setIsPasswordChanged] = useState(false);
+  const [isConfirmPopupOpen, setIsConfirmPopupOpen] = useState(false);
 
-        const validateForm = () => {
-          let isValid = true;
-          let errors = {};
+  const validateForm = () => {
+    let isValid = true;
+    let errors = {};
 
-          if (!password) {
-            errors.password = "Old password is required";
-            isValid = false;
-          }
-          if (newPassword.length < 8) {
-            errors.newPassword = "Password must be at least 8 characters long";
-            isValid = false;
-          }
-          if (newPassword !== confirmPassword) {
-            errors.confirmPassword = "Passwords do not match";
-            isValid = false;
-          }
+    if (!password) {
+      errors.password = "Old password is required";
+      isValid = false;
+    }
+    if (newPassword.length < 8) {
+      errors.newPassword = "Password must be at least 8 characters long";
+      isValid = false;
+    }
+    if (newPassword !== confirmPassword) {
+      errors.confirmPassword = "Passwords do not match";
+      isValid = false;
+    }
 
-          setErrors(errors);
-          return isValid;
-        };
-      /*const handleSubmit = async (e) => {
-        e.preventDefault();
-     if (validateForm()) {
-      try {
-        const response = await axios.post(`${Keys.base_url}/passwordChange`, {
-          email,
-          password,
-          newPassword,
-          confirmPassword
-        });
-        console.log(response.data);
-        setIsPasswordChanged(true);
+    setErrors(errors);
+    return isValid;
+  };
 
-        setEmail('');
-        setPassword('');
-        setNewPassword('');
-        setConfirmPassword('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setIsConfirmPopupOpen(true);
+      // setIsPasswordChanged(true);
+    }
+  };
 
-      } catch (error) {
-        console.error("Error changing password: ", error);
-        
-      }
-            //console.log('Submitting new password');
-            // To add API call logic here to send data to the server
-     }
-        };*/
-        const handleSubmit = async (e) => {
-          e.preventDefault();
-          if (validateForm()) {
-            setIsPasswordChanged(true);
-          }
-        };
-        
-        const handleConfirmPasswordChange = async () => {
-          try {
-            const response = await axios.post(`${Keys.base_url}/passwordChange`, {
-              email,
-              password,
-              newPassword,
-              confirmPassword
-            });
-            console.log(response.data);
-            setIsPasswordChanged(false); 
+  const handleConfirmPasswordChange = async () => {
+    try {
+      const response = await axios.post(`${Keys.base_url}/passwordChange`, {
+        email,
+        password,
+        newPassword,
+        confirmPassword
+      });
+      console.log(response.data);
+      setIsPasswordChanged(true);
 
-            setEmail('');
-            setPassword('');
-            setNewPassword('');
-            setConfirmPassword('');
-          } catch (error) {
-            console.error("Error changing password: ", error);
-            setIsPasswordChanged(false); 
-          }
-        };
-        
-        const handleCancelPasswordChange = () => {
-          setIsPasswordChanged(false);
+      setEmail('');
+      setPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+      setIsConfirmPopupOpen(false);
+    } catch (error) {
+      console.error("Error changing password: ", error);
+      setIsPasswordChanged(false);
+      setIsConfirmPopupOpen(false);
+    }
+  };
 
-          setEmail('');
-          setPassword('');
-          setNewPassword('');
-          setConfirmPassword('');
-        };
-      
+  const handleCancelPasswordChange = () => {
+    setIsPasswordChanged(false);
+
+    setEmail('');
+    setPassword('');
+    setNewPassword('');
+    setConfirmPassword('');
+  };
+
   return (
     <>
       <UserProfileHeader />
@@ -124,7 +103,7 @@ const UserProfileChangePassword = () => {
             {errors.email && (
               <div className="error">{errors.email}</div>
             )}
-            </div>
+          </div>
           <div className="input-group">
             {/* <i className="fa fa-lock icon"></i> */}
             <label htmlFor="username">Enter Old Password</label>
@@ -139,9 +118,9 @@ const UserProfileChangePassword = () => {
             )}
           </div>
           <div className="forgot-password">
-          <a href="/forgotPassword" className="forgot-password">
-            Forgot password?
-          </a>
+            <a href="/forgotPassword" className="forgot-password">
+              Forgot password?
+            </a>
           </div>
           <div className="input-group">
             <i className="fa fa-lock icon"></i>
@@ -173,9 +152,10 @@ const UserProfileChangePassword = () => {
         </form>
         <div className="popupContainer">
           <ConfirmPasswordChangePopupPage
-          onConfirm={handleConfirmPasswordChange} 
-          onCancel={handleCancelPasswordChange}
-          isOpen={isPasswordChanged} />
+            isOpen={isConfirmPopupOpen}
+            onConfirm={handleConfirmPasswordChange}
+            onCancel={() => setIsConfirmPopupOpen(false)}
+          />
         </div>
       </div>
     </>

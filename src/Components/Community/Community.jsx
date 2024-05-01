@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "../Search/SearchBar";
 import FormButton from "../FormButton";
 import { useNavigate } from "react-router-dom";
@@ -6,27 +6,7 @@ import axios from "axios";
 import Keys from "../../Constants/Keys.js";
 import { communityDetails } from "../../Constants/Products.js"
 import "./community.css";
-
-import TomatoVerticalPopup from "../PopupMessage/CommunityPopup/TomatoVerticalPopup.jsx";
-import LettuceVerticalPopup from "../PopupMessage/CommunityPopup/LettuceVerticalPopup.jsx";
-import GrainVerticalPopup from "../PopupMessage/CommunityPopup/GrainVerticalPopup.jsx";
-import PotatoVerticalPopup from "../PopupMessage/CommunityPopup/PotatoVerticalPopup.jsx";
-import TomatoHydroPopup from "../PopupMessage/CommunityPopup/TomatoHydroPopup.jsx";
-import LettuceHydroPopup from "../PopupMessage/CommunityPopup/LettuceHydroPopup.jsx";
-import GrainHydroPopup from "../PopupMessage/CommunityPopup/GrainHydroPopup.jsx";
-import TuberHydroPopup from "../PopupMessage/CommunityPopup/TuberHydroPopup.jsx";
 import Popup from "../PopupMessage/Popup/Popup.jsx";
-
-const popupPageComponentMap = {
-  TomatoVerticalPopup,
-  LettuceVerticalPopup,
-  GrainVerticalPopup,
-  PotatoVerticalPopup,
-  TomatoHydroPopup,
-  LettuceHydroPopup,
-  GrainHydroPopup,
-  TuberHydroPopup,
-};
 
 const Community = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,27 +15,51 @@ const Community = () => {
   const Navigate = useNavigate();
 
   const handleCancelClick = () => {
-    
+
     setIsVisible(!isVisible);
   }
 
-  const handleJoinCommunity = async (communityId) => {
+
+  const [communityId, setCommunityId] = useState("");
+  const handleCommunityClick = async (id) => {
+    setCommunityId(id);
     try {
       const response = await axios.post(`${Keys.base_url}/joinCommunity`, {
         communityId: communityId,
+      }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+        },
       });
       console.log(response.data);
       setIsUserLoggedIn(true);
     } catch (error) {
       console.error("Error joining community:", error);
     }
-  }
-  const [communityId, setCommunityId] = useState("");
-  const handleCommunityClick = (id) => {
-    setCommunityId(id);
     setIsVisible(!isVisible);
   }
-  
+  const [communitiesList, setCommunitiesList] = useState([]);
+  useEffect(() => {
+    const fetchCommunity = async () => {
+      try {
+        const response = await axios.get(`${Keys.base_url}/fetchCommunities`,
+          {
+            headers: {
+              Authorization: `JWT ${localStorage.getItem("auth_token")}`,
+            },
+          });
+        console.log(localStorage.getItem("auth_token"))
+
+        setCommunitiesList(response.data.message);
+      } catch (error) {
+        console.error("Error fetching community:", error);
+      }
+    }
+    fetchCommunity();
+  }
+    , []);
+
+
 
   return (
     <div>
@@ -66,34 +70,32 @@ const Community = () => {
         }}
         text="Congratulations!"
         paragraph={
-          paragraph
+          <>
+            You have successfully joined
+            <span style={{ color: "#f29620" }}> Lettuce</span>
+            <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+          </>
         }
       />
       <div className="communityHero">
         <SearchBar />
         <h3 className="heroTitle">COMMUNITY</h3>
       </div>
-      {communityDetails.map((item, index) => {
-          const PopupPageComponent = popupPageComponentMap[item.popupPage];
+      {communitiesList.map((item, index) => {
 
         return (
           <div key={index} className="productDetails">
-            <img className="images" src={item.image} alt="" />
+            <img className="images" src={`/AboutUs3.png`} alt="" />
             <div className="borderDetails">
-              <h3>{item.title}</h3>
-              <h6 className="primaryColor">{item.about}</h6>
+              <h3>{item.name}</h3>
+              <h6 className="primaryColor">{`Vegetable`}</h6>
               <h6>
-                <span className="coloredText">Type:</span> {item.green}
+                <span className="coloredText">Type:</span> {`Tomato`}
               </h6>
               <FormButton name="Join Community" onClick={() => {
-                 setParagraph(item.paragraph);
-                 handleCommunityClick()
-              //   if (isUserLoggedIn) {
-              //     setParagraph(item.paragraph);
-              //     handleCancelClick()
-              // } else {
-              //   Navigate("/login")
-              // }
+                setParagraph(item.paragraph);
+                handleCommunityClick(item.id);
+                
               }} />
             </div>
           </div>

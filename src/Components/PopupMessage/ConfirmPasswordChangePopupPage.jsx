@@ -16,19 +16,6 @@ const ConfirmPasswordChangePopupPage = ({ isOpen, onConfirm, onCancel }) => {
         onConfirm();
     };
 
-    // const handleSuccessPopupClose = () => {
-    //     setIsSuccessPopupOpen(false);
-    // };
-
-    // const handleSuccessPopupConfirm = () => {
-    //     setIsSuccessPopupOpen(false);
-    //     onCancel();
-    // };
-
-    // const handleSuccessPopupCancel = () => {
-    //     setIsSuccessPopupOpen(false);
-
-    // };
     const handleClose = () => {
         navigate('/login');
     };
@@ -42,7 +29,7 @@ const ConfirmPasswordChangePopupPage = ({ isOpen, onConfirm, onCancel }) => {
                 <div className="confirmPopup">
                     <p className='confirmPopupText'>Are you sure you want to change your password?</p>
                     <div className="confirmPopupButtonContainer">
-                        <button className='yesButton' onClick={handleCancelClick}>Yes</button>
+                        <button className='yesButton' onClick={handleConfirm}>Yes</button>
                         <button className='noButton' onClick={onCancel}>No</button>
                     </div>
                 </div>
