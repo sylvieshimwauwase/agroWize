@@ -138,7 +138,7 @@ const ResetPassword = () => {
                         />
                         <FontAwesomeIcon
                             icon={showPassword ? faLockOpen : faLock}
-                            className="password-toggle"
+                            className="password-toggle1"
                             onClick={togglePasswordVisibility}
                         />
                     </div>

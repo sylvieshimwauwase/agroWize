@@ -105,10 +105,10 @@ const LoginForm = ({onFormSubmit}) => {
           />
           <FontAwesomeIcon
             icon={showPassword ? faLockOpen : faLock}
-            className="lockIcon"
+            className="loginlockicon"
             onClick={togglePassword}
           />
-          {error && <div className="error">{error}</div>}
+          {error && <div className="error">{error}</div>} 
           <a href="/forgotPassword" className="forgot-password">
             Forgot password?
           </a>

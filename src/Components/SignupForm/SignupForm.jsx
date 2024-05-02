@@ -195,7 +195,7 @@ const SignupForm = () => {
                   />
                   <FontAwesomeIcon
                     icon={showPassword ? faLockOpen : faLock}
-                    className="icon"
+                    className="signlockicon"
                     onClick={togglePassword}
                   />
                   <ErrorMessage
@@ -216,7 +216,7 @@ const SignupForm = () => {
                   />
                   <FontAwesomeIcon
                     icon={showPassword ? faLockOpen : faLock}
-                    className="icon"
+                    className="signlockicon"
                     onClick={togglePassword}
                   />
                   <ErrorMessage
