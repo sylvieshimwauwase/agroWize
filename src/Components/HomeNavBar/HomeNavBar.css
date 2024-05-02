@@ -16,14 +16,16 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
- font-size: 20px;
+ font-size: 18px;
+ font-family: NunitoSans;
 }
 
 .homeNavBarLinks {
   text-decoration: none;
   color: #000000;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 550;
+  font-size: 18px;
+  font-family: NunitoSans;
 }
 
 .homeNavBarLinks:hover,
@@ -31,12 +33,14 @@
   color: #257830;
   text-decoration: underline;
   transform: scale(0.95);
+  font-family: NunitoSans;
 }
 .homeNavBarButtonSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  font-family: NunitoSans;
 }
 .homeNavBar2ButtonSection {
   display: flex;

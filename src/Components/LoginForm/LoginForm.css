@@ -39,6 +39,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.loginlockicon {
+  position: absolute;
+    top: 55%;
+    transform: translate(-50%);
+    right: 40%;
+    color: #808080;
+    width: 10.7px;
+    height: 14px;
+}
 @media screen and (max-width: 768px) {
   .login-form {
   width: 90%;
@@ -91,7 +101,7 @@ input[type="password"] {
 
 .lockIcon {
   position: absolute;
-  top: 58%;
+  top: 56%;
   right: 270px;
   transform: translateY(-50%);
   color: #808080;
