@@ -1,15 +1,36 @@
 import { definition } from "@fortawesome/free-solid-svg-icons/fa0";
 
 export const products = [
-  { id: "course1", image: "/AboutUs3.png", title: "Vertical Farming" },
-  { id: "course2", image: "/HydroFarming.png", title: "Hydro Farming " },
-  { id: "course3", image: "/Crop rotation.png", title: "Crop Rotation" },
+  {
+    id: "course1",
+    image: "/AboutUs3.png",
+    title: "Vertical Farming",
+    duration: "2 hours",
+  },
+  {
+    id: "course2",
+    image: "/HydroFarming.png",
+    title: "Hydro Farming ",
+    duration: "2 hours",
+  },
+  {
+    id: "course3",
+    image: "/Crop rotation.png",
+    title: "Crop Rotation",
+    duration: "1 - 3 Months",
+  },
   {
     id: "course4",
     image: "/soil conservation.png",
     title: "Soil Conservation",
+    duration: "1 - 3 Months",
   },
-  { id: "course5", image: "/water management.png", title: "Water Management" },
+  {
+    id: "course5",
+    image: "/water management.png",
+    title: "Water Management",
+    duration: "1 - 3 Months",
+  },
 ];
 
 export const communityDetails = [

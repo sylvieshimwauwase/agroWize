@@ -102,7 +102,7 @@ const Courses = () => {
             <img className="images" src={item.image} alt="" />
             <div className="borderDetails">
               <h3>{item.title}</h3>
-              <h6>Duration: 1 - 3 Months</h6>
+              <h6>{item.duration}</h6>
               <h6>Certificate: Available Upon Completion</h6>
               <h5 className="primaryColor">Online</h5>
 
