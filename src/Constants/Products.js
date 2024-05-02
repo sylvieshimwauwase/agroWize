@@ -1,15 +1,36 @@
 import { definition } from "@fortawesome/free-solid-svg-icons/fa0";
 
 export const products = [
-  { id: "course1", image: "/AboutUs3.png", title: "Vertical Farming" },
-  { id: "course2", image: "/HydroFarming.png", title: "Hydro Farming " },
-  { id: "course3", image: "/Crop rotation.png", title: "Crop Rotation" },
+  {
+    id: "course1",
+    image: "/AboutUs3.png",
+    title: "Vertical Farming",
+    duration: "2 hours",
+  },
+  {
+    id: "course2",
+    image: "/HydroFarming.png",
+    title: "Hydro Farming ",
+    duration: "2 hours",
+  },
+  {
+    id: "course3",
+    image: "/Crop rotation.png",
+    title: "Crop Rotation",
+    duration: "1 - 3 Months",
+  },
   {
     id: "course4",
     image: "/soil conservation.png",
     title: "Soil Conservation",
+    duration: "1 - 3 Months",
   },
-  { id: "course5", image: "/water management.png", title: "Water Management" },
+  {
+    id: "course5",
+    image: "/water management.png",
+    title: "Water Management",
+    duration: "1 - 3 Months",
+  },
 ];
 
 export const communityDetails = [
@@ -19,11 +40,13 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Tomato",
     popupPage: "TomatoVerticalPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Vegetables</span>
-    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Vegetables</span>
+        <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/FrameHome.png",
@@ -31,11 +54,13 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Lettuce",
     popupPage: "LettuceVerticalPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Lettuce</span>
-    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Lettuce</span>
+        <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/Grain vertical.png",
@@ -43,11 +68,13 @@ export const communityDetails = [
     about: "Grain",
     green: "Rice",
     popupPage: "GrainVerticalPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Grain</span>
-    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Grain</span>
+        <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/tuber verticall 1.png",
@@ -55,11 +82,13 @@ export const communityDetails = [
     about: "Tuber",
     green: "Potato",
     popupPage: "PotatoVerticalPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Tuber</span>
-    <span style={{ color: "#257830" }}> Vertical Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Tuber</span>
+        <span style={{ color: "#257830" }}> Vertical Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/hydroponic vegetable 1 1.png",
@@ -67,11 +96,13 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Tomato",
     popupPage: "TomatoHydroPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Vegetables</span>
-    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Vegetables</span>
+        <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/hydro vegetable 3 1.png",
@@ -79,11 +110,13 @@ export const communityDetails = [
     about: "Vegetable",
     green: "Lettuce",
     popupPage: "LettuceHydroPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Lettuce</span>
-    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Lettuce</span>
+        <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/hydroponic 1 1.png",
@@ -91,11 +124,13 @@ export const communityDetails = [
     about: "Grain",
     green: "Tomato",
     popupPage: "GrainHydroPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Grain</span>
-    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Grain</span>
+        <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+      </>
+    ),
   },
   {
     image: "/hydroponic 1 1.png",
@@ -103,11 +138,13 @@ export const communityDetails = [
     about: "Tuber",
     green: "Rice",
     popupPage: "TuberHydroPopup",
-    paragraph:<>
-    You have successfully joined
-    <span style={{ color: "#f29620" }}> Tuber</span>
-    <span style={{ color: "#257830" }}> Hydro Farming</span> Community
-  </>
+    paragraph: (
+      <>
+        You have successfully joined
+        <span style={{ color: "#f29620" }}> Tuber</span>
+        <span style={{ color: "#257830" }}> Hydro Farming</span> Community
+      </>
+    ),
   },
 ];
 export const courseDetails = [
@@ -304,10 +341,10 @@ export const courseDetails = [
         <br />
         <p>
           3. <span style={{ color: "#226D2C" }}>Pruning and Training:</span>
-           Regularly prune and train vegetable plants to
-          promote healthy growth and maximize productivity. Remove damaged or
-          diseased foliage, and use trellising or support structures to guide
-          plant growth vertically and prevent sprawling.
+          Regularly prune and train vegetable plants to promote healthy growth
+          and maximize productivity. Remove damaged or diseased foliage, and use
+          trellising or support structures to guide plant growth vertically and
+          prevent sprawling.
         </p>
       </>
     ),

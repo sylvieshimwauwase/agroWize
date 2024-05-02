@@ -28,7 +28,8 @@ const CourseContent = () => {
 
    console.log(courses)
   
-   
+   console.log(courses);
+
    const handlePadlockClick = (lessonId) => {
     setProgress((prevProgress) => prevProgress + 1);
      setUnlockedLessons((prevUnlockedLessons) => [
