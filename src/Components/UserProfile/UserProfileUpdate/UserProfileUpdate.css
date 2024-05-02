@@ -111,7 +111,6 @@
     width: 200px;
     height: 22px;
     font-family: "Nunito", sans-serif;
-    font-size: 20px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -134,7 +133,6 @@
     border-radius: 9px;
     border: solid 1px #4285f4;
     background-color: #fff;
-    font-size: 20px;
 }
 
 .icon {
