@@ -19,7 +19,7 @@
 }
 
 .secondContainer {
-  background-color: #3ec772;
+  background-color: #226d2c;
   color: #fff;
 }
 .imageSection img {
@@ -31,19 +31,20 @@
 .secondContentSection {
   padding: 0 30px;
   text-align: left;
+  font-size: 20px;
 }
 
 .firstContentSection h3 {
   margin-bottom: 10px;
   color: #226d2c;
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
 }
 
 .secondContentSection h3 {
   margin-bottom: 10px;
   color: #000000;
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
 }
 

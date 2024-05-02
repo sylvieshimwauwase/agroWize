@@ -23,7 +23,7 @@
     height: auto;
 }
 
-.overlay {
+/* .overlay {
     position: absolute;
     top: 30%;
     left: 50%;
@@ -46,13 +46,14 @@
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
-}
+} */
 
 .row-section-item {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 30px;
+    font-size: 20px;
 }
 
 .row-section-item p,
@@ -66,7 +67,6 @@
 }
 
 .row-section-item p{
-    font-size: 16px;
     font-family: NunitoSans;
     font-weight: 500;
     align-items: center;
