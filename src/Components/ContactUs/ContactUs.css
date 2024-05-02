@@ -33,6 +33,7 @@
       width: 30%;
       padding: 20px;
       margin-right: 50px;
+      font-size: 20px;
   }
 
 
@@ -40,19 +41,20 @@
     width: 40%;
     padding: 8px;
     height: 2rem;
-    font-size: 1rem;
+    font-size: 20px;
     border: 1px solid #4285f4;
     border-radius: 9px;
   }
   .contactUsLabel {
      margin-bottom: 10px;
      text-align: left;
+     font-size: 20px;
   }
   .contactUsTextArea {
     width: 95%;
     padding: 8px;
     height: 7rem;
-    font-size: 1rem;
+    font-size: 20px;
     border: 1px solid #4285f4;
     border-radius: 9px;
   }

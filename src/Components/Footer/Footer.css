@@ -52,17 +52,18 @@
 
   .logoSection p {
     display: flex;
-    font-size: medium;
+    font-size: 20px;
     align-items: center;
   }
 
   .footerContainer1 h2 {
-    font-size: medium;
+    font-size: 20px;
   }
   .footerContainer1 ul {
     list-style: none;
     padding: 0;
     margin: 10px;
+    font-size: 18px;
   }
 
   .footerContainer2 {
@@ -73,7 +74,7 @@
   
   .footerContainer2 h2 {
     margin-right: 20px;
-    font-size: medium;
+    font-size: 20px;
   }
   
   .footerContainer2 ul {
@@ -81,6 +82,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: 17px;
   }
   
   .footerContainer2 ul li {
@@ -101,6 +103,7 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    font-size: 20px;
   }
 
   .copyright {
@@ -137,7 +140,7 @@
   }
 
   .footerSection2 p {
-    font-size: 14px;
+    font-size: 20px;
   }
   
   .input-box {
@@ -155,6 +158,7 @@
     padding: 24px;
     background-color: #fff;
     border: none;
+    font-size: 20px;
   }
 
   .newsletter-button {
@@ -165,6 +169,7 @@
     color: #fff;
     font-size: 16px;
     font-weight: 400;
+    font-size: 20px;
     cursor: pointer;
   }
 
