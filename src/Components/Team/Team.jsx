@@ -30,7 +30,7 @@ const Team = () => {
                         <p className="cYellow">Product Manager</p>
                     </div>
                     <div className="teamMember">
-                        <img src="/Kidane.png" alt="Team Member" />
+                        <img src="/Kidstemariam K.png" alt="Team Member" />
                         <p className="cBlack">Kidstemariam Kidane</p>
                         <p className="cYellow">Product Manager</p>
                     </div>
@@ -76,8 +76,8 @@ const Team = () => {
                     </div>
                     <div className="teamMember">
                         <img src="/Oluwadamilola.png" alt="Team Member" />
-                        <p className="cWhite">Oluwadamilola Ogunmodede</p>
-                        <p className="cBlack">Product Designer</p>
+                        <p className="cBlack">Oluwadamilola Ogunmodede</p>
+                        <p className="cYellow">Product Manager</p>
                     </div>
                         </div>
                   </section>

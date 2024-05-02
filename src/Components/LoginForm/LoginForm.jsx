@@ -54,6 +54,7 @@ const LoginForm = ({onFormSubmit}) => {
       setPassword("");
       
 
+      
       /*if (onFormSubmit) {
         onFormSubmit();
       } else {

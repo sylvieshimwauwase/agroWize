@@ -18,13 +18,15 @@ const CourseContent = () => {
 
    const fetchLessonContent = async () => {
      try {
-       const url = `${Keys.base_url}/coursesperlesson`;
+       const url = `${Keys.base_url}/allLessons`;
        const response = await axios.get(url);
-       setCourses(response.data);
+       setCourses(response.data?.message || []);
      } catch (error) {
        console.error("Error fetching lesson content:", error);
      }
    };
+
+   console.log(courses)
   
    console.log(courses);
 
@@ -40,26 +42,26 @@ const CourseContent = () => {
       <div className="colorpallete">
         <div className="coursesContainer">
           <ProgressRating progress={progress} total={totalLessons} />
-          {courseDetails.map((course) => {
-           const isUnlocked = unlockedLessons.includes(course.id);
+          {courses.map((course) => {
+           const isUnlocked = unlockedLessons.includes(course.lesson_id);
             return (
-              <div className="courseWrapper" key={course.id}>
-              <div className="courseBar" key={course.id}>
+              <div className="courseWrapper" key={course.lesson_id}>
+              <div className="courseBar" key={course.lesson_id}>
                 <div className="courseBarDetail">
                   <div className="iconAlignment">
                     <img
                       className="courseDetailIcon"
-                      src="/clipboardIcon.png"
+                      src={course.image_url || "./clipboardIcon.png"}
                       alt=""
                     />
-                    <p className="coursetitle">{course.lesson}</p>
+                    <p className="coursetitle">{course.lesson_title}</p>
                   </div>
                   <h4>{course.title}</h4>
                   <div className="iconAlignment">
                     <p className="coursetitle">{course.period}</p>
                     <button
                       className={`padlock ${isUnlocked ? "unlocked" : ""}`}
-                      onClick={() => handlePadlockClick(course.id)}
+                      onClick={() => handlePadlockClick(course.lesson_id)}
                       disabled={isUnlocked}
                     >
                       <img

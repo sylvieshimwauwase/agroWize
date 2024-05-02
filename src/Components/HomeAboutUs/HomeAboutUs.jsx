@@ -17,11 +17,11 @@ const HomeAboutUs = () => {
       <div className="containerOne">
         <div className="firstContent">
           <p>Welcome to <span style={{color:"#226d2c"}}>AgroWize</span>, the foremost
-          <br />
+          
             source of agricultural knowledge in Africa. Our goal is to lead the
-            <br />
+            
             way in transforming the farming sector by providing comprehensive
-            <br />
+            
             education and training on sustainable agricultural practices.
           </p>
         </div>
@@ -36,15 +36,10 @@ const HomeAboutUs = () => {
         <div className="secondContent">
           <p>
             At <span style={{color:"#f29620"}}>AgroWize</span>, we are committed to
-            <br />
             advancing agricultural knowledge and promoting the adoption of
-            <br />
             sustainable practices among farmers throughout Africa. Our community
-            <br />
             platform aims to foster a culture of collaboration and knowledge
-            <br />
             exchange that empowers farmers to make informed decisions and drive
-            <br />
             positive change in the agricultural industry.
           </p>
           <FormButton name="Learn More" onClick={handleLearnMoreClick} />

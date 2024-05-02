@@ -9,23 +9,23 @@ const UserProfileHeader = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchUserName = async () => {
-      setIsLoading(true);
-      setError(null);
+  // useEffect(() => {
+  //   const fetchUserName = async () => {
+  //     setIsLoading(true);
+  //     setError(null);
 
-      try {
-        const response = await axios.post(`${Keys.base_url}/addUserName`);
-        setFullName(response.data.fullName);
-      } catch (error) {
-        console.error("Error fetching user name:", error);
-        setError(error.message || "An error occurred.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchUserName();
-  }, []);
+  //     try {
+  //       const response = await axios.post(`${Keys.base_url}/addUserName`, );
+  //       setFullName(response.data.fullName);
+  //     } catch (error) {
+  //       console.error("Error fetching user name:", error);
+  //       setError(error.message || "An error occurred.");
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchUserName();
+  // }, []);
   return (
     <div className="userProfileHeader">
         <div>
@@ -34,9 +34,9 @@ const UserProfileHeader = () => {
         <div className="userProfileHeaderDiv">
         <Link to="/" className="formNavbarLink">Home</Link>
         <Link to="/aboutUs" className="formNavbarLink">About Us</Link>
+        <Link to="/verticalFarming" className="formNavbarLink">farm Mode</Link>
         <Link to="/courses" className="formNavbarLink">Courses</Link>
         <Link to="/community" className="formNavbarLink">Community</Link>
-        <Link to="/articles" className="formNavbarLink">Articles</Link>
       </div>
         <div>
         <button className="userProfileButton">{fullName}</button>

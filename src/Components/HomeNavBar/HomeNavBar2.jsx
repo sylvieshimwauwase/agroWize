@@ -11,8 +11,8 @@ const HomeNavBar2 = () => {
             <div className="homeNavBarLinksSection">
                 <Link to="/" className="homeNavBarLinks">Home</Link>
                 <Link to="/aboutUs" className="homeNavBarLinks">About Us</Link>
+                <Link to="/verticalFarming" className="homeNavBarLinks">Farm Mode</Link>
                 <Link to="/courses" className="homeNavBarLinks">Courses</Link>
-                <Link to="/articles" className="homeNavBarLinks">Articles</Link>
                 <Link to="/community" className="homeNavBarLinks">Community</Link>
             </div>
             <div className="homeNavBar2ButtonSection">

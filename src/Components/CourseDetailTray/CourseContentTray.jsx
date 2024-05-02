@@ -4,19 +4,19 @@ import BtnComponent from "../BtnComponent/BtnComponent";
 import "./CourseContentTray.css"
 
 const CourseContentTray = ({lesson}) => {
-     const lessonData = courseDetails.find((item) => item.id === lesson.id);
- if (lessonData) {
+    //  const lesson = courseDetails.find((item) => item.id === lesson.id);
+ if (lesson?.lesson_content) {
     //  return (
     // <div>
     //   {courseDetails.map((lesson) => {
         return (
           <div className="courseDetailWrapper">
-            <h3 className="lessonTitle">{lesson.lessonTitle}</h3>
-            <p className="lessonTopic">{lesson.lessonTopic}</p>
-            <p className="lessonParagraph">{lesson.lessonDefinition}</p>
-            <p className="subTitle">{lesson.subTitle}</p>
-            <p className="lessonParagraph">{lesson.lessonParagraph}</p>
-            <img className="lessonImg" src={lesson.img} alt="" />
+            <h3 className="lessonTitle">{lesson.lesson_title}</h3>
+            {/* <p className="lessonTopic">{lesson.lessonTopic}</p> */}
+            {/* <p className="lessonParagraph">{lesson.lessonDefinition}</p>
+            <p className="subTitle">{lesson.subTitle}</p> */}
+            <p className="lessonParagraph">{lesson.lesson_content}</p>
+            <img className="lessonImg" src={lesson.image_url} alt="" />
             <BtnComponent
               variant="primary"
               size="large"
