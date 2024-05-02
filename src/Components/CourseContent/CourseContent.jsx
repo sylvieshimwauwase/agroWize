@@ -13,8 +13,7 @@ const CourseContent = () => {
    const [unlockedLessons, setUnlockedLessons] = useState([])
 
     useEffect(() => {
-      fetchLessonContent();
-    }, []);
+ 
 
    const fetchLessonContent = async () => {
      try {
@@ -25,8 +24,8 @@ const CourseContent = () => {
        console.error("Error fetching lesson content:", error);
      }
    };
-
-   console.log(courses)
+     fetchLessonContent();
+    }, []);
   
    console.log(courses);
 

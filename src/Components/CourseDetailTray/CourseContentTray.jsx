@@ -17,6 +17,7 @@ const CourseContentTray = ({lesson}) => {
             <p className="subTitle">{lesson.subTitle}</p> */}
             <p className="lessonParagraph">{lesson.lesson_content}</p>
             <img className="lessonImg" src={lesson.image_url} alt="" />
+            {/* <img className="lessonImg" src="/public/FrameHome.png" alt="" /> */}
             <BtnComponent
               variant="primary"
               size="large"

@@ -17,10 +17,11 @@
      padding-bottom: 16px;
      padding-left: 20px;
      justify-content: center;
+     line-height: 38px;
      
 }
 .lessonImg{
-    padding: 28px 0px 80px 0px;
+    /* padding: 28px 0px 80px 0px; */
     display: flex;
     margin: auto;
     border-radius: 20px;
