@@ -11,6 +11,7 @@ import Keys from "../../Constants/Keys";
 import LoginPopUpPage from "../../Components/PopupMessage/LoginPopUpPage";
 import Popup from "../PopupMessage/Popup/Popup";
 import SmallSizeFormButton from "../SmallSizeFormButton/SmallSizeFormButton";
+import { setStorage } from "../../Utils/storage";
 
 const LoginForm = ({onFormSubmit}) => {
   const [username, setUsername] = useState("");
@@ -44,6 +45,7 @@ const LoginForm = ({onFormSubmit}) => {
       console.log(response.data);
       const token = response.data.token;
       localStorage.setItem("auth_token", token);
+      setStorage("user", response.data);
 
       
       //setIsLoggedIn(true);

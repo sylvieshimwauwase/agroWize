@@ -6,27 +6,10 @@ import axios from "axios";
 import Keys from "../../Constants/Keys.js";
 import { communityDetails } from "../../Constants/Products.js"
 import "./community.css";
-
-import TomatoVerticalPopup from "../PopupMessage/CommunityPopup/TomatoVerticalPopup.jsx";
-import LettuceVerticalPopup from "../PopupMessage/CommunityPopup/LettuceVerticalPopup.jsx";
-import GrainVerticalPopup from "../PopupMessage/CommunityPopup/GrainVerticalPopup.jsx";
-import PotatoVerticalPopup from "../PopupMessage/CommunityPopup/PotatoVerticalPopup.jsx";
-import TomatoHydroPopup from "../PopupMessage/CommunityPopup/TomatoHydroPopup.jsx";
-import LettuceHydroPopup from "../PopupMessage/CommunityPopup/LettuceHydroPopup.jsx";
-import GrainHydroPopup from "../PopupMessage/CommunityPopup/GrainHydroPopup.jsx";
-import TuberHydroPopup from "../PopupMessage/CommunityPopup/TuberHydroPopup.jsx";
+import { getStorage } from "../../Utils/storage.jsx";
 import Popup from "../PopupMessage/Popup/Popup.jsx";
 
-const popupPageComponentMap = {
-  TomatoVerticalPopup,
-  LettuceVerticalPopup,
-  GrainVerticalPopup,
-  PotatoVerticalPopup,
-  TomatoHydroPopup,
-  LettuceHydroPopup,
-  GrainHydroPopup,
-  TuberHydroPopup,
-};
+
 
 const Community = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,8 +27,10 @@ const Community = () => {
   const handleCommunityClick = async (id) => {
     setCommunityId(id);
     try {
+      const user= getStorage("user");
       const response = await axios.post(`${Keys.base_url}/joinCommunity`, {
-        communityId: communityId,
+        community_id: communityId,
+        user_id: user?.id
       }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
@@ -69,7 +54,7 @@ const Community = () => {
             },
           });
         console.log(localStorage.getItem("auth_token"))
-
+        console.log(response);
         setCommunitiesList(response.data.message);
       } catch (error) {
         console.error("Error fetching community:", error);
@@ -79,6 +64,13 @@ const Community = () => {
   }
     , []);
 
+    const  getParagraph = (item) => {
+      return <>
+      You have successfully joined
+      <span style={{ color: "#f29620" }}> {item.green}</span>
+      <span style={{ color: "#257830" }}>{item.title}</span> Community
+    </>
+    }
 
 
   return (
@@ -89,15 +81,14 @@ const Community = () => {
         }}
         text="Congratulations!"
         paragraph={
-         paragraph
+          paragraph
         }
       />
       <div className="communityHero">
         <SearchBar />
         <h3 className="heroTitle">COMMUNITY</h3>
       </div>
-      {communityDetails.map((item, index) => {
-        const PopupPageComponent = popupPageComponentMap[item.popupPage];
+      {communitiesList.map((item, index) => {
 
         return (
           <div key={index} className="productDetails">
@@ -109,7 +100,7 @@ const Community = () => {
                 <span className="coloredText">Type:</span> {item.green}
               </h6>
               <FormButton name="Join Community" onClick={() => {
-                setParagraph(item.paragraph);
+                setParagraph(getParagraph(item));
                 handleCommunityClick(item.id);
                 //   if (isUserLoggedIn) {
                 //     setParagraph(item.paragraph);
